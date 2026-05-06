@@ -141,7 +141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .adiv{height:1px;background:rgba(242,237,230,.05);}
 
 /* ─── RUNWAY ─── */
-#runway{background:var(--cream);color:var(--ink);padding:0 0 8rem;}
+#runway{background:var(--ink);color:var(--bone);padding:0 0 8rem;scroll-margin-top:65px;}
 .rw-hdr{padding:6rem 3rem 4rem;border-bottom:1px solid rgba(10,9,8,.07);}
 .rw-htw{display:flex;align-items:baseline;gap:2rem;}
 .rw-ht{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,6vw,6rem);font-weight:700;font-style:italic;line-height:.9;color:var(--ink);}
@@ -750,43 +750,47 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 </section>
 
 
-<!-- ─── RUNWAY ─── -->
+<!-- ─── FASHION WEEK ─── -->
 <section id="runway">
-  <div class="rw-hdr sr">
-    <div class="rw-htw"><div class="rw-ht">Fashion</div><div class="rw-ha">Week</div></div>
-    <div style="margin-top:.8rem;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);font-weight:200;">Paris &middot; Milan &middot; 2024 &mdash; 2025</div>
+  <div class="ed-hdr sr">
+    <div class="ed-htitle"><em>03 &mdash; Fashion Week</em>PARIS<br>FASHION WEEK</div>
+    <div class="ed-hint">Paris &middot; 2024 &mdash; 2025</div>
   </div>
-  <div class="rw-row rr1 sr">
-    <div>
-      <div class="rf t"></div>
-      <div class="rc"><div class="rh">Valentino</div><div class="rw">Georgina Rodr&iacute;guez</div><span class="rn">AW25 &mdash; PFW Mar 2025</span></div>
+
+  <div class="ed-moodboard sr">
+
+    <div class="ed-card" onclick="lbOpen(['images/georgina/valentino-final.jpg','images/georgina/valentino-aw25-converted.jpg','images/georgina/valentino-aw25.jpg'],0)">
+      <img src="images/georgina/valentino-final.jpg" alt="Valentino AW25 Georgina" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Valentino</span><span class="ed-card-date">Georgina &middot; Mar 2025</span></div>
     </div>
-    <div style="margin-top:5rem;">
-      <div class="rf p"></div>
-      <div class="rc"><div class="rh">Courr&egrave;ges</div><div class="rw">Bad Gyal</div><span class="rn">PFW Mar 2025</span></div>
+
+    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-artists/11.jpg','images/bad-gyal-artists/12.jpg'],0)">
+      <img src="images/bad-gyal-artists/11.jpg" alt="Courrèges PFW Bad Gyal" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Courr&egrave;ges</span><span class="ed-card-date">Bad Gyal &middot; Mar 2025</span></div>
     </div>
-    <div>
-      <div class="rf t"></div>
-      <div class="rc"><div class="rh">Coperni</div><div class="rw">Georgina Rodr&iacute;guez</div><span class="rn">PFW Mar 2025</span></div>
+
+    <div class="ed-card" onclick="lbOpen(['images/georgina/ldss-show.jpg'],0)">
+      <img src="images/georgina/ldss-show.jpg" alt="Coperni PFW Georgina" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Coperni</span><span class="ed-card-date">Georgina &middot; Mar 2025</span></div>
     </div>
-  </div>
-  <div class="rw-row rr2 sr">
-    <div>
-      <div class="rf w"></div>
-      <div class="rc"><div class="rh">Loewe</div><div class="rw">Priscilla Delgado</div>
-      <div class="rs">PARIS<br>FASHION<br>WEEK</div>
-      <div class="rnote">Styling on multiple shows across Paris Fashion Week seasons, 2024&ndash;2025.</div>
+
+    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-artists/13.jpg','images/bad-gyal-artists/14.jpg'],0)">
+      <img src="images/bad-gyal-artists/13.jpg" alt="Valentino PFW Bad Gyal" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Valentino</span><span class="ed-card-date">Bad Gyal &middot; Mar 2025</span></div>
     </div>
-  </div>
-  <div class="rw-row rr3 sr">
-    <div>
-      <div class="rf p"></div>
-      <div class="rc"><div class="rh">Louis de Javier</div><div class="rw">Priscilla Delgado</div><span class="rn">PFW Oct 2025</span></div>
+
+    <div class="ed-card ed-card-ph" style="cursor:default;">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Loewe</span><span class="ed-card-date">Priscilla &middot; 2025</span></div>
     </div>
-    <div style="margin-top:5rem;">
-      <div class="rf s"></div>
-      <div class="rc"><div class="rh">Versace</div><div class="rw">Bad Gyal</div><span class="rn">PFW Mar 2025</span></div>
+
+    <div class="ed-card ed-card-ph" style="cursor:default;">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Louis de Javier</span><span class="ed-card-date">Priscilla &middot; Oct 2025</span></div>
     </div>
+
+    <div class="ed-card ed-card-ph" style="cursor:default;">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Versace</span><span class="ed-card-date">Bad Gyal &middot; Mar 2025</span></div>
+    </div>
+
   </div>
 </section>
 
