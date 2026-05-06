@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naomi Vallejo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#111010;
+  --bone:#f2ede6;
+  --cream:#e8e1d6;
+  --choco:#2a1008;
+  --choco2:#5c3520;
+  --choco3:#5c3520;
+  --choco-pale:#c4a48a;
+  --gray:#7a7570;
+  --warm:#b8a898;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--bone);font-family:'DM Sans',sans-serif;font-weight:200;overflow-x:hidden;cursor:none;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9000;opacity:.55;}
+
+/* CURSOR */
+.cur{position:fixed;width:10px;height:10px;border:1px solid var(--bone);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:difference;}
+.cur.big{width:38px;height:38px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 3rem;background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(242,237,230,.05);}
+.nav-sig{font-family:'Unbounded',sans-serif;font-style:normal;font-weight:200;font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(242,237,230,.5);text-decoration:none;display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1.3;gap:.05rem;}
+.nav-sig-name{font-family:'Great Vibes',cursive;font-size:1.65rem;letter-spacing:.01em;text-transform:none;color:rgba(242,237,230,.88);line-height:1;font-weight:400;pointer-events:none;white-space:nowrap;display:block;}
+.nav-r{display:flex;align-items:center;gap:2.2rem;}
+.nav-r a{font-size:.7rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.4);text-decoration:none;transition:color .2s;white-space:nowrap;}
+.nav-r a:hover,.nav-r a.on{color:var(--bone);}
+
+/* COVER */
+#cover{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
+.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:contrast(1.08) saturate(.7) brightness(.95);}
+.cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.95) 0%,rgba(10,9,8,.35) 55%,rgba(10,9,8,.15) 100%);}
+.cover-content{position:absolute;inset:0;z-index:2;}
+.cover-name{position:absolute;bottom:7rem;left:3rem;right:3rem;z-index:3;display:flex;align-items:baseline;justify-content:space-between;pointer-events:none;}
+.cover-name-left{font-family:'Unbounded',sans-serif;font-size:clamp(2.2rem,6vw,6.5rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;color:var(--bone);writing-mode:horizontal-tb;animation:dropIn .85s cubic-bezier(.2,.8,.3,1) 0s both;}
+.cover-name-right{font-family:'Unbounded',sans-serif;font-size:clamp(2.2rem,6vw,6.5rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;color:var(--bone);writing-mode:horizontal-tb;animation:dropIn .85s cubic-bezier(.2,.8,.3,1) .12s both;}
+@keyframes dropIn{0%{opacity:0;transform:translateY(-120vh);}65%{opacity:1;transform:translateY(2rem);}82%{transform:translateY(-.8rem);}100%{opacity:1;transform:translateY(0);}}70%{opacity:1;transform:translateY(1.5rem);}85%{transform:translateY(-.5rem);}100%{opacity:1;transform:translateY(0);}}
+.cover-name .v{color:var(--bone);}
+.cover-sub{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:absolute;bottom:3.5rem;left:3rem;right:3rem;z-index:5;}
+.cover-role{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(242,237,230,.35);}
+.cover-meta{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(242,237,230,.35);text-align:right;line-height:2.4;}
+.cover-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);font-size:.42rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(242,237,230,.18);z-index:2;animation:blink 2.5s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:.18;}50%{opacity:.5;}}
+
+/* MARQUEE ARTISTS STRIP */
+.marquee-strip{background:var(--ink);border-top:1px solid rgba(242,237,230,.06);border-bottom:1px solid rgba(242,237,230,.06);padding:.75rem 0;overflow:hidden;}
+.marquee-track{display:flex;gap:3rem;white-space:nowrap;animation:mq 22s linear infinite;width:max-content;}
+.marquee-track:hover{animation-play-state:paused;}
+.mq-item{font-family:'Unbounded',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,230,.45);display:flex;align-items:center;gap:3rem;flex-shrink:0;}
+.mq-item.hl{color:#d4cdc6;}
+.mq-dot{width:3px;height:3px;border-radius:50%;background:var(--choco3);flex-shrink:0;}
+@keyframes mq{to{transform:translateX(-50%);}}
+
+/* SECTION */
+.s-kicker{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:var(--choco3);margin-bottom:1rem;display:block;}
+
+/* ─── EDITORIAL ─── */
+#editorial{background:#1a0c06;color:var(--bone);padding:0 0 8rem;}
+#editorial::before{content:'';display:block;height:3rem;background:linear-gradient(to bottom,#111010,#1a0c06);margin-bottom:0;}
+.ed-hdr{padding:5rem 3rem 3rem;border-bottom:1px solid rgba(242,237,230,.08);display:flex;align-items:flex-end;gap:3rem;}
+.ed-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.6rem,3vw,3rem);font-weight:700;line-height:.9;letter-spacing:-.025em;text-transform:uppercase;flex:1;color:var(--bone);}
+.ed-htitle em{font-family:'Libre Baskerville',serif;font-style:italic;font-weight:400;font-size:.58em;display:block;color:rgba(242,237,230,.38);letter-spacing:.02em;margin-bottom:.4rem;}
+.ed-hint{max-width:250px;padding-bottom:.4rem;font-size:.78rem;line-height:1.9;color:rgba(242,237,230,.38);font-style:italic;font-family:'Libre Baskerville',serif;}
+
+.ed-row{display:grid;align-items:start;padding:4rem 3rem;gap:3rem;border-bottom:1px solid rgba(10,9,8,.06);}
+.la{grid-template-columns:2fr 1fr;gap:5rem;}
+.lb{grid-template-columns:1fr 2fr;gap:5rem;}
+.lc{grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:end;}
+.ld{grid-template-columns:3fr 1fr;gap:5rem;}
+.le{grid-template-columns:1fr 1fr;gap:3rem;}
+
+.ef{width:100%;background:rgba(10,9,8,.07);position:relative;overflow:hidden;}
+.ef.tall{aspect-ratio:2/3;max-height:82vh;}
+.ef.wide{aspect-ratio:3/2;max-height:65vh;}
+.ef.sq{aspect-ratio:1/1;max-height:75vh;}
+.ef.port{aspect-ratio:3/4;max-height:80vh;}
+.ef{cursor:zoom-in;}.ef img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s cubic-bezier(.23,1,.32,1);}
+.ef.tall img,.ef.port img{object-position:top;}
+.ef:hover img{transform:scale(1.04);}
+
+.et{display:flex;flex-direction:column;justify-content:flex-end;}
+.et.ctr{justify-content:center;}
+.ep{font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--choco3);margin-bottom:.6rem;display:block;}
+.ej{font-family:'Libre Baskerville',serif;font-size:clamp(1.5rem,3vw,3rem);font-weight:400;line-height:1.05;color:var(--ink);}
+.ej em{font-style:italic;color:var(--choco3);}
+.es{font-size:.68rem;color:var(--bone);letter-spacing:.1em;margin-top:.7rem;display:block;font-weight:300;}
+.ed{font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(10,9,8,.28);margin-top:.5rem;display:block;}
+.epull{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.6rem;line-height:1.4;color:rgba(10,9,8,.14);padding:2rem 0;border-top:1px solid rgba(10,9,8,.08);border-bottom:1px solid rgba(10,9,8,.08);align-self:center;}
+
+/* ─── ARTISTS ─── */
+#artists{background:var(--ink);color:var(--bone);padding:0 0 8rem;scroll-margin-top:65px;}
+#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;}
+#art-overview-page.detail-mode{height:0;overflow:hidden;padding:0;}
+.art-hdr{padding:1.8rem 3rem 1rem;border-bottom:1px solid rgba(242,237,230,.06);display:grid;grid-template-columns:1fr auto;align-items:end;gap:3rem;flex-shrink:0;}
+.art-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.8rem,3.5vw,3.8rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;}
+.art-htitle .out{font-family:'Libre Baskerville',serif;font-style:italic;font-weight:400;font-size:.9em;letter-spacing:-.01em;-webkit-text-stroke:0;color:rgba(242,237,230,.55);text-transform:lowercase;}
+.out{-webkit-text-stroke:1px rgba(242,237,230,.18);color:transparent;}
+.art-hsub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,237,230,.38);text-align:right;line-height:2.5;padding-bottom:.4rem;}
+
+.ab{padding:3.5rem 3rem;border-bottom:1px solid rgba(242,237,230,.05);}
+.ai{display:grid;align-items:start;gap:1.5rem;}
+.a1{grid-template-columns:1.2fr .9fr .9fr;}
+.a2{grid-template-columns:.55fr 1.45fr;}
+.a3{grid-template-columns:1fr 1fr 1fr 1fr;}
+.a4{grid-template-columns:1.5fr .5fr 1fr;}
+.a5{grid-template-columns:.5fr 1.5fr .5fr;align-items:center;}
+
+.af{background:rgba(242,237,230,.04);position:relative;overflow:hidden;}
+.af{cursor:zoom-in;}.af.t{aspect-ratio:2/3;max-height:85vh;}
+.af.sq{aspect-ratio:1/1;}
+.af.w{aspect-ratio:4/3;}
+.af.xt{aspect-ratio:1/1.5;}
+.af.xl{aspect-ratio:16/10;}
+.af img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s cubic-bezier(.23,1,.32,1);}
+.af.t img,.af.xt img{object-position:top;}
+.af:hover img{transform:scale(1.04);}
+
+.al{padding:.7rem 0;}
+.aw{font-family:'Unbounded',sans-serif;font-size:clamp(.7rem,1.2vw,1rem);font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--bone);margin-bottom:.25rem;}
+.ax{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--choco3);margin-bottom:.2rem;}
+.ay{font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.38);}
+
+.atb{display:flex;flex-direction:column;justify-content:center;padding:2rem 0;}
+.abn{font-family:'Unbounded',sans-serif;font-size:clamp(1.5rem,4vw,4.5rem);font-weight:900;letter-spacing:-.025em;text-transform:uppercase;-webkit-text-stroke:1px rgba(242,237,230,.1);color:transparent;line-height:1;}
+.adiv{height:1px;background:rgba(242,237,230,.05);}
+
+/* ─── RUNWAY ─── */
+#runway{background:var(--cream);color:var(--ink);padding:0 0 8rem;}
+.rw-hdr{padding:6rem 3rem 4rem;border-bottom:1px solid rgba(10,9,8,.07);}
+.rw-htw{display:flex;align-items:baseline;gap:2rem;}
+.rw-ht{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,6vw,6rem);font-weight:700;font-style:italic;line-height:.9;color:var(--ink);}
+.rw-ha{font-family:'Unbounded',sans-serif;font-size:clamp(2.5rem,6vw,6rem);font-weight:200;letter-spacing:-.025em;text-transform:uppercase;color:rgba(10,9,8,.18);line-height:.9;}
+.rw-row{padding:4rem 3rem;display:grid;gap:2.5rem;border-bottom:1px solid rgba(10,9,8,.06);}
+.rr1{grid-template-columns:1fr 1fr 1fr;}
+.rr2{grid-template-columns:2fr 1fr;align-items:end;}
+.rr3{grid-template-columns:1fr 1fr;}
+.rf{background:rgba(10,9,8,.07);position:relative;overflow:hidden;}
+.rf.t{aspect-ratio:2/3;}
+.rf.p{aspect-ratio:3/4;}
+.rf.w{aspect-ratio:4/3;}
+.rf.s{aspect-ratio:1/1;}
+.rf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s cubic-bezier(.23,1,.32,1);}
+.rf:hover img{transform:scale(1.04);}
+.rc{padding:.9rem 0 0;}
+.rh{font-family:'Unbounded',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.25rem;}
+.rw{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1rem;color:var(--gray);}
+.rn{font-size:.5rem;letter-spacing:.25em;text-transform:uppercase;color:var(--warm);margin-top:.3rem;display:block;}
+.rtb{display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:1rem;}
+.rs{font-family:'Unbounded',sans-serif;font-size:clamp(1rem,3vw,3rem);font-weight:200;letter-spacing:.05em;text-transform:uppercase;color:rgba(10,9,8,.08);line-height:1.1;margin-bottom:1rem;}
+.rnote{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;line-height:1.8;color:var(--gray);max-width:280px;}
+
+/* ─── ABOUT ─── */
+#about{background:var(--ink);color:var(--bone);padding:0;}
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;}
+.abl{padding:6rem 3.5rem 5rem;border-right:1px solid rgba(242,237,230,.05);display:flex;flex-direction:column;justify-content:space-between;}
+.abn2{font-family:'Unbounded',sans-serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:900;line-height:.88;letter-spacing:-.025em;text-transform:uppercase;margin-bottom:2rem;}
+.abn2 .l2{-webkit-text-stroke:1px rgba(242,237,230,.18);color:transparent;display:block;}
+.abr2{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.95rem;color:rgba(242,237,230,.28);margin-bottom:3rem;}
+.abb{font-size:.88rem;line-height:2.1;color:rgba(242,237,230,.42);max-width:390px;}
+.abb p{margin-bottom:.9rem;}
+.abb strong{font-weight:300;color:rgba(242,237,230,.75);}
+.ablang{margin-top:3rem;display:flex;gap:2rem;padding-top:2rem;border-top:1px solid rgba(242,237,230,.06);}
+.li{text-align:center;}
+.ln{font-family:'Unbounded',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,237,230,.38);margin-bottom:.3rem;}
+.ll{font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:var(--choco3);}
+.abr{padding:6rem 3.5rem 5rem;display:flex;flex-direction:column;}
+.tli{padding:1.6rem 0;border-bottom:1px solid rgba(242,237,230,.05);position:relative;padding-left:1.5rem;}
+.tli::before{content:'';position:absolute;left:0;top:2rem;width:4px;height:4px;border-radius:50%;background:var(--choco3);}
+.tly{font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,230,.36);margin-bottom:.4rem;}
+.tlr{font-family:'Unbounded',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--bone);margin-bottom:.18rem;}
+.tlc{font-size:.65rem;color:rgba(242,237,230,.45);}
+.tlt{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.6rem;}
+.tltag{font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(242,237,230,.08);padding:.15rem .4rem;color:rgba(242,237,230,.18);}
+
+/* ─── CONTACT ─── */
+#contact{background:#1a0c06;padding:5.5rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;}
+.c-big{font-family:'Unbounded',sans-serif;font-size:clamp(2.2rem,6vw,6rem);font-weight:900;line-height:.88;letter-spacing:-.025em;text-transform:uppercase;color:var(--bone);margin-bottom:2rem;}
+.c-sub{font-size:.82rem;line-height:2;color:rgba(242,237,230,.4);margin-bottom:2rem;max-width:300px;}
+.c-links{display:flex;flex-direction:column;gap:.8rem;}
+.c-link{display:flex;align-items:center;gap:.8rem;font-size:.75rem;color:rgba(242,237,230,.45);text-decoration:none;transition:color .2s;font-family:'Libre Baskerville',serif;font-style:italic;}
+.c-link:hover{color:var(--bone);}
+.cfh{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.4rem;color:var(--bone);margin-bottom:2rem;}
+.fg{margin-bottom:1.3rem;}
+.fl{display:block;font-size:.48rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,237,230,.28);margin-bottom:.4rem;}
+.fi{width:100%;background:none;border:none;border-bottom:1px solid rgba(242,237,230,.15);padding:.65rem 0;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:200;color:var(--bone);outline:none;transition:border-color .2s;cursor:none;}
+.fi:focus{border-bottom-color:var(--bone);}
+.fi::placeholder{color:rgba(242,237,230,.15);}
+textarea.fi{resize:none;height:60px;}
+.fsub{margin-top:1.5rem;width:100%;padding:.9rem;background:var(--bone);color:var(--choco2);border:none;font-family:'Unbounded',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s;}
+.fsub:hover{background:var(--ink);color:var(--bone);}
+
+footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(242,237,230,.05);}
+.fl2{font-size:.5rem;letter-spacing:.14em;color:rgba(242,237,230,.14);}
+.fr2 a{font-size:.5rem;letter-spacing:.1em;color:rgba(242,237,230,.14);text-decoration:none;transition:color .2s;}
+.fr2 a:hover{color:var(--choco3);}
+
+.sr{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1);}
+.sr.vis{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}
+.d2{transition-delay:.2s;}
+
+@media(max-width:900px){
+  nav{padding:.9rem 1.5rem;}
+  .nav-r a{font-size:.6rem;gap:1.5rem;}
+  .cover-content{padding:0 1.5rem 2.5rem;}
+  .ed-hdr,.ed-row,.ab,.art-hdr,.rw-hdr,.rw-row{padding:3rem 1.5rem;}
+  .la,.lb,.ld{grid-template-columns:1fr;}
+  .lc,.le{grid-template-columns:1fr 1fr;}
+  .a1,.a3,.a4{grid-template-columns:1fr 1fr;}
+  .a2,.a5{grid-template-columns:1fr;}
+  .rr1{grid-template-columns:1fr 1fr;}
+  .rr2,.rr3{grid-template-columns:1fr;}
+  .about-wrap{grid-template-columns:1fr;}
+  .abl{border-right:none;border-bottom:1px solid rgba(242,237,230,.05);padding:4rem 1.5rem 3rem;}
+  .abr{padding:4rem 1.5rem 3rem;}
+  #contact{grid-template-columns:1fr;padding:4rem 1.5rem;}
+  footer{flex-direction:column;gap:.4rem;padding:1rem 1.5rem;text-align:center;}
+}
+/* GALLERY OVERLAY */
+#glr{display:none;position:fixed;inset:0;background:#0a0908;z-index:9000;flex-direction:column;}
+#glr.on{display:flex;}
+#glr-top{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;flex-shrink:0;}
+#glr-ct{font-family:'Unbounded',sans-serif;font-size:.45rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(242,237,230,.3);}
+#glr-x{color:rgba(242,237,230,.5);font-size:2rem;background:none;border:none;cursor:pointer;line-height:1;font-weight:200;transition:color .15s;padding:0;cursor:none;}
+#glr-x:hover{color:var(--bone);}
+#glr-main{flex:1;display:flex;align-items:center;justify-content:center;position:relative;min-height:0;padding:0 4.5rem;}
+#glr-img{max-width:100%;max-height:100%;object-fit:contain;display:block;user-select:none;transition:opacity .15s;}
+#glr-prev,#glr-next{position:absolute;top:50%;transform:translateY(-50%);color:rgba(242,237,230,.4);font-size:2.8rem;background:none;border:none;cursor:pointer;padding:.4rem 1rem;line-height:1;font-weight:200;transition:color .15s;cursor:none;}
+#glr-prev:hover,#glr-next:hover{color:var(--bone);}
+#glr-prev{left:0;}#glr-next{right:0;}
+#glr-strip{display:flex;gap:.35rem;padding:.7rem 2rem 1rem;overflow-x:auto;flex-shrink:0;scrollbar-width:none;justify-content:center;}
+#glr-strip::-webkit-scrollbar{display:none;}
+.glr-th{width:48px;height:48px;object-fit:cover;opacity:.35;cursor:pointer;transition:opacity .2s,outline .2s;flex-shrink:0;outline:1px solid transparent;outline-offset:1px;}
+.glr-th.act{opacity:1;outline-color:rgba(242,237,230,.5);}
+.glr-th:hover{opacity:.75;}
+#glr-title{font-family:'Unbounded',sans-serif;font-size:.72rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.65);flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 1rem;}
+#glr-hint{font-size:1.1rem;color:rgba(242,237,230,.22);text-align:center;padding-bottom:.5rem;flex-shrink:0;letter-spacing:.4em;}
+.g{cursor:zoom-in;}
+/* ─── EDITORIAL MOODBOARD ─── */
+.ed-moodboard{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;padding:3rem 3rem 5rem;}
+.ed-card{position:relative;aspect-ratio:2/3;overflow:hidden;cursor:zoom-in;background:rgba(10,9,8,.1);}
+.ed-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s cubic-bezier(.23,1,.32,1);}
+.ed-card:hover img{transform:scale(1.05);}
+.ed-card-info{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,0) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:.85rem;transition:opacity .3s;}
+.ed-card-ph .ed-card-info{opacity:1;background:rgba(10,9,8,.18);}
+.ed-card-pub{font-size:.42rem;letter-spacing:.3em;text-transform:uppercase;color:var(--choco3);margin-bottom:.28rem;}
+.ed-card-name{font-family:'Libre Baskerville',serif;font-size:.88rem;line-height:1.2;color:var(--bone);}
+.ed-card-date{font-size:.4rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,230,.38);margin-top:.2rem;}
+
+
+/* ─── PROJECT MOODBOARD (inside talent detail) ─── */
+.proj-grid{grid-row:3;grid-column:1;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:.7rem;padding:.5rem 3rem .6rem;min-height:0;}
+.proj-card{position:relative;overflow:hidden;cursor:zoom-in;background:rgba(242,237,230,.05);}
+.proj-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s cubic-bezier(.23,1,.32,1);}
+.proj-card:hover img{transform:scale(1.05);}
+.proj-card-info{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,9,8,.95) 0%,rgba(10,9,8,0) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem .8rem .8rem;transition:opacity .3s;opacity:0;}
+.proj-card:hover .proj-card-info{opacity:1;}
+.proj-card-pub{font-size:.4rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(242,237,230,.5);margin-bottom:.25rem;}
+.proj-card-name{font-family:'Libre Baskerville',serif;font-size:.82rem;line-height:1.2;color:var(--bone);}
+.proj-card-date{font-size:.38rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.36);margin-top:.18rem;}
+.art-detail-hdr{grid-row:2;grid-column:1;display:flex;align-items:baseline;gap:1.2rem;padding:.1rem 3rem .8rem;border-bottom:1px solid rgba(242,237,230,.06);}
+.art-detail-kicker{font-family:'Unbounded',sans-serif;font-size:clamp(1.2rem,2.5vw,2.2rem);font-weight:900;letter-spacing:-.03em;text-transform:uppercase;color:rgba(242,237,230,.88);line-height:1;}
+@media(max-width:900px){
+  .art-detail.active{grid-template-rows:auto auto 1fr;height:calc(100vh - 55px);}
+  .art-back{padding:.6rem 0 .2rem 1.5rem;}
+  .proj-grid{grid-template-columns:repeat(2,1fr);padding:.4rem 1.5rem .4rem;}
+}
+/* ─── ARTIST OVERVIEW ─── */
+.art-overview{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:.7rem;padding:.6rem 3rem .8rem;}
+.art-overview.art-hidden{display:none!important;}
+.art-ov-card{position:relative;overflow:hidden;cursor:pointer;background:rgba(242,237,230,.04);}
+.art-ov-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s cubic-bezier(.23,1,.32,1);}
+.art-ov-card:hover img{transform:scale(1.04);}
+.art-ov-info{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.82) 0%,rgba(10,9,8,0) 52%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;transition:background .3s;}
+.art-ov-card:hover .art-ov-info{background:linear-gradient(to top,rgba(10,9,8,.95) 0%,rgba(10,9,8,.12) 62%);}
+.art-ov-name{font-family:'Unbounded',sans-serif;font-size:clamp(.8rem,1.4vw,1.15rem);font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--bone);}
+.art-ov-sub{font-size:.42rem;letter-spacing:.2em;text-transform:uppercase;color:var(--choco3);margin-top:.28rem;}
+
+/* ─── ARTIST DETAIL ─── */
+.art-detail{display:none;}
+.art-detail.active{display:grid;grid-template-rows:auto auto 1fr;grid-template-columns:1fr;height:calc(100vh - 65px);}
+.art-back{grid-row:1;grid-column:1;display:inline-flex;align-items:center;gap:.5rem;font-family:'Unbounded',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,230,.62);background:none;border:none;padding:1.8rem 0 .3rem 3rem;cursor:pointer;transition:color .2s;cursor:none;}
+.art-back:hover{color:var(--bone);}
+.art-back::before{content:'←';margin-right:.5rem;font-size:.9rem;}
+
+@media(max-width:900px){
+  .ed-moodboard{grid-template-columns:repeat(2,1fr);padding:1.5rem 1.5rem 3rem;gap:1rem;}
+  .art-overview{grid-template-columns:repeat(2,1fr);padding:1.5rem 1.5rem 3rem;}
+  .art-back{margin:1.5rem 1.5rem 0;}
+  .art-detail-name{padding:2rem 1.5rem 0;}
+}
+
+</style>
+</head>
+<body>
+<div class="cur" id="cur"></div>
+
+<nav>
+  <a href="#cover" class="nav-sig"><span class="nav-sig-name">Naomi</span><span>Vallejo L&oacute;pez</span></a>
+  <div class="nav-r">
+    <a href="#editorial" id="n-ed">Editorial</a>
+    <a href="#artists" id="n-art">Talents</a>
+    <a href="#runway" id="n-rw">Runway</a>
+    <a href="#about" id="n-ab">About</a>
+    <a href="#contact" id="n-co">Contact</a>
+    <a href="https://instagram.com/na0mivallej0" target="_blank">@na0mivallej0</a>
+  </div>
+</nav>
+
+<!-- COVER: using GQ BW image — clean minimal background -->
+<section id="cover">
+  <div class="cover-bg" style="background-image:url('images/cover-2400.jpg');background-position:center 20%;"></div>
+  <div class="cover-content">
+    <div class="cover-name"><span class="cover-name-left">NAOMI</span><span class="cover-name-right"><span class="v">V</span>ALLEJO</span></div>
+    <div class="cover-sub">
+      <div class="cover-role">Fashion Stylist &mdash; Paris</div>
+      <div class="cover-meta">Open to relocation<br>ES &middot; FR &middot; EN</div>
+    </div>
+  </div>
+  <div class="cover-scroll">Scroll</div>
+  <!-- ARTISTS MARQUEE -->
+  <div class="marquee-strip" style="position:absolute;bottom:0;left:0;right:0;z-index:4;">
+  <div class="marquee-track">
+    <span class="mq-item hl">Karol G<div class="mq-dot"></div></span>
+    <span class="mq-item hl">Bad Gyal<div class="mq-dot"></div></span>
+    <span class="mq-item hl">Aitana<div class="mq-dot"></div></span>
+    <span class="mq-item">Georgina Rodr&iacute;guez<div class="mq-dot"></div></span>
+    <span class="mq-item">Rauw Alejandro<div class="mq-dot"></div></span>
+    <span class="mq-item">Jill Kortleve<div class="mq-dot"></div></span>
+    <span class="mq-item">Emma Corrin<div class="mq-dot"></div></span>
+    <span class="mq-item">Deva Cassel<div class="mq-dot"></div></span>
+    <span class="mq-item">Diane Kruger<div class="mq-dot"></div></span>
+    <span class="mq-item hl">ELLE &middot; Vogue &middot; Harper&rsquo;s Bazaar &middot; GQ<div class="mq-dot"></div></span>
+    <span class="mq-item">Paris Fashion Week<div class="mq-dot"></div></span>
+    <span class="mq-item hl">Karol G<div class="mq-dot"></div></span>
+    <span class="mq-item hl">Bad Gyal<div class="mq-dot"></div></span>
+    <span class="mq-item hl">Aitana<div class="mq-dot"></div></span>
+    <span class="mq-item">Georgina Rodr&iacute;guez<div class="mq-dot"></div></span>
+    <span class="mq-item">Rauw Alejandro<div class="mq-dot"></div></span>
+    <span class="mq-item">Jill Kortleve<div class="mq-dot"></div></span>
+    <span class="mq-item">Emma Corrin<div class="mq-dot"></div></span>
+    <span class="mq-item">Deva Cassel<div class="mq-dot"></div></span>
+    <span class="mq-item">Diane Kruger<div class="mq-dot"></div></span>
+    <span class="mq-item hl">ELLE &middot; Vogue &middot; Harper&rsquo;s Bazaar &middot; GQ<div class="mq-dot"></div></span>
+    <span class="mq-item">Paris Fashion Week<div class="mq-dot"></div></span>
+  </div>
+</div>
+</section>
+
+<section id="editorial">
+  <div class="ed-hdr sr">
+    <div class="ed-htitle"><em>01 &mdash; Editorial</em>PRINT &amp;<br>MAGAZINE</div>
+    <div class="ed-hint">Vogue, ELLE, Harper&rsquo;s Bazaar, Hero, Carnale and independent press.</div>
+  </div>
+
+  <div class="ed-moodboard sr">
+
+    <div class="ed-card" onclick="lbOpen(['images/cap74024/02.jpg','images/cap74024/01.jpg','images/cap74024/03.jpg','images/cap74024/04.jpg','images/cap74024/05.jpg','images/cap74024/06.jpg'],0)">
+      <img src="images/cap74024/02.jpg" alt="CAP74024 Miu Miu Jill Kortleve" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">CAP74024 &times; Miu Miu</span><span class="ed-card-name">Jill Kortleve</span><span class="ed-card-date">Paris</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/steinberg-vogue/7a_9b_kVS3KJ1p.jpg','images/steinberg-vogue/5b_b1_kcgpOzxp.jpg','images/steinberg-vogue/a1_09_vRGrc9yT.jpg','images/steinberg-vogue/84_05_k70kM9VO.jpg','images/steinberg-vogue/21_0a_JPAhHT3V.jpg','images/steinberg-vogue/9f_69_jyhi5POj.jpg','images/steinberg-vogue/0f_fc_drwplGaS.jpg','images/steinberg-vogue/6d_c9_LkmTQSJW.jpg'],0)">
+      <img src="images/steinberg-vogue/7a_9b_kVS3KJ1p.jpg" alt="Steinberg Vogue CS" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Vogue CS</span><span class="ed-card-name">Steinberg</span><span class="ed-card-date">Sep 2024</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/vogue-japan/1.jpg','images/vogue-japan/2.jpg','images/vogue-japan/3.jpg','images/vogue-japan/4.jpg','images/vogue-japan/5.jpg','images/vogue-japan/6.jpg','images/vogue-japan/7.jpg','images/vogue-japan/8.jpg','images/vogue-japan/9.jpg','images/vogue-japan/10.jpg','images/vogue-japan/11.jpg','images/vogue-japan/12.jpg','images/vogue-japan/13.jpg'],0)">
+      <img src="images/vogue-japan/1.jpg" alt="Vogue Japan Hikari Mori" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Vogue Japan</span><span class="ed-card-name">Hikari Mori</span><span class="ed-card-date">Oct 2025</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-gq/gq-01.jpg','images/bad-gyal-gq/gq-02.jpg','images/bad-gyal-gq/gq-03.jpg','images/bad-gyal-gq/gq-04.jpg','images/bad-gyal-gq/gq-05.jpg','images/bad-gyal-gq/gq-06.jpg','images/bad-gyal-gq/gq-07.jpg','images/bad-gyal-gq/gq-08.jpg','images/bad-gyal-gq/gq-09.jpg'],0)">
+      <img src="images/bad-gyal-gq/gq-01.jpg" alt="Bad Gyal GQ Spain" loading="lazy" style="object-position:top;">
+      <div class="ed-card-info"><span class="ed-card-pub">GQ Spain &mdash; Cover</span><span class="ed-card-name">Bad Gyal</span><span class="ed-card-date">Dec 2024</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/emma-corrin/ec-01.jpg','images/emma-corrin/ec-02.jpg','images/emma-corrin/ec-03.jpg','images/emma-corrin/ec-04.jpg','images/emma-corrin/ec-05.jpg','images/emma-corrin/ec-06.jpg','images/emma-corrin/ec-07.jpg'],0)">
+      <img src="images/emma-corrin/ec-01.jpg" alt="Emma Corrin S Moda" loading="lazy" style="object-position:center 12%;">
+      <div class="ed-card-info"><span class="ed-card-pub">S Moda El Pa&iacute;s</span><span class="ed-card-name">Emma Corrin</span><span class="ed-card-date">Jul 2024</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/clement/clement-01.jpg','images/clement/clement-02.jpg','images/clement/clement-03.jpg','images/clement/clement-04.jpg','images/clement/clement-05.jpg','images/clement/clement-06.jpg','images/clement/clement-07.jpg','images/clement/clement-08.jpg','images/clement/clement-09.jpg','images/clement/clement-10.jpg','images/clement/clement-11.jpg','images/clement/clement-12.jpg','images/clement/clement-13.jpg','images/clement/clement-14.jpg','images/clement/clement-15.jpg','images/clement/clement-16.jpg','images/clement/clement-17.jpg','images/clement/clement-18.jpg','images/clement/clement-19.jpg','images/clement/clement-20.jpg','images/clement/clement-21.jpg','images/clement/clement-22.jpg'],0)">
+      <img src="images/clement/clement-01.jpg" alt="Clement Chabernaud Hero Magazine" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Hero Magazine</span><span class="ed-card-name">Cl&eacute;ment Chabernaud</span><span class="ed-card-date">Sep 2024</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/karol-g/elle-cover-1.jpg','images/karol-g/elle-cover-2.jpg','images/karol-g/elle-04.jpg','images/karol-g/elle-05.jpg','images/karol-g/elle-06.jpg','images/karol-g/elle-08.jpg','images/karol-g/elle-09.jpg','images/karol-g/elle-10.jpg','images/karol-g/elle-11.jpg','images/karol-g/elle-03.jpg'],0)">
+      <img src="images/karol-g/elle-cover-1.jpg" alt="Karol G ELLE Espana" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">ELLE Espa&ntilde;a &mdash; Cover</span><span class="ed-card-name">Karol G</span><span class="ed-card-date">Aug 2025</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/carnale/carnale-01.jpg','images/carnale/carnale-02.jpg','images/carnale/carnale-03.jpg','images/carnale/carnale-04.jpg','images/carnale/carnale-05.jpg','images/carnale/carnale-06.jpg','images/carnale/carnale-07.jpg','images/carnale/carnale-08.jpg','images/carnale/carnale-09.jpg','images/carnale/carnale-10.jpg','images/carnale/carnale-11.jpg','images/carnale/carnale-12.jpg','images/carnale/carnale-13.jpg','images/carnale/carnale-14.jpg','images/carnale/carnale-15.jpg','images/carnale/carnale-16.jpg','images/carnale/carnale-17.jpg','images/carnale/carnale-18.jpg','images/carnale/carnale-19.jpg','images/carnale/carnale-20.jpg','images/carnale/carnale-21.jpg','images/carnale/carnale-22.jpg','images/carnale/carnale-23.jpg','images/carnale/carnale-24.jpg','images/carnale/carnale-25.jpg','images/carnale/carnale-26.jpg','images/carnale/carnale-27.jpg','images/carnale/carnale-28.jpg','images/carnale/carnale-29.jpg','images/carnale/carnale-30.jpg','images/carnale/carnale-31.jpg','images/carnale/carnale-32.jpg','images/carnale/carnale-33.jpg','images/carnale/carnale-34.jpg','images/carnale/carnale-35.jpg'],0)">
+      <img src="images/carnale/carnale-01.jpg" alt="Carnale Issue 07 Mimi Dey" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Carnale Issue 07</span><span class="ed-card-name">Mimi Dey</span><span class="ed-card-date">May 2025</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-gq/hb-cover.jpg'],0)">
+      <img src="images/bad-gyal-gq/hb-cover.jpg" alt="Bad Gyal HB Espana" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a &mdash; Cover</span><span class="ed-card-name">Bad Gyal</span><span class="ed-card-date">Dec 2025</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/diane-kruger/hb-01.jpg','images/diane-kruger/hb-02.jpg','images/diane-kruger/hb-03.jpg','images/diane-kruger/hb-04.jpg','images/diane-kruger/hb-05.jpg','images/diane-kruger/hb-06.jpg','images/diane-kruger/hb-07.jpg','images/diane-kruger/hb-08.jpg','images/diane-kruger/hb-09.jpg'],0)">
+      <img src="images/diane-kruger/hb-07.jpg" alt="Diane Kruger HB Espana" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a</span><span class="ed-card-name">Diane Kruger</span><span class="ed-card-date">Nov 2024</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/deva-cassel/1.jpg','images/deva-cassel/2.jpg','images/deva-cassel/3.jpg','images/deva-cassel/4.jpg','images/deva-cassel/5.jpg','images/deva-cassel/8.jpg','images/deva-cassel/11.jpg','images/deva-cassel/12.jpg'],0)">
+      <img src="images/deva-cassel/1.jpg" alt="Deva Cassel HB Espana" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a</span><span class="ed-card-name">Deva Cassel</span><span class="ed-card-date">Nov 2025</span></div>
+    </div>
+
+    <div class="ed-card" onclick="lbOpen(['images/mina-serrano/3.jpg'],0)">
+      <img src="images/mina-serrano/3.jpg" alt="Mina Serrano Premios Forque" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Premios Forqu&eacute;</span><span class="ed-card-name">Mina Serrano</span><span class="ed-card-date">Jan 2025</span></div>
+    </div>
+
+    <div class="ed-card ed-card-ph" style="cursor:default;">
+      <div class="ed-card-info"><span class="ed-card-pub">Vogue CS</span><span class="ed-card-name">Camille Chifflot</span><span class="ed-card-date">Feb 2025</span></div>
+    </div>
+
+    <div class="ed-card ed-card-ph" style="cursor:default;">
+      <div class="ed-card-info"><span class="ed-card-pub">Vaquero Book</span><span class="ed-card-name">—</span><span class="ed-card-date">Mar 2026</span></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── ARTISTS ─── -->
+<section id="artists">
+  <div id="art-overview-page">
+  <div class="art-hdr sr">
+    <div class="art-htitle">TALENTS</div>
+    <div class="art-hsub">Karol G &middot; Bad Gyal<br>Aitana &middot; Tini<br>Rauw &middot; Georgina</div>
+  </div>
+
+  <!-- ── OVERVIEW GRID ── -->
+  <div class="art-overview sr" id="art-overview">
+
+    <div class="art-ov-card" onclick="artOpen('karolg')">
+      <img src="images/karol-g-artists/01.jpg" alt="Karol G" loading="lazy">
+      <div class="art-ov-info"><div class="art-ov-name">Karol G</div><div class="art-ov-sub">VMAs &middot; Tour &middot; ELLE &middot; Music Videos</div></div>
+    </div>
+
+    <div class="art-ov-card" onclick="artOpen('badgyal')">
+      <img src="images/bad-gyal-artists/01.jpg" alt="Bad Gyal" loading="lazy">
+      <div class="art-ov-info"><div class="art-ov-name">Bad Gyal</div><div class="art-ov-sub">GQ &middot; HB &middot; PFW &middot; Music Videos</div></div>
+    </div>
+
+    <div class="art-ov-card" onclick="artOpen('aitana')">
+      <img src="images/aitana-vogue/cover.jpg" alt="Aitana" loading="lazy">
+      <div class="art-ov-info"><div class="art-ov-name">Aitana</div><div class="art-ov-sub">Vogue &middot; Tour &middot; LOS40 &middot; Music Videos</div></div>
+    </div>
+
+    <div class="art-ov-card" onclick="artOpen('georgina')">
+      <img src="images/georgina/red-sea-portrait-final.jpg" alt="Georgina Rodriguez" loading="lazy">
+      <div class="art-ov-info"><div class="art-ov-name">Georgina</div><div class="art-ov-sub">PFW &middot; Red Carpet &middot; Events</div></div>
+    </div>
+
+    <div class="art-ov-card" onclick="artOpen('tini')">
+      <img src="images/tini/de-papel-thumbnail.jpg" alt="Tini Stoessel" loading="lazy">
+      <div class="art-ov-info"><div class="art-ov-name">Tini</div><div class="art-ov-sub">Music Videos</div></div>
+    </div>
+
+    <div class="art-ov-card" onclick="artOpen('rauw')">
+      <img src="images/rauw/rauw-07.jpg" alt="Rauw Alejandro" loading="lazy">
+      <div class="art-ov-info"><div class="art-ov-name">Rauw Alejandro</div><div class="art-ov-sub">El Pa&iacute;s Semanal &middot; Editorial</div></div>
+    </div>
+
+  </div><!-- /art-overview -->
+  </div><!-- /art-overview-page -->
+
+  <!-- ══════════════════════════════════════════
+       KAROL G — DETAIL
+  ══════════════════════════════════════════ -->
+  <div class="art-detail" id="art-detail-karolg">
+    <button class="art-back" onclick="artBack()">Talents</button>
+    <div class="art-detail-hdr"><span class="art-detail-kicker">Karol G</span></div>
+    <div class="proj-grid">
+
+    <div class="proj-card" onclick="lbOpen(['images/karol-g-artists/01.jpg','images/karol-g-artists/02.jpg','images/karol-g-artists/03.jpg','images/karol-g-artists/04.jpg','images/karol-g-artists/05.jpg','images/karol-g-artists/06.jpg','images/karol-g-artists/07.jpg'],0)">
+      <img src="images/karol-g-artists/01.jpg" alt="MTV VMAs" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Red Carpet &amp; Fitting</span><span class="proj-card-name">MTV VMAs<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; red carpet</span></span><span class="proj-card-date">Sep 2024</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/karol-g-artists/08.jpg','images/karol-g-artists/09.jpg','images/karol-g-artists/10.jpg','images/karol-g-artists/11.jpg','images/karol-g-artists/12.jpg','images/karol-g/msb-tour.jpg','images/karol-g/msb-tourR.jpg','images/karol-g/msb-tour_.jpg','images/karol-g/msb-tour-sketches.jpg','images/karol-g/sketches-msb-tour.jpg'],0)">
+      <img src="images/karol-g-artists/08.jpg" alt="Tour Ma&ntilde;ana Ser&aacute; Bonito" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Tour Styling</span><span class="proj-card-name">Tour Ma&ntilde;ana Ser&aacute; Bonito<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; tour</span></span><span class="proj-card-date">2024</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/karol-g/no-me-cansare-thumbnail.jpg'],0)">
+      <img src="images/karol-g/no-me-cansare-thumbnail.jpg" alt="No me cansar&eacute;" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Music Video &mdash; ft. Sevdaliza</span><span class="proj-card-name">No me cansar&eacute;<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Oct 2024</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/karol-g/tropicoqueta-cover.jpg'],0)">
+      <img src="images/karol-g/tropicoqueta-cover.jpg" alt="Tropicoqueta" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Art Direction &mdash; Pedro Artola</span><span class="proj-card-name">Tropicoqueta<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; album</span></span><span class="proj-card-date">Jun 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/karol-g/elle-cover-1.jpg','images/karol-g/elle-cover-2.jpg','images/karol-g/elle-04.jpg','images/karol-g/elle-05.jpg','images/karol-g/elle-06.jpg','images/karol-g/elle-08.jpg','images/karol-g/elle-09.jpg','images/karol-g/elle-10.jpg','images/karol-g/elle-11.jpg','images/karol-g/elle-03.jpg'],0)">
+      <img src="images/karol-g/elle-cover-1.jpg" alt="ELLE Espa&ntilde;a" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Cover Story</span><span class="proj-card-name">ELLE Espa&ntilde;a<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Aug 2025</span></div>
+    </div>
+    </div>
+  </div><!-- /art-detail-karolg -->
+
+  <!-- ══════════════════════════════════════════
+       BAD GYAL — DETAIL
+  ══════════════════════════════════════════ -->
+  <div class="art-detail" id="art-detail-badgyal">
+    <button class="art-back" onclick="artBack()">Talents</button>
+    <div class="art-detail-hdr"><span class="art-detail-kicker">Bad Gyal</span></div>
+    <div class="proj-grid">
+
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal-artists/01.jpg','images/bad-gyal-artists/02.jpg','images/bad-gyal-artists/03.jpg','images/bad-gyal-artists/04.jpg','images/bad-gyal-artists/05.jpg','images/bad-gyal-artists/06.jpg','images/bad-gyal-artists/07.jpg','images/bad-gyal-artists/08.jpg','images/bad-gyal-artists/09.jpg'],0)">
+      <img src="images/bad-gyal-artists/01.jpg" alt="GQ Spain &mdash; Cover Story" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Mujer del A&ntilde;o</span><span class="proj-card-name">GQ Spain<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Dec 2024</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal-gq/hb-cover.jpg'],0)">
+      <img src="images/bad-gyal-gq/hb-cover.jpg" alt="Harper&rsquo;s Bazaar &mdash; Cover" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Women of the Year</span><span class="proj-card-name">Harper&rsquo;s Bazaar<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Dec 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal-artists/10.jpg'],0)">
+      <img src="images/bad-gyal-artists/10.jpg" alt="&ldquo;Angelito&rdquo;" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Music Video</span><span class="proj-card-name">&ldquo;Angelito&rdquo;<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Jan 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal-artists/11.jpg','images/bad-gyal-artists/12.jpg'],0)">
+      <img src="images/bad-gyal-artists/11.jpg" alt="Courr&egrave;ges" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Paris Fashion Week</span><span class="proj-card-name">Courr&egrave;ges<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; fashion show</span></span><span class="proj-card-date">Mar 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal-artists/13.jpg','images/bad-gyal-artists/14.jpg'],0)">
+      <img src="images/bad-gyal-artists/13.jpg" alt="Valentino" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Paris Fashion Week</span><span class="proj-card-name">Valentino<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; fashion show</span></span><span class="proj-card-date">Mar 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal-artists/15.jpg','images/bad-gyal-artists/16.jpg','images/bad-gyal-artists/17.jpg'],0)">
+      <img src="images/bad-gyal-artists/15.jpg" alt="Premios Lo Nuestro" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Red Carpet</span><span class="proj-card-name">Premios Lo Nuestro<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; awards</span></span><span class="proj-card-date">Feb 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal/2am-thumbnail.jpg'],0)">
+      <img src="images/bad-gyal/2am-thumbnail.jpg" alt="&ldquo;2AM&rdquo;" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Music Video &mdash; ft. Sebasti&aacute;n Yatra</span><span class="proj-card-name">&ldquo;2AM&rdquo;<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Nov 2024</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal/orilla-thumbnail.jpg'],0)">
+      <img src="images/bad-gyal/orilla-thumbnail.jpg" alt="&ldquo;Orilla&rdquo;" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Music Video &mdash; ft. 8Belial</span><span class="proj-card-name">&ldquo;Orilla&rdquo;<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Mar 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal/dame-thumbnail.jpg'],0)">
+      <img src="images/bad-gyal/dame-thumbnail.jpg" alt="&ldquo;Da Me&rdquo;" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Music Video</span><span class="proj-card-name">&ldquo;Da Me&rdquo;<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Jun 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/bad-gyal/ultima-noche-thumbnail.jpg'],0)">
+      <img src="images/bad-gyal/ultima-noche-thumbnail.jpg" alt="&ldquo;&Uacute;ltima Noche&rdquo;" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Music Video &mdash; ft. Ozuna</span><span class="proj-card-name">&ldquo;&Uacute;ltima Noche&rdquo;<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Jul 2025</span></div>
+    </div>
+    </div>
+  </div><!-- /art-detail-badgyal -->
+
+  <!-- ══════════════════════════════════════════
+       AITANA — DETAIL
+  ══════════════════════════════════════════ -->
+  <div class="art-detail" id="art-detail-aitana">
+    <button class="art-back" onclick="artBack()">Talents</button>
+    <div class="art-detail-hdr"><span class="art-detail-kicker">Aitana</span></div>
+    <div class="proj-grid">
+
+    <div class="proj-card" onclick="lbOpen(['images/aitana-vogue/cover.jpg','images/aitana-vogue-hq/main.jpg','images/aitana-vogue/01.jpg','images/aitana-vogue/02.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
+      <img src="images/aitana-vogue/cover.jpg" alt="Vogue Espa&ntilde;a" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Cover Story</span><span class="proj-card-name">Vogue Espa&ntilde;a<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Jul 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/aitana/metamorfosis-0502.jpg','images/aitana/metamorfosis-0503.jpg','images/aitana/metamorfosis-0504.jpg','images/aitana/metamorfosis-0505.jpg','images/aitana/metamorfosis-0506-2.jpg','images/aitana/metamorfosis-0507-2.jpg','images/aitana/metamorfosis-0508.jpg','images/aitana/metamorfosis-0509.jpg','images/aitana/metamorfosis-0510.jpg','images/aitana/metamorfosis-0511.jpg','images/aitana/metamorfosis-0512-2.jpg','images/aitana/metamorfosis-0513.jpg','images/aitana/metamorfosis-0514.jpg','images/aitana/metamorfosis-0515.jpg','images/aitana/metamorfosis-0516.jpg','images/aitana/metamorfosis-0517.jpg','images/aitana/metamorfosis-0518.jpg','images/aitana/metamorfosis-0519.jpg','images/aitana/metamorfosis-0520.jpg','images/aitana/metamorfosis-0521.jpg','images/aitana/metamorfosis-tour-2.jpg','images/aitana/metamorfosis-tour-3.jpg','images/aitana/metamorfosis-tour-1.jpg'],0)">
+      <img src="images/aitana/metamorfosis-0502.jpg" alt="Metamorfosis Season Tour" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Tour Styling</span><span class="proj-card-name">Metamorfosis Season Tour<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; tour</span></span><span class="proj-card-date">Jul 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/aitana/sentimiento-natural-thumbnail.jpg'],0)">
+      <img src="images/aitana/sentimiento-natural-thumbnail.jpg" alt="Sentimiento Natural" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Music Video &mdash; ft. Myke Towers</span><span class="proj-card-name">Sentimiento Natural<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Mar 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/aitana/cuarto-azul-cover.jpg'],0)">
+      <img src="images/aitana/cuarto-azul-cover.jpg" alt="Cuarto Azul" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">&Aacute;lbum Portada</span><span class="proj-card-name">Cuarto Azul<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; album</span></span><span class="proj-card-date">May 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/aitana/los40-2025.jpg','images/aitana-los40/0.jpg','images/aitana-los40/2.jpg'],0)">
+      <img src="images/aitana/los40-2025.jpg" alt="LOS40 Music Awards" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Best New Artist</span><span class="proj-card-name">LOS40 Music Awards<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; awards</span></span><span class="proj-card-date">Nov 2025</span></div>
+    </div>
+    </div>
+  </div><!-- /art-detail-aitana -->
+
+  <!-- ══════════════════════════════════════════
+       GEORGINA — DETAIL
+  ══════════════════════════════════════════ -->
+  <div class="art-detail" id="art-detail-georgina">
+    <button class="art-back" onclick="artBack()">Talents</button>
+    <div class="art-detail-hdr"><span class="art-detail-kicker">Georgina</span></div>
+    <div class="proj-grid">
+
+    <div class="proj-card" onclick="lbOpen(['images/georgina/red-sea-portrait-final.jpg'],0)">
+      <img src="images/georgina/red-sea-portrait-final.jpg" alt="Red Sea Film Festival" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Red Carpet</span><span class="proj-card-name">Red Sea Film Festival<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; event</span></span><span class="proj-card-date">Dec 2024</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/georgina/ldss-show.jpg'],0)">
+      <img src="images/georgina/ldss-show.jpg" alt="Ludovic de Saint Sernin" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">AW25 Paris Fashion Week</span><span class="proj-card-name">Ludovic de Saint Sernin<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; fashion show</span></span><span class="proj-card-date">Mar 2025</span></div>
+    </div>
+    <div class="proj-card" onclick="lbOpen(['images/georgina/valentino-final.jpg'],0)">
+      <img src="images/georgina/valentino-final.jpg" alt="Valentino" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">AW25 Paris Fashion Week</span><span class="proj-card-name">Valentino<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; fashion show</span></span><span class="proj-card-date">Mar 2025</span></div>
+    </div>
+    </div>
+  </div><!-- /art-detail-georgina -->
+
+  <!-- ══════════════════════════════════════════
+       TINI — DETAIL
+  ══════════════════════════════════════════ -->
+  <div class="art-detail" id="art-detail-tini">
+    <button class="art-back" onclick="artBack()">Talents</button>
+    <div class="art-detail-hdr"><span class="art-detail-kicker">Tini</span></div>
+    <div class="proj-grid">
+
+    <div class="proj-card" onclick="lbOpen(['images/tini/de-papel-thumbnail.jpg'],0)">
+      <img src="images/tini/de-papel-thumbnail.jpg" alt="De Papel" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Music Video</span><span class="proj-card-name">De Papel<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Aug 2025</span></div>
+    </div>
+    </div>
+  </div><!-- /art-detail-tini -->
+
+  <!-- ══════════════════════════════════════════
+       RAUW ALEJANDRO — DETAIL
+  ══════════════════════════════════════════ -->
+  <div class="art-detail" id="art-detail-rauw">
+    <button class="art-back" onclick="artBack()">Talents</button>
+    <div class="art-detail-hdr"><span class="art-detail-kicker">Rauw Alejandro</span></div>
+    <div class="proj-grid">
+
+    <div class="proj-card" onclick="lbOpen(['images/rauw/rauw-07.jpg','images/rauw/rauw-08.jpg','images/rauw/rauw-09.jpg','images/rauw/rauw-10.jpg','images/rauw/rauw-11.jpg','images/rauw/rauw-12.jpg','images/rauw/rauw-13.jpg','images/rauw/rauw-14.jpg','images/rauw/rauw-15.jpg','images/rauw/rauw-16.jpg','images/rauw/rauw-17.jpg','images/rauw/rauw-18.jpg','images/rauw/rauw-19.jpg','images/rauw/rauw-20.jpg','images/rauw/rauw-21.jpg','images/rauw/rauw-22.jpg','images/rauw/rauw-23.jpg'],0)">
+      <img src="images/rauw/rauw-07.jpg" alt="El Pa&iacute;s Semanal" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Editorial</span><span class="proj-card-name">El Pa&iacute;s Semanal<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Apr 2025</span></div>
+    </div>
+    </div>
+  </div><!-- /art-detail-rauw -->
+
+</section>
+
+
+<!-- ─── RUNWAY ─── -->
+<section id="runway">
+  <div class="rw-hdr sr">
+    <div class="rw-htw"><div class="rw-ht">Fashion</div><div class="rw-ha">Week</div></div>
+    <div style="margin-top:.8rem;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);font-weight:200;">Paris &middot; Milan &middot; 2024 &mdash; 2025</div>
+  </div>
+  <div class="rw-row rr1 sr">
+    <div>
+      <div class="rf t"></div>
+      <div class="rc"><div class="rh">Valentino</div><div class="rw">Georgina Rodr&iacute;guez</div><span class="rn">AW25 &mdash; PFW Mar 2025</span></div>
+    </div>
+    <div style="margin-top:5rem;">
+      <div class="rf p"></div>
+      <div class="rc"><div class="rh">Courr&egrave;ges</div><div class="rw">Bad Gyal</div><span class="rn">PFW Mar 2025</span></div>
+    </div>
+    <div>
+      <div class="rf t"></div>
+      <div class="rc"><div class="rh">Coperni</div><div class="rw">Georgina Rodr&iacute;guez</div><span class="rn">PFW Mar 2025</span></div>
+    </div>
+  </div>
+  <div class="rw-row rr2 sr">
+    <div>
+      <div class="rf w"></div>
+      <div class="rc"><div class="rh">Loewe</div><div class="rw">Priscilla Delgado</div>
+      <div class="rs">PARIS<br>FASHION<br>WEEK</div>
+      <div class="rnote">Styling on multiple shows across Paris Fashion Week seasons, 2024&ndash;2025.</div>
+    </div>
+  </div>
+  <div class="rw-row rr3 sr">
+    <div>
+      <div class="rf p"></div>
+      <div class="rc"><div class="rh">Louis de Javier</div><div class="rw">Priscilla Delgado</div><span class="rn">PFW Oct 2025</span></div>
+    </div>
+    <div style="margin-top:5rem;">
+      <div class="rf s"></div>
+      <div class="rc"><div class="rh">Versace</div><div class="rw">Bad Gyal</div><span class="rn">PFW Mar 2025</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="abl sr">
+      <div>
+        <div class="abn2">NAOMI<span class="l2">VALLEJO</span></div>
+        <div class="abr2">Stylist &mdash; Paris</div>
+        <div class="abb">
+          <p>Paris-based fashion stylist. Graduated from <strong>Istituto Marangoni Paris</strong> with a Bachelor in Fashion Styling &amp; Creative Direction &mdash; studies split between Milan and Paris.</p>
+          <p>Worked directly alongside <strong>Alba Melendo</strong> on editorial shoots, music videos, world tours, Paris Fashion Week and red carpet appearances for internationally acclaimed artists.</p>
+          <p>Open to travel and relocation. Available for editorial, artist styling and collaborations.</p>
+        </div>
+      </div>
+      <div class="ablang">
+        <div class="li"><div class="ln">Spanish</div><div class="ll">Native</div></div>
+        <div class="li"><div class="ln">French</div><div class="ll">Native</div></div>
+        <div class="li"><div class="ln">English</div><div class="ll">Bilingual</div></div>
+        <div class="li"><div class="ln">Italian</div><div class="ll">Elementary</div></div>
+      </div>
+    </div>
+    <div class="abr sr d1">
+      <div class="tli">
+        <div class="tly">2024 &mdash; Present</div>
+        <div class="tlr">Stylist</div>
+        <div class="tlc">A+ Creatives &middot; Alba Melendo &middot; Paris</div>
+        <div class="tlt"><span class="tltag">Karol G</span><span class="tltag">Bad Gyal</span><span class="tltag">Aitana</span><span class="tltag">Georgina Rodr&iacute;guez</span><span class="tltag">Emma Corrin</span></div>
+      </div>
+      <div class="tli">
+        <div class="tly">2023 &mdash; 2024</div>
+        <div class="tlr">PFW Guest Check-in</div>
+        <div class="tlc">Paris Fashion Week</div>
+      </div>
+      <div class="tli">
+        <div class="tly">2022 &mdash; 2024</div>
+        <div class="tlr">Dresser</div>
+        <div class="tlc">Shows &middot; Paris &amp; Milan</div>
+      </div>
+      <div class="tli">
+        <div class="tly">2021 &mdash; 2024</div>
+        <div class="tlr">Fashion Styling &amp; Creative Direction</div>
+        <div class="tlc">Istituto Marangoni &middot; Milan &amp; Paris &middot; Bachelor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="sr">
+    <div class="c-big">GET IN<br>TOUCH.</div>
+    <div class="c-sub">Available for editorial, artist styling, fashion weeks and collaborations. Paris-based, open to travel and relocation.</div>
+    <div class="c-links">
+      <a href="https://instagram.com/na0mivallej0" target="_blank" class="c-link">@na0mivallej0</a>
+      <a href="mailto:naomiivallejo0@gmail.com" class="c-link">naomiivallejo0@gmail.com</a>
+      <a href="tel:+34603867751" class="c-link">+34 603 867 751</a>
+    </div>
+  </div>
+  <div class="sr d1">
+    <div class="cfh">Send a message</div>
+    <div class="fg"><label class="fl">Name</label><input type="text" class="fi" placeholder="Your name"></div>
+    <div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="you@email.com"></div>
+    <div class="fg"><label class="fl">Project</label><input type="text" class="fi" placeholder="Music video, editorial, event..."></div>
+    <div class="fg"><label class="fl">Message</label><textarea class="fi" placeholder="Tell me more..."></textarea></div>
+    <button class="fsub" id="fsub">Send</button>
+  </div>
+</section>
+
+<footer>
+  <span class="fl2">&copy; 2026 Naomi Vallejo &mdash; Stylist &middot; Paris</span>
+  <span class="fr2"><a href="https://instagram.com/na0mivallej0" target="_blank">@na0mivallej0</a></span>
+</footer>
+
+<script>
+const cur=document.getElementById('cur');
+let mx=0,my=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'));});
+const ids=['editorial','artists','runway','about','contact'];
+const nm={'editorial':'n-ed','artists':'n-art','runway':'n-rw','about':'n-ab','contact':'n-co'};
+function updateNav(){
+  let current='';
+  const atBottom=window.scrollY+window.innerHeight>=document.body.scrollHeight-4;
+  if(atBottom){
+    current=ids[ids.length-1];
+  } else {
+    ids.forEach(id=>{
+      const el=document.getElementById(id);
+      if(!el)return;
+      if(el.getBoundingClientRect().top<=90)current=id;
+    });
+  }
+  ids.forEach(id=>{
+    const a=document.getElementById(nm[id]);
+    if(!a)return;
+    if(id===current)a.classList.add('on');else a.classList.remove('on');
+  });
+}
+window.addEventListener('scroll',updateNav);
+ids.forEach(id=>{
+  const a=document.getElementById(nm[id]);
+  if(!a)return;
+  a.addEventListener('click',()=>{
+    ids.forEach(oid=>{const oa=document.getElementById(nm[oid]);if(oa)oa.classList.remove('on');});
+    a.classList.add('on');
+    setTimeout(updateNav,800);
+  });
+});
+document.querySelectorAll('.sr').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('vis');},{threshold:.07}).observe(el);});
+document.getElementById('fsub').addEventListener('click',function(){this.textContent='Sent ✓';setTimeout(()=>{this.textContent='Send';},3000);});
+var LB={imgs:[],i:0};
+var GLR={imgs:[],i:0,title:''};
+var _pendingTitle='';
+document.addEventListener('click',function(e){
+  var card=e.target.closest('.proj-card,.ed-card,.af,.ef');
+  if(!card)return;
+  var nameEl=card.querySelector('.proj-card-name,.ed-card-name,.aw');
+  if(nameEl){
+    // Get only the main text node, strip the type tag span
+    var clone=nameEl.cloneNode(true);
+    var tagSpan=clone.querySelector('span');
+    if(tagSpan)tagSpan.remove();
+    _pendingTitle=clone.textContent.trim();
+  } else {
+    var img=card.querySelector('img');
+    _pendingTitle=img?(img.alt||''):'';
+  }
+},true);
+function lbOpen(imgs,i){
+  GLR.imgs=imgs; GLR.i=(i||0);
+  GLR.title=_pendingTitle; _pendingTitle='';
+  glrRender();
+  document.getElementById('glr').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function lbClose(){glrClose();}
+function lbGo(d){glrGo(d);}
+function glrClose(){
+  document.getElementById('glr').classList.remove('on');
+  document.body.style.overflow='';
+}
+function glrRender(){
+  var glr=document.getElementById('glr');
+  var img=document.getElementById('glr-img');
+  var strip=document.getElementById('glr-strip');
+  var hint=document.getElementById('glr-hint');
+  var single=GLR.imgs.length===1;
+  img.src=GLR.imgs[GLR.i];
+  document.getElementById('glr-ct').textContent=(GLR.i+1)+' — '+GLR.imgs.length;
+  var titleEl=document.getElementById('glr-title');
+  if(titleEl)titleEl.textContent=GLR.title||'';
+  document.getElementById('glr-prev').style.visibility=single?'hidden':'visible';
+  document.getElementById('glr-next').style.visibility=single?'hidden':'visible';
+  hint.style.display=single?'none':'block';
+  strip.style.display=single?'none':'flex';
+  strip.innerHTML='';
+  if(!single){
+    GLR.imgs.forEach(function(src,idx){
+      var t=document.createElement('img');
+      t.src=src; t.className='glr-th'+(idx===GLR.i?' act':'');
+      t.onclick=function(e){e.stopPropagation();GLR.i=idx;glrRender();};
+      strip.appendChild(t);
+    });
+    // Scroll active thumb into view
+    var act=strip.querySelector('.act');
+    if(act)act.scrollIntoView({block:'nearest',inline:'center'});
+  }
+}
+function glrGo(d){
+  if(GLR.imgs.length<2)return;
+  GLR.i=(GLR.i+d+GLR.imgs.length)%GLR.imgs.length;
+  glrRender();
+}
+document.addEventListener('keydown',function(e){
+  if(!document.getElementById('glr').classList.contains('on'))return;
+  if(e.key==='Escape')glrClose();
+  if(e.key==='ArrowRight')glrGo(1);
+  if(e.key==='ArrowLeft')glrGo(-1);
+});
+document.getElementById('glr-main').addEventListener('click',function(e){
+  if(e.target===this)glrClose();
+});
+// Touch swipe support
+var _tx=null;
+document.getElementById('glr').addEventListener('touchstart',function(e){_tx=e.changedTouches[0].clientX;},{passive:true});
+document.getElementById('glr').addEventListener('touchend',function(e){
+  if(_tx===null)return;
+  var dx=e.changedTouches[0].clientX-_tx; _tx=null;
+  if(Math.abs(dx)>50)glrGo(dx<0?1:-1);
+});
+// Smart project lightbox: click any .af/.ef → gallery of all photos in that project block
+document.addEventListener('click',function(e){
+  var fr=e.target.closest('.af,.ef');
+  if(!fr)return;
+  if(fr.getAttribute('onclick'))return;
+  var img=fr.querySelector('img');
+  if(!img||!img.src)return;
+  // Collect all images in the same project block (.ab or .ed-row)
+  var block=fr.closest('.ab,.ed-row');
+  var imgs,idx=0;
+  if(block){
+    var frames=Array.from(block.querySelectorAll('.af img,.ef img'));
+    imgs=frames.map(function(i){return i.src;}).filter(function(s){return s&&s.length>10;});
+    idx=frames.indexOf(img);
+    if(idx<0)idx=0;
+  } else {
+    imgs=[img.src];
+  }
+  if(imgs.length>0)lbOpen(imgs,idx);
+});
+function artOpen(id){
+  var ov=document.getElementById('art-overview');
+  if(ov)ov.classList.add('art-hidden');
+  var pg=document.getElementById('art-overview-page');
+  if(pg)pg.classList.add('detail-mode');
+  document.querySelectorAll('.art-detail').forEach(function(el){el.classList.remove('active');});
+  var det=document.getElementById('art-detail-'+id);
+  if(det){
+    det.classList.add('active');
+    det.querySelectorAll('.sr').forEach(function(el){if(!el.classList.contains('vis'))el.classList.add('vis');});
+  }
+  var sec=document.getElementById('artists');
+  if(sec)window.scrollTo({top:sec.offsetTop-65,behavior:'smooth'});
+}
+function artBack(){
+  document.querySelectorAll('.art-detail').forEach(function(el){el.classList.remove('active');});
+  var ov=document.getElementById('art-overview');
+  if(ov)ov.classList.remove('art-hidden');
+  var pg=document.getElementById('art-overview-page');
+  if(pg)pg.classList.remove('detail-mode');
+  var sec=document.getElementById('artists');
+  if(sec)window.scrollTo({top:sec.offsetTop-65,behavior:'smooth'});
+}
+</script>
+<div id="glr">
+  <div id="glr-top">
+    <span id="glr-ct"></span>
+    <span id="glr-title"></span>
+    <button id="glr-x" onclick="glrClose()">&#215;</button>
+  </div>
+  <div id="glr-main">
+    <button id="glr-prev" onclick="glrGo(-1)">&#8249;</button>
+    <img id="glr-img" src="" alt="">
+    <button id="glr-next" onclick="glrGo(1)">&#8250;</button>
+  </div>
+  <div id="glr-hint">&#8592;&nbsp;&nbsp;&nbsp;&#8594;</div>
+  <div id="glr-strip"></div>
+</div>
+</body>
+</html>
