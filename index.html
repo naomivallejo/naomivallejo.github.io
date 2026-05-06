@@ -110,6 +110,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 #art-overview-page.detail-mode{height:0;overflow:hidden;padding:0;}
 .art-hdr{padding:1.8rem 3rem 1rem;border-bottom:1px solid rgba(242,237,230,.06);display:grid;grid-template-columns:1fr auto;align-items:end;gap:3rem;flex-shrink:0;}
 .art-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.8rem,3.5vw,3.8rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;}
+.art-htitle em{font-family:'Libre Baskerville',serif;font-style:italic;font-weight:400;font-size:.52em;display:block;color:rgba(242,237,230,.38);letter-spacing:.02em;margin-bottom:.4rem;text-transform:none;}
 .art-htitle .out{font-family:'Libre Baskerville',serif;font-style:italic;font-weight:400;font-size:.9em;letter-spacing:-.01em;-webkit-text-stroke:0;color:rgba(242,237,230,.55);text-transform:lowercase;}
 .out{-webkit-text-stroke:1px rgba(242,237,230,.18);color:transparent;}
 .art-hsub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,237,230,.38);text-align:right;line-height:2.5;padding-bottom:.4rem;}
@@ -362,7 +363,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 .art-ov-info{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.82) 0%,rgba(10,9,8,0) 52%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;transition:background .3s;}
 .art-ov-card:hover .art-ov-info{background:linear-gradient(to top,rgba(10,9,8,.95) 0%,rgba(10,9,8,.12) 62%);}
 .art-ov-name{font-family:'Unbounded',sans-serif;font-size:clamp(.8rem,1.4vw,1.15rem);font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--bone);}
-.art-ov-sub{font-size:.42rem;letter-spacing:.2em;text-transform:uppercase;color:var(--choco3);margin-top:.28rem;}
+.art-ov-sub{font-size:.42rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,230,.52);margin-top:.28rem;}
 
 /* ─── ARTIST DETAIL ─── */
 .art-detail{display:none;}
@@ -371,11 +372,17 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 .art-back:hover{color:var(--bone);}
 .art-back::before{content:'←';margin-right:.5rem;font-size:.9rem;}
 
+/* Fashion Week: tighter header so grid is visible on first viewport */
+#runway .ed-hdr{padding:2rem 3rem 1.5rem;}
+#runway .ed-moodboard{padding-top:1.5rem;}
+
 @media(max-width:900px){
   .ed-moodboard{grid-template-columns:repeat(2,1fr);padding:1.5rem 1.5rem 3rem;gap:1rem;}
   .art-overview{grid-template-columns:repeat(2,1fr);padding:1.5rem 1.5rem 3rem;}
   .art-back{margin:1.5rem 1.5rem 0;}
   .art-detail-name{padding:2rem 1.5rem 0;}
+  #runway .ed-hdr{padding:1.5rem 1.4rem 1rem;}
+  #runway .ed-moodboard{padding-top:1rem;}
 }
 
 /* ── MOBILE NAV OPEN — must be LAST to win specificity ── */
@@ -388,10 +395,12 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   bottom:0 !important;
   background:#0a0908 !important;
   flex-direction:column !important;
-  align-items:center !important;
-  justify-content:center !important;
-  padding-top:5.5rem !important;
-  gap:.9rem !important;
+  align-items:flex-end !important;
+  justify-content:flex-end !important;
+  padding-bottom:5rem !important;
+  padding-right:2.2rem !important;
+  padding-top:0 !important;
+  gap:1rem !important;
   z-index:5000 !important;
 }
 .nav-r.mob-open a{
@@ -403,6 +412,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   text-transform:uppercase !important;
   font-family:'Unbounded',sans-serif !important;
   text-decoration:none !important;
+  text-align:right !important;
 }
 
 </style>
@@ -412,7 +422,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <nav>
   <a href="#cover" class="nav-sig"><span class="nav-sig-name">Naomi</span><span>Vallejo L&oacute;pez</span></a>
-  <div class="nav-r" id="nav-r">
+  <div class="nav-r" id="nav-r" onclick="if(this.classList.contains('mob-open')&&!event.target.closest('a'))navClose()">
     <a href="#editorial" id="n-ed" onclick="navClose()">Editorial</a>
     <a href="#artists" id="n-art" onclick="navClose()">Talents</a>
     <a href="#runway" id="n-rw" onclick="navClose()">Runway</a>
@@ -549,7 +559,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 <section id="artists">
   <div id="art-overview-page">
   <div class="art-hdr sr">
-    <div class="art-htitle">TALENTS</div>
+    <div class="art-htitle"><em>02 &mdash; Talents</em>TALENTS</div>
     <div class="art-hsub">Karol G &middot; Bad Gyal<br>Aitana &middot; Tini<br>Rauw &middot; Georgina</div>
   </div>
 
