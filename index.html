@@ -26,6 +26,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 /* CURSOR */
 .cur{position:fixed;width:10px;height:10px;border:1px solid var(--bone);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:difference;}
 .cur.big{width:38px;height:38px;}
+@media(hover:none){.cur{display:none;}}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 3rem;background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(242,237,230,.05);}
@@ -34,6 +35,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .nav-r{display:flex;align-items:center;gap:2.2rem;}
 .nav-r a{font-size:.7rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.4);text-decoration:none;transition:color .2s;white-space:nowrap;}
 .nav-r a:hover,.nav-r a.on{color:var(--bone);}
+/* Hamburger */
+.nav-ham{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;justify-content:center;gap:5px;z-index:502;}
+.nav-ham span{display:block;width:22px;height:1.5px;background:rgba(242,237,230,.65);transition:transform .25s,opacity .25s;}
+.nav-ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-ham.open span:nth-child(2){opacity:0;}
+.nav-ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 
 /* COVER */
 #cover{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
@@ -195,8 +202,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .fi:focus{border-bottom-color:var(--bone);}
 .fi::placeholder{color:rgba(242,237,230,.15);}
 textarea.fi{resize:none;height:60px;}
-.fsub{margin-top:1.5rem;width:100%;padding:.9rem;background:var(--bone);color:var(--choco2);border:none;font-family:'Unbounded',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s;}
-.fsub:hover{background:var(--ink);color:var(--bone);}
+.fsub{margin-top:1.5rem;width:100%;padding:.9rem;background:var(--bone);color:var(--choco2);border:none;font-family:'Unbounded',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,opacity .2s;}
+.fsub:hover:not(:disabled){background:var(--ink);color:var(--bone);}
+.fsub:disabled{opacity:.5;cursor:default;}
 
 footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(242,237,230,.05);}
 .fl2{font-size:.5rem;letter-spacing:.14em;color:rgba(242,237,230,.14);}
@@ -224,6 +232,87 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   .abr{padding:4rem 1.5rem 3rem;}
   #contact{grid-template-columns:1fr;padding:4rem 1.5rem;}
   footer{flex-direction:column;gap:.4rem;padding:1rem 1.5rem;text-align:center;}
+  .art-overview{grid-template-rows:repeat(3,1fr);}
+}
+
+/* ── MOBILE (hamburger nav + layout) ── */
+@media(max-width:680px){
+  /* NAV → hamburger */
+  nav{padding:.85rem 1.4rem;}
+  .nav-sig-name{font-size:1.45rem;}
+  .nav-ham{display:flex;}
+  .nav-r{
+    display:none;
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    padding-top:80px;
+    background:rgba(10,9,8,.97);
+    backdrop-filter:blur(16px);
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2.2rem;
+    z-index:501;
+  }
+  .nav-r.open{display:flex;}
+  .nav-r a{font-size:1rem;letter-spacing:.22em;}
+
+  /* COVER */
+  .cover-name{bottom:5.5rem;left:1.4rem;right:1.4rem;flex-direction:column;gap:.15rem;align-items:flex-start;justify-content:flex-start;}
+  .cover-name-left,.cover-name-right{font-size:clamp(2.6rem,14vw,4rem);line-height:.9;}
+  .cover-sub{bottom:2.2rem;left:1.4rem;right:1.4rem;flex-direction:column;gap:.4rem;align-items:flex-start;}
+  .cover-meta{text-align:left;}
+  .cover-scroll{display:none;}
+
+  /* EDITORIAL */
+  .ed-hdr{padding:3.5rem 1.4rem 2rem;}
+  .ed-moodboard{padding:1.2rem 1.4rem 3rem;}
+
+  /* TALENTS overview */
+  #art-overview-page{height:auto;min-height:calc(100vh - 65px);}
+  .art-hdr{padding:1.4rem 1.4rem .8rem;}
+  .art-overview{
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(3,1fr);
+    gap:.5rem;
+    padding:.5rem 1.4rem .8rem;
+    min-height:calc(100vh - 130px);
+  }
+
+  /* TALENT DETAIL */
+  .art-detail.active{height:auto;min-height:calc(100vh - 65px);display:flex;flex-direction:column;}
+  .proj-grid{
+    flex:1;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:minmax(140px,1fr);
+    padding:.4rem 1.4rem .6rem;
+    gap:.5rem;
+  }
+  .art-back{padding:1.4rem 0 .3rem 1.4rem;}
+  .art-detail-hdr{padding:.1rem 1.4rem .7rem;}
+
+  /* ABOUT */
+  .abl{padding:3.5rem 1.4rem 2.5rem;}
+  .abr{padding:2rem 1.4rem 3rem;}
+  .ablang{gap:1.2rem;}
+
+  /* CONTACT */
+  #contact{padding:3.5rem 1.4rem;}
+  .c-big{font-size:clamp(2rem,12vw,3rem);}
+
+  /* RUNWAY */
+  .rw-hdr,.rw-row{padding:3rem 1.4rem;}
+  .rr1{grid-template-columns:1fr;}
+
+  /* FOOTER */
+  footer{padding:.9rem 1.4rem;}
+
+  /* GALLERY on mobile */
+  #glr-main{padding:0 2.8rem;}
+  #glr-prev,#glr-next{padding:.4rem .6rem;font-size:2.2rem;}
+  #glr-strip{padding:.5rem 1rem .8rem;}
+  #glr-title{font-size:.6rem;}
 }
 /* GALLERY OVERLAY */
 #glr{display:none;position:fixed;inset:0;background:#0a0908;z-index:9000;flex-direction:column;}
@@ -306,14 +395,17 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <nav>
   <a href="#cover" class="nav-sig"><span class="nav-sig-name">Naomi</span><span>Vallejo L&oacute;pez</span></a>
-  <div class="nav-r">
-    <a href="#editorial" id="n-ed">Editorial</a>
-    <a href="#artists" id="n-art">Talents</a>
-    <a href="#runway" id="n-rw">Runway</a>
-    <a href="#about" id="n-ab">About</a>
-    <a href="#contact" id="n-co">Contact</a>
-    <a href="https://instagram.com/na0mivallej0" target="_blank">@na0mivallej0</a>
+  <div class="nav-r" id="nav-r">
+    <a href="#editorial" id="n-ed" onclick="navClose()">Editorial</a>
+    <a href="#artists" id="n-art" onclick="navClose()">Talents</a>
+    <a href="#runway" id="n-rw" onclick="navClose()">Runway</a>
+    <a href="#about" id="n-ab" onclick="navClose()">About</a>
+    <a href="#contact" id="n-co" onclick="navClose()">Contact</a>
+    <a href="https://instagram.com/na0mivallej0" target="_blank" onclick="navClose()">@na0mivallej0</a>
   </div>
+  <button class="nav-ham" id="nav-ham" aria-label="Menu" onclick="navToggle()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- COVER: using GQ BW image — clean minimal background -->
@@ -746,14 +838,14 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <a href="tel:+34603867751" class="c-link">+34 603 867 751</a>
     </div>
   </div>
-  <div class="sr d1">
+  <form class="sr d1" id="contact-form" novalidate>
     <div class="cfh">Send a message</div>
-    <div class="fg"><label class="fl">Name</label><input type="text" class="fi" placeholder="Your name"></div>
-    <div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="you@email.com"></div>
-    <div class="fg"><label class="fl">Project</label><input type="text" class="fi" placeholder="Music video, editorial, event..."></div>
-    <div class="fg"><label class="fl">Message</label><textarea class="fi" placeholder="Tell me more..."></textarea></div>
-    <button class="fsub" id="fsub">Send</button>
-  </div>
+    <div class="fg"><label class="fl">Name</label><input type="text" name="name" class="fi" placeholder="Your name" required></div>
+    <div class="fg"><label class="fl">Email</label><input type="email" name="email" class="fi" placeholder="you@email.com" required></div>
+    <div class="fg"><label class="fl">Project</label><input type="text" name="project" class="fi" placeholder="Music video, editorial, event..."></div>
+    <div class="fg"><label class="fl">Message</label><textarea name="message" class="fi" placeholder="Tell me more..."></textarea></div>
+    <button type="submit" class="fsub" id="fsub">Send</button>
+  </form>
 </section>
 
 <footer>
@@ -797,7 +889,59 @@ ids.forEach(id=>{
   });
 });
 document.querySelectorAll('.sr').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('vis');},{threshold:.07}).observe(el);});
-document.getElementById('fsub').addEventListener('click',function(){this.textContent='Sent ✓';setTimeout(()=>{this.textContent='Send';},3000);});
+
+/* ── HAMBURGER NAV ── */
+function navToggle(){
+  var ham=document.getElementById('nav-ham');
+  var nr=document.getElementById('nav-r');
+  var open=ham.classList.toggle('open');
+  nr.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+function navClose(){
+  document.getElementById('nav-ham').classList.remove('open');
+  document.getElementById('nav-r').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ── CONTACT FORM (FormSubmit.co) ── */
+document.getElementById('contact-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var btn=document.getElementById('fsub');
+  var name=this.querySelector('[name="name"]').value.trim();
+  var email=this.querySelector('[name="email"]').value.trim();
+  if(!name||!email){
+    btn.textContent='Fill name & email';
+    setTimeout(()=>{btn.textContent='Send';},2500);
+    return;
+  }
+  btn.textContent='Sending…';
+  btn.disabled=true;
+  try{
+    var res=await fetch('https://formsubmit.co/ajax/naomiivallejo0@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        name:name,
+        email:email,
+        project:this.querySelector('[name="project"]').value,
+        message:this.querySelector('[name="message"]').value,
+        _subject:'Portfolio contact — '+name,
+        _captcha:'false'
+      })
+    });
+    if(res.ok){
+      btn.textContent='Sent ✓';
+      this.reset();
+      setTimeout(()=>{btn.textContent='Send';btn.disabled=false;},4000);
+    } else {
+      throw new Error('fail');
+    }
+  } catch(err){
+    btn.textContent='Error — try again';
+    setTimeout(()=>{btn.textContent='Send';btn.disabled=false;},3000);
+  }
+});
 var LB={imgs:[],i:0};
 var GLR={imgs:[],i:0,title:''};
 var _pendingTitle='';
