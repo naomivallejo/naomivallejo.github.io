@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .s-kicker{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:var(--choco3);margin-bottom:1rem;display:block;}
 
 /* ─── EDITORIAL ─── */
-#editorial{background:var(--ink);color:var(--bone);padding:0 0 8rem;}
+#editorial{background:#1a0c06;color:var(--bone);padding:0 0 8rem;}
 .ed-hdr{padding:5rem 3rem 3rem;border-bottom:1px solid rgba(242,237,230,.08);display:flex;align-items:flex-end;gap:3rem;}
 .ed-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.6rem,3vw,3rem);font-weight:700;line-height:.9;letter-spacing:-.025em;text-transform:uppercase;flex:1;color:var(--bone);}
 .ed-htitle em{font-family:'Libre Baskerville',serif;font-style:italic;font-weight:400;font-size:.58em;display:block;color:rgba(242,237,230,.38);letter-spacing:.02em;margin-bottom:.4rem;}
@@ -104,8 +104,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .epull{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.6rem;line-height:1.4;color:rgba(10,9,8,.14);padding:2rem 0;border-top:1px solid rgba(10,9,8,.08);border-bottom:1px solid rgba(10,9,8,.08);align-self:center;}
 
 /* ─── ARTISTS ─── */
-#artists{background:#1a0c06;color:var(--bone);padding:0 0 8rem;scroll-margin-top:65px;}
-#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;}
+#artists{background:#ede8df;color:var(--ink);padding:0 0 8rem;scroll-margin-top:65px;}
+#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;background:#ede8df;}
+/* Talents light-bg overrides */
+#artists .art-hdr{border-bottom-color:rgba(10,9,8,.1);}
+#artists .art-htitle,#artists .art-detail-kicker{color:#2a1008;}
+#artists .art-htitle em{color:rgba(42,16,8,.42);}
+#artists .art-hsub{color:rgba(42,16,8,.42);}
+#artists .art-back{color:rgba(42,16,8,.5);}
+#artists .art-back:hover{color:#2a1008;}
+#artists .art-detail-hdr{border-bottom-color:rgba(10,9,8,.08);}
+#artists .art-ov-card{background:rgba(10,9,8,.1);}
+#artists .proj-card{background:rgba(10,9,8,.07);}
+/* card overlay text stays light (dark photo gradient behind it) */
+#artists .art-ov-name{color:var(--bone);}
+#artists .art-ov-sub{color:rgba(242,237,230,.6);}
 #art-overview-page.detail-mode{height:0;overflow:hidden;padding:0;}
 .art-hdr{padding:1.8rem 3rem 1rem;border-bottom:1px solid rgba(242,237,230,.06);display:grid;grid-template-columns:1fr auto;align-items:end;gap:3rem;flex-shrink:0;}
 .art-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.8rem,3.5vw,3.8rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;}
@@ -167,7 +180,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .rnote{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;line-height:1.8;color:var(--gray);max-width:280px;}
 
 /* ─── ABOUT ─── */
-#about{background:#ffffff;color:var(--ink);padding:0;}
+#about{background:#f2ede6;color:var(--ink);padding:0;}
 #about .about-wrap{border-top:1px solid rgba(10,9,8,.06);}
 #about .abl{border-right-color:rgba(10,9,8,.08);}
 #about .abn2{color:#1a0c06;}
