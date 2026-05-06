@@ -72,8 +72,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .s-kicker{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:var(--choco3);margin-bottom:1rem;display:block;}
 
 /* ─── EDITORIAL ─── */
-#editorial{background:#1a0c06;color:var(--bone);padding:0 0 8rem;}
+#editorial{background:#1a0c06;color:var(--bone);padding:0 0 8rem;position:relative;}
 #editorial::before{content:'';display:block;height:3rem;background:linear-gradient(to bottom,#111010,#1a0c06);margin-bottom:0;}
+#editorial::after{content:'';position:absolute;bottom:0;left:0;right:0;height:7rem;background:linear-gradient(to bottom,transparent,#ede8df);pointer-events:none;}
 .ed-hdr{padding:5rem 3rem 3rem;border-bottom:1px solid rgba(242,237,230,.08);display:flex;align-items:flex-end;gap:3rem;}
 .ed-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.6rem,3vw,3rem);font-weight:700;line-height:.9;letter-spacing:-.025em;text-transform:uppercase;flex:1;color:var(--bone);}
 .ed-htitle em{font-family:'Libre Baskerville',serif;font-style:italic;font-weight:400;font-size:.58em;display:block;color:rgba(242,237,230,.38);letter-spacing:.02em;margin-bottom:.4rem;}
@@ -105,8 +106,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .epull{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.6rem;line-height:1.4;color:rgba(10,9,8,.14);padding:2rem 0;border-top:1px solid rgba(10,9,8,.08);border-bottom:1px solid rgba(10,9,8,.08);align-self:center;}
 
 /* ─── ARTISTS ─── */
-#artists{background:var(--ink);color:var(--bone);padding:0 0 8rem;scroll-margin-top:65px;}
-#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;}
+#artists{background:#ede8df;color:var(--ink);padding:0 0 8rem;scroll-margin-top:65px;position:relative;}
+#artists::after{content:'';position:absolute;bottom:0;left:0;right:0;height:7rem;background:linear-gradient(to bottom,transparent,var(--ink));pointer-events:none;}
+#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;background:#ede8df;}
+/* Artists light-bg text overrides */
+#artists .art-hdr{border-bottom-color:rgba(10,9,8,.1);}
+#artists .art-htitle,#artists .art-detail-kicker{color:#2a1008;}
+#artists .art-htitle em{color:rgba(42,16,8,.45);}
+#artists .art-hsub{color:rgba(42,16,8,.45);}
+#artists .art-ov-sub{color:rgba(42,16,8,.48);}
+#artists .art-back{color:rgba(42,16,8,.55);}
+#artists .art-back:hover{color:#2a1008;}
+#artists .art-detail-hdr{border-bottom-color:rgba(10,9,8,.08);}
+#artists .art-ov-card{background:rgba(10,9,8,.1);}
+#artists .proj-card{background:rgba(10,9,8,.08);}
 #art-overview-page.detail-mode{height:0;overflow:hidden;padding:0;}
 .art-hdr{padding:1.8rem 3rem 1rem;border-bottom:1px solid rgba(242,237,230,.06);display:grid;grid-template-columns:1fr auto;align-items:end;gap:3rem;flex-shrink:0;}
 .art-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.8rem,3.5vw,3.8rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;}
@@ -246,9 +259,10 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   .nav-r{display:none;}
 
   /* COVER */
-  .cover-name{bottom:8rem;left:1.4rem;right:1.4rem;flex-direction:column;gap:.1rem;align-items:flex-start;}
+  #cover{min-height:100dvh;}
+  .cover-name{bottom:12rem;left:1.4rem;right:1.4rem;flex-direction:column;gap:.1rem;align-items:flex-start;}
   .cover-name-left,.cover-name-right{font-size:clamp(2rem,10.5vw,3.2rem);line-height:.88;}
-  .cover-sub{bottom:3.8rem;left:1.4rem;right:1.4rem;flex-direction:column;align-items:flex-start;gap:.3rem;}
+  .cover-sub{bottom:7rem;left:1.4rem;right:1.4rem;flex-direction:column;align-items:flex-start;gap:.3rem;}
   .cover-meta{text-align:left;line-height:1.6;display:flex;flex-direction:row;justify-content:space-between;align-items:center;width:100%;font-size:.42rem;}
   .cover-meta br{display:none;}
   .cover-langs{font-size:.36rem;}
@@ -385,34 +399,35 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   #runway .ed-moodboard{padding-top:1rem;}
 }
 
-/* ── MOBILE NAV OPEN — must be LAST to win specificity ── */
-.nav-r.mob-open{
-  display:flex !important;
-  position:fixed !important;
-  top:0 !important;
-  left:0 !important;
-  right:0 !important;
-  bottom:0 !important;
-  background:#0a0908 !important;
-  flex-direction:column !important;
-  align-items:flex-end !important;
-  justify-content:flex-end !important;
-  padding-bottom:5rem !important;
-  padding-right:2.2rem !important;
-  padding-top:0 !important;
-  gap:1rem !important;
-  z-index:5000 !important;
-}
-.nav-r.mob-open a{
-  display:block !important;
-  font-size:.75rem !important;
-  letter-spacing:.22em !important;
-  color:rgba(242,237,230,.9) !important;
-  font-weight:300 !important;
-  text-transform:uppercase !important;
-  font-family:'Unbounded',sans-serif !important;
-  text-decoration:none !important;
-  text-align:right !important;
+/* ── MOBILE NAV OPEN — expand the nav itself (avoids iOS nested-fixed bug) ── */
+@media(max-width:680px){
+  nav.menu-open{
+    bottom:0;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  nav.menu-open .nav-r{
+    display:flex !important;
+    width:100%;
+    flex:1;
+    flex-direction:column;
+    align-items:flex-end;
+    justify-content:flex-end;
+    padding-right:2.4rem;
+    padding-bottom:4.5rem;
+    gap:1.1rem;
+  }
+  nav.menu-open .nav-r a{
+    font-size:.72rem !important;
+    letter-spacing:.22em;
+    color:rgba(242,237,230,.9) !important;
+    font-weight:300;
+    text-transform:uppercase;
+    font-family:'Unbounded',sans-serif;
+    text-decoration:none;
+    text-align:right;
+    white-space:nowrap;
+  }
 }
 
 </style>
@@ -420,9 +435,9 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 <body>
 <div class="cur" id="cur"></div>
 
-<nav>
+<nav id="main-nav" onclick="if(this.classList.contains('menu-open')&&!event.target.closest('a,button'))navClose()">
   <a href="#cover" class="nav-sig"><span class="nav-sig-name">Naomi</span><span>Vallejo L&oacute;pez</span></a>
-  <div class="nav-r" id="nav-r" onclick="if(this.classList.contains('mob-open')&&!event.target.closest('a'))navClose()">
+  <div class="nav-r" id="nav-r">
     <a href="#editorial" id="n-ed" onclick="navClose()">Editorial</a>
     <a href="#artists" id="n-art" onclick="navClose()">Talents</a>
     <a href="#runway" id="n-rw" onclick="navClose()">Runway</a>
@@ -924,14 +939,14 @@ document.querySelectorAll('.sr').forEach(el=>{new IntersectionObserver(([e])=>{i
 /* ── HAMBURGER NAV ── */
 function navToggle(){
   var ham=document.getElementById('nav-ham');
-  var nr=document.getElementById('nav-r');
+  var navEl=document.getElementById('main-nav');
   var open=ham.classList.toggle('open');
-  nr.classList.toggle('mob-open',open);
+  navEl.classList.toggle('menu-open',open);
   document.body.style.overflow=open?'hidden':'';
 }
 function navClose(){
   document.getElementById('nav-ham').classList.remove('open');
-  document.getElementById('nav-r').classList.remove('mob-open');
+  document.getElementById('main-nav').classList.remove('menu-open');
   document.body.style.overflow='';
 }
 
