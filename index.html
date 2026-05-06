@@ -250,14 +250,13 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:min(2.2rem,5vh);
-    padding:5rem 2rem;
-    overflow-y:auto;
+    gap:min(1.5rem,3.5vh);
+    padding:3rem 2rem;
     z-index:501;
   }
   .nav-r.open{display:flex;}
   .nav-r a{
-    font-size:1.1rem;
+    font-size:1.05rem;
     letter-spacing:.25em;
     color:rgba(242,237,230,.88);
   }
@@ -268,7 +267,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   .cover-name-left,.cover-name-right{font-size:clamp(2rem,10.5vw,3.2rem);line-height:.88;}
   .cover-sub{bottom:2rem;left:1.4rem;right:1.4rem;flex-direction:column;gap:.5rem;align-items:flex-start;}
   .cover-meta{text-align:left;}
-  .cover-role,.cover-meta{font-size:.6rem;letter-spacing:.35em;}
+  .cover-role,.cover-meta{font-size:.44rem;letter-spacing:.38em;}
   .cover-scroll{display:none;}
 
   /* EDITORIAL */
@@ -276,14 +275,15 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   .ed-moodboard{padding:1.2rem 1.4rem 3rem;}
 
   /* TALENTS overview */
-  #art-overview-page{height:auto;min-height:calc(100vh - 65px);}
+  #art-overview-page{height:auto;}
   .art-hdr{padding:1.4rem 1.4rem .8rem;}
   .art-overview{
+    flex:none;
     grid-template-columns:repeat(2,1fr);
-    grid-template-rows:repeat(3,1fr);
+    grid-template-rows:none;
+    grid-auto-rows:minmax(36vw,1fr);
     gap:.5rem;
-    padding:.5rem 1.4rem .8rem;
-    min-height:calc(100vh - 130px);
+    padding:.5rem 1.4rem 1.2rem;
   }
 
   /* TALENT DETAIL */
