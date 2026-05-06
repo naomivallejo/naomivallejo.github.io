@@ -74,7 +74,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 /* ─── EDITORIAL ─── */
 #editorial{background:#1a0c06;color:var(--bone);padding:0 0 8rem;position:relative;}
 #editorial::before{content:'';display:block;height:3rem;background:linear-gradient(to bottom,#111010,#1a0c06);margin-bottom:0;}
-#editorial::after{content:'';position:absolute;bottom:0;left:0;right:0;height:7rem;background:linear-gradient(to bottom,transparent,#ede8df);pointer-events:none;}
+#editorial::after{content:'';position:absolute;bottom:0;left:0;right:0;height:7rem;background:linear-gradient(to bottom,transparent,#ffffff);pointer-events:none;}
 .ed-hdr{padding:5rem 3rem 3rem;border-bottom:1px solid rgba(242,237,230,.08);display:flex;align-items:flex-end;gap:3rem;}
 .ed-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.6rem,3vw,3rem);font-weight:700;line-height:.9;letter-spacing:-.025em;text-transform:uppercase;flex:1;color:var(--bone);}
 .ed-htitle em{font-family:'Libre Baskerville',serif;font-style:italic;font-weight:400;font-size:.58em;display:block;color:rgba(242,237,230,.38);letter-spacing:.02em;margin-bottom:.4rem;}
@@ -106,19 +106,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .epull{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.6rem;line-height:1.4;color:rgba(10,9,8,.14);padding:2rem 0;border-top:1px solid rgba(10,9,8,.08);border-bottom:1px solid rgba(10,9,8,.08);align-self:center;}
 
 /* ─── ARTISTS ─── */
-#artists{background:#ede8df;color:var(--ink);padding:0 0 8rem;scroll-margin-top:65px;position:relative;}
+#artists{background:#ffffff;color:var(--ink);padding:0 0 8rem;scroll-margin-top:65px;position:relative;}
 #artists::after{content:'';position:absolute;bottom:0;left:0;right:0;height:7rem;background:linear-gradient(to bottom,transparent,var(--ink));pointer-events:none;}
-#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;background:#ede8df;}
+#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;background:#ffffff;}
 /* Artists light-bg text overrides */
-#artists .art-hdr{border-bottom-color:rgba(10,9,8,.1);}
+#artists .art-hdr{border-bottom-color:rgba(10,9,8,.12);}
 #artists .art-htitle,#artists .art-detail-kicker{color:#2a1008;}
 #artists .art-htitle em{color:rgba(42,16,8,.45);}
 #artists .art-hsub{color:rgba(42,16,8,.45);}
-#artists .art-ov-sub{color:rgba(42,16,8,.48);}
+/* card overlay text stays light — sits on dark photo gradient */
+#artists .art-ov-sub{color:rgba(242,237,230,.62);}
 #artists .art-back{color:rgba(42,16,8,.55);}
 #artists .art-back:hover{color:#2a1008;}
 #artists .art-detail-hdr{border-bottom-color:rgba(10,9,8,.08);}
-#artists .art-ov-card{background:rgba(10,9,8,.1);}
+#artists .art-ov-card{background:rgba(10,9,8,.12);}
 #artists .proj-card{background:rgba(10,9,8,.08);}
 #art-overview-page.detail-mode{height:0;overflow:hidden;padding:0;}
 .art-hdr{padding:1.8rem 3rem 1rem;border-bottom:1px solid rgba(242,237,230,.06);display:grid;grid-template-columns:1fr auto;align-items:end;gap:3rem;flex-shrink:0;}
@@ -156,7 +157,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .adiv{height:1px;background:rgba(242,237,230,.05);}
 
 /* ─── RUNWAY ─── */
-#runway{background:var(--ink);color:var(--bone);padding:0 0 8rem;scroll-margin-top:65px;}
+#runway{background:var(--ink);color:var(--bone);padding:0 0 8rem;scroll-margin-top:65px;position:relative;}
+#runway::after{content:'';position:absolute;bottom:0;left:0;right:0;height:7rem;background:linear-gradient(to bottom,transparent,#1a0c06);pointer-events:none;}
 .rw-hdr{padding:6rem 3rem 4rem;border-bottom:1px solid rgba(10,9,8,.07);}
 .rw-htw{display:flex;align-items:baseline;gap:2rem;}
 .rw-ht{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,6vw,6rem);font-weight:700;font-style:italic;line-height:.9;color:var(--ink);}
@@ -181,7 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .rnote{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;line-height:1.8;color:var(--gray);max-width:280px;}
 
 /* ─── ABOUT ─── */
-#about{background:var(--ink);color:var(--bone);padding:0;}
+#about{background:#1a0c06;color:var(--bone);padding:0;}
 .about-wrap{display:grid;grid-template-columns:1fr 1fr;}
 .abl{padding:6rem 3.5rem 5rem;border-right:1px solid rgba(242,237,230,.05);display:flex;flex-direction:column;justify-content:space-between;}
 .abn2{font-family:'Unbounded',sans-serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:900;line-height:.88;letter-spacing:-.025em;text-transform:uppercase;margin-bottom:2rem;}
