@@ -250,12 +250,14 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:2.8rem;
+    gap:min(2.2rem,5vh);
+    padding:5rem 2rem;
+    overflow-y:auto;
     z-index:501;
   }
   .nav-r.open{display:flex;}
   .nav-r a{
-    font-size:1.15rem;
+    font-size:1.1rem;
     letter-spacing:.25em;
     color:rgba(242,237,230,.88);
   }
@@ -266,7 +268,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   .cover-name-left,.cover-name-right{font-size:clamp(2rem,10.5vw,3.2rem);line-height:.88;}
   .cover-sub{bottom:2rem;left:1.4rem;right:1.4rem;flex-direction:column;gap:.5rem;align-items:flex-start;}
   .cover-meta{text-align:left;}
-  .cover-role,.cover-meta{font-size:.46rem;}
+  .cover-role,.cover-meta{font-size:.6rem;letter-spacing:.35em;}
   .cover-scroll{display:none;}
 
   /* EDITORIAL */
