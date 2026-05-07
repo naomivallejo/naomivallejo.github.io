@@ -44,8 +44,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 
 /* COVER */
 #cover{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:contrast(1.08) saturate(.7) brightness(.95);}
-.cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.95) 0%,rgba(10,9,8,.35) 55%,rgba(10,9,8,.15) 100%);}
+.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:grayscale(1) contrast(1.06) brightness(1.0);}
+.cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,.25) 52%,rgba(10,9,8,.08) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
 .cover-sig{position:absolute;bottom:7rem;left:3rem;width:clamp(280px,40vw,580px);height:auto;z-index:3;pointer-events:none;overflow:visible;}
 @media(max-width:600px){.cover-sig{bottom:5.5rem;left:1.5rem;width:clamp(210px,58vw,340px);}}
@@ -450,15 +450,14 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <nav id="main-nav" onclick="if(this.classList.contains('menu-open')&&!event.target.closest('a,button'))navClose()">
   <a href="#cover" class="nav-mono" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Naomi Vallejo López">
-    <svg viewBox="0 0 44 58" width="26" height="34" fill="none" stroke="rgba(242,237,230,.7)" stroke-width="0.85" stroke-linecap="butt" stroke-linejoin="round" aria-hidden="true">
-      <!-- N: tall left structure, two verticals + diagonal -->
-      <path d="M 4,54 L 4,4 L 22,54 L 22,4"/>
-      <!-- V: pointed arch (inverted A-shape), apex centered — same grammar as reference's A -->
-      <path d="M 8,54 L 22,26 L 36,54"/>
-      <!-- L: right vertical + foot -->
-      <path d="M 34,4 L 34,54 L 42,54"/>
-      <!-- Circle: design element inscribed at visual center, like reference -->
-      <circle cx="22" cy="36" r="7"/>
+    <svg viewBox="0 0 22 42" width="16" height="30" fill="none" stroke="rgba(242,237,230,.72)" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <!-- Calligraphic N: three organic curved strokes, hairline weight -->
+      <!-- Left vertical — slight inward lean -->
+      <path d="M 3,39 C 2.5,27 3,15 4,3"/>
+      <!-- Diagonal — gentle bezier for calligraphic quality -->
+      <path d="M 4,3 C 8,16 13,27 18,39"/>
+      <!-- Right vertical — mirrors left, slight lean -->
+      <path d="M 18,39 C 18.5,27 18.5,15 18,3"/>
     </svg>
   </a>
   <div class="nav-r" id="nav-r">
@@ -476,10 +475,10 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <!-- COVER: using GQ BW image — clean minimal background -->
 <section id="cover">
-  <div class="cover-bg" style="background-image:url('images/carnale/carnale-18.jpg');background-position:center 28%;"></div>
+  <div class="cover-bg" style="background-image:url('images/cover-hero.jpg');background-position:center 30%;"></div>
   <div class="cover-content">
     <svg class="cover-sig" id="sig-svg" viewBox="0 0 760 130" preserveAspectRatio="xMinYMid meet" aria-label="Naomi Vallejo">
-      <text font-family="'Alex Brush', cursive" font-size="108" letter-spacing="5" fill="rgba(242,237,230,.84)" x="6" y="108">Naomi Vallejo</text>
+      <text font-family="'Alex Brush', cursive" font-size="108" letter-spacing="7" fill="rgba(242,237,230,.56)" x="6" y="108">Naomi Vallejo</text>
     </svg>
     <div class="cover-sub">
       <div class="cover-role">Fashion Stylist &mdash; Paris</div>
