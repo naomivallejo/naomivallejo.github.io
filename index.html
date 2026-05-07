@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naomi Vallejo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Alex+Brush&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -454,13 +454,12 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <nav id="main-nav" onclick="if(this.classList.contains('menu-open')&&!event.target.closest('a,button'))navClose()">
   <a href="#cover" class="nav-mono" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Naomi Vallejo López">
-    <svg viewBox="0 0 60 46" width="42" height="32" fill="none" stroke="rgba(242,237,230,.68)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <!-- N: top-left vertical, diagonal, right vertical → ends at fork point A (18,4) -->
-      <path d="M 2,42 L 2,4 L 18,42 L 18,4"/>
-      <!-- V: left leg from fork A (18,4) down to apex, back up to fork point B (42,4) -->
-      <path d="M 18,4 L 30,42 L 42,4"/>
-      <!-- L: vertical from fork B (42,4) down, then foot right -->
-      <path d="M 42,4 L 42,42 L 58,42"/>
+    <svg viewBox="0 0 38 34" width="38" height="34" fill="none" stroke="rgba(242,237,230,.72)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <!-- N fused into V: left vertical + diagonal form N, diagonal continues as V left leg -->
+      <!-- Right leg of V doubles as L vertical, L foot extends right -->
+      <path d="M 2,30 L 2,4 L 14,30 L 14,4"/>
+      <path d="M 14,4 L 22,30 L 30,4"/>
+      <path d="M 30,4 L 30,30 L 36,30"/>
     </svg>
   </a>
   <div class="nav-r" id="nav-r">
@@ -481,7 +480,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   <div class="cover-bg" style="background-image:url('images/carnale/carnale-18.jpg');background-position:center 28%;"></div>
   <div class="cover-content">
     <svg class="cover-sig" id="sig-svg" viewBox="0 0 600 122" preserveAspectRatio="xMinYMid meet" aria-label="Naomi Vallejo">
-      <text font-family="'Pinyon Script', cursive" font-size="96" fill="rgba(242,237,230,.82)" x="6" y="102">Naomi Vallejo</text>
+      <text font-family="'Alex Brush', cursive" font-size="96" fill="rgba(242,237,230,.82)" x="6" y="102">Naomi Vallejo</text>
     </svg>
     <div class="cover-sub">
       <div class="cover-role">Fashion Stylist &mdash; Paris</div>
