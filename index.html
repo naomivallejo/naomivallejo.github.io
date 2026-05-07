@@ -55,6 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .cover-sub{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:absolute;bottom:3.5rem;left:3rem;right:3rem;z-index:5;}
 .cover-role{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(242,237,230,.35);}
 .cover-meta{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(242,237,230,.35);text-align:right;line-height:2.4;}
+.cover-lastname{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,237,230,.72);display:block;margin-bottom:.5rem;}
 .cover-langs{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.44rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(242,237,230,.35);line-height:2;}
 .cover-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);font-size:.42rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(242,237,230,.18);z-index:2;animation:blink 2.5s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:.18;}50%{opacity:.5;}}
@@ -453,7 +454,6 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 <nav id="main-nav" onclick="if(this.classList.contains('menu-open')&&!event.target.closest('a,button'))navClose()">
   <a href="#cover" class="nav-mono" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Naomi Vallejo López">
     <span class="nav-name-first">Naomi</span>
-    <span class="nav-name-last">Vallejo L&oacute;pez</span>
   </a>
   <div class="nav-r" id="nav-r">
     <a href="#editorial" id="n-ed" onclick="navClose()">Editorial</a>
@@ -470,14 +470,14 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <!-- COVER: using GQ BW image — clean minimal background -->
 <section id="cover">
-  <div class="cover-bg" style="background-image:url('images/karol-g/karol-5.avif');background-size:auto 100%;background-position:center top;"></div>
+  <div class="cover-bg" style="background-image:url('images/karol-g/karol-5.avif');background-position:center 20%;"></div>
   <div class="cover-content">
     <svg class="cover-sig" id="sig-svg" viewBox="0 0 820 130" preserveAspectRatio="xMinYMid meet" aria-label="Naomi Vallejo">
       <text font-family="'Alex Brush', cursive" font-size="108" letter-spacing="7" fill="rgba(242,237,230,.78)" x="6" y="108">Naomi Vallejo</text>
     </svg>
     <div class="cover-sub">
       <div class="cover-role">Fashion Stylist &mdash; Paris</div>
-      <div class="cover-meta">Open to relocation<br><span class="cover-langs">ES &middot; FR &middot; EN</span></div>
+      <div class="cover-meta"><span class="cover-lastname">Vallejo L&oacute;pez</span>Open to relocation<br><span class="cover-langs">ES &middot; FR &middot; EN</span></div>
     </div>
   </div>
   <div class="cover-scroll">Scroll</div>
