@@ -60,7 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 @keyframes blink{0%,100%{opacity:.18;}50%{opacity:.5;}}
 
 /* MARQUEE ARTISTS STRIP */
-.marquee-strip{background:#1a0c06;border-top:1px solid rgba(242,237,230,.06);border-bottom:1px solid rgba(242,237,230,.06);padding:.75rem 0;overflow:hidden;}
+.marquee-strip{background:var(--ink);border-top:1px solid rgba(242,237,230,.06);border-bottom:1px solid rgba(242,237,230,.06);padding:.75rem 0;overflow:hidden;}
 .marquee-track{display:flex;gap:3rem;white-space:nowrap;animation:mq 22s linear infinite;width:max-content;}
 .marquee-track:hover{animation-play-state:paused;}
 .mq-item{font-family:'Unbounded',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,230,.45);display:flex;align-items:center;gap:3rem;flex-shrink:0;}
@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .s-kicker{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:var(--choco3);margin-bottom:1rem;display:block;}
 
 /* ─── EDITORIAL ─── */
-#editorial{background:var(--ink);color:var(--bone);padding:0 0 8rem;}
+#editorial{background:#1a0c06;color:var(--bone);padding:0 0 8rem;}
 .ed-hdr{padding:5rem 3rem 3rem;border-bottom:1px solid rgba(242,237,230,.08);display:flex;align-items:flex-end;gap:3rem;}
 .ed-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.6rem,3vw,3rem);font-weight:700;line-height:.9;letter-spacing:-.025em;text-transform:uppercase;flex:1;color:var(--bone);}
 .ed-htitle em{font-family:'Libre Baskerville',serif;font-style:italic;font-weight:400;font-size:.58em;display:block;color:rgba(242,237,230,.38);letter-spacing:.02em;margin-bottom:.4rem;}
@@ -104,21 +104,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .epull{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.6rem;line-height:1.4;color:rgba(10,9,8,.14);padding:2rem 0;border-top:1px solid rgba(10,9,8,.08);border-bottom:1px solid rgba(10,9,8,.08);align-self:center;}
 
 /* ─── ARTISTS ─── */
-#artists{background:#ede8df;color:var(--ink);padding:0 0 8rem;scroll-margin-top:65px;}
-#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;background:#ede8df;}
-/* Talents light-bg overrides */
-#artists .art-hdr{border-bottom-color:rgba(10,9,8,.1);}
-#artists .art-htitle,#artists .art-detail-kicker{color:#2a1008;}
-#artists .art-htitle em{color:rgba(42,16,8,.42);}
-#artists .art-hsub{color:rgba(42,16,8,.42);}
-#artists .art-back{color:rgba(42,16,8,.5);}
-#artists .art-back:hover{color:#2a1008;}
-#artists .art-detail-hdr{border-bottom-color:rgba(10,9,8,.08);}
-#artists .art-ov-card{background:rgba(10,9,8,.1);}
-#artists .proj-card{background:rgba(10,9,8,.07);}
-/* card overlay text stays light (dark photo gradient behind it) */
+#artists{background:var(--ink);color:var(--bone);padding:0 0 8rem;scroll-margin-top:65px;}
+#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;background:var(--ink);}
+/* Talents dark-bg values */
+#artists .art-hdr{border-bottom-color:rgba(242,237,230,.06);}
+#artists .art-htitle,#artists .art-detail-kicker{color:var(--bone);}
+#artists .art-htitle em{color:rgba(242,237,230,.38);}
+#artists .art-hsub{color:rgba(242,237,230,.38);}
+#artists .art-back{color:rgba(242,237,230,.5);}
+#artists .art-back:hover{color:var(--bone);}
+#artists .art-detail-hdr{border-bottom-color:rgba(242,237,230,.06);}
+#artists .art-ov-card{background:rgba(242,237,230,.04);}
+#artists .proj-card{background:rgba(242,237,230,.05);}
 #artists .art-ov-name{color:var(--bone);}
-#artists .art-ov-sub{color:rgba(242,237,230,.6);}
+#artists .art-ov-sub{color:rgba(242,237,230,.52);}
 #art-overview-page.detail-mode{height:0;overflow:hidden;padding:0;}
 .art-hdr{padding:1.8rem 3rem 1rem;border-bottom:1px solid rgba(242,237,230,.06);display:grid;grid-template-columns:1fr auto;align-items:end;gap:3rem;flex-shrink:0;}
 .art-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.8rem,3.5vw,3.8rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;}
@@ -155,7 +154,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .adiv{height:1px;background:rgba(242,237,230,.05);}
 
 /* ─── RUNWAY ─── */
-#runway{background:var(--ink);color:var(--bone);padding:0 0 8rem;scroll-margin-top:65px;}
+#runway{background:#ede8df;color:var(--ink);padding:0 0 8rem;scroll-margin-top:65px;}
+/* Runway cream-bg overrides */
+#runway .ed-hdr{border-bottom-color:rgba(10,9,8,.12);}
+#runway .ed-htitle{color:#1a0c06;}
+#runway .ed-htitle em{color:rgba(10,9,8,.42);}
+#runway .ed-hint{color:rgba(10,9,8,.42);}
+#runway .rw-hdr{border-bottom-color:rgba(10,9,8,.1);}
 .rw-hdr{padding:6rem 3rem 4rem;border-bottom:1px solid rgba(10,9,8,.07);}
 .rw-htw{display:flex;align-items:baseline;gap:2rem;}
 .rw-ht{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,6vw,6rem);font-weight:700;font-style:italic;line-height:.9;color:var(--ink);}
@@ -180,21 +185,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .rnote{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.88rem;line-height:1.8;color:var(--gray);max-width:280px;}
 
 /* ─── ABOUT ─── */
-#about{background:#ede8df;color:var(--ink);padding:0;}
-#about .about-wrap{border-top:1px solid rgba(10,9,8,.06);}
-#about .abl{border-right-color:rgba(10,9,8,.08);}
-#about .abn2{color:#1a0c06;}
-#about .abn2 .l2{color:#1a0c06;-webkit-text-stroke:0;}
-#about .abr2{color:rgba(10,9,8,.38);}
-#about .abb{color:rgba(10,9,8,.55);}
-#about .abb strong{color:rgba(10,9,8,.85);}
-#about .ablang{border-top-color:rgba(10,9,8,.08);}
-#about .ln{color:rgba(10,9,8,.38);}
-#about .tli{border-bottom-color:rgba(10,9,8,.07);}
-#about .tly{color:rgba(10,9,8,.36);}
-#about .tlr{color:#1a0c06;}
-#about .tlc{color:rgba(10,9,8,.5);}
-#about .tltag{border-color:rgba(10,9,8,.12);color:rgba(10,9,8,.3);}
+#about{background:var(--ink);color:var(--bone);padding:0;}
+#about .about-wrap{border-top:1px solid rgba(242,237,230,.06);}
+#about .abl{border-right-color:rgba(242,237,230,.06);}
+#about .abn2{color:var(--bone);}
+#about .abn2 .l2{color:transparent;-webkit-text-stroke:1px rgba(242,237,230,.18);}
+#about .abr2{color:rgba(242,237,230,.28);}
+#about .abb{color:rgba(242,237,230,.42);}
+#about .abb strong{color:rgba(242,237,230,.75);}
+#about .ablang{border-top-color:rgba(242,237,230,.06);}
+#about .ln{color:rgba(242,237,230,.38);}
+#about .tli{border-bottom-color:rgba(242,237,230,.05);}
+#about .tly{color:rgba(242,237,230,.36);}
+#about .tlr{color:var(--bone);}
+#about .tlc{color:rgba(242,237,230,.45);}
+#about .tltag{border-color:rgba(242,237,230,.08);color:rgba(242,237,230,.18);}
 .about-wrap{display:grid;grid-template-columns:1fr 1fr;}
 .abl{padding:6rem 3.5rem 5rem;border-right:1px solid rgba(242,237,230,.05);display:flex;flex-direction:column;justify-content:space-between;}
 .abn2{font-family:'Unbounded',sans-serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:900;line-height:.88;letter-spacing:-.025em;text-transform:uppercase;margin-bottom:2rem;}
@@ -359,7 +364,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 .ed-card:hover img{transform:scale(1.05);}
 .ed-card-info{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,0) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:.85rem;transition:opacity .3s;}
 .ed-card-ph .ed-card-info{opacity:1;background:rgba(10,9,8,.18);}
-.ed-card-pub{font-size:.42rem;letter-spacing:.3em;text-transform:uppercase;color:var(--choco3);margin-bottom:.28rem;}
+.ed-card-pub{font-size:.42rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,237,230,.65);margin-bottom:.28rem;}
 .ed-card-name{font-family:'Libre Baskerville',serif;font-size:.88rem;line-height:1.2;color:var(--bone);}
 .ed-card-date{font-size:.4rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,230,.38);margin-top:.2rem;}
 
@@ -518,18 +523,18 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">CAP74024 &times; Miu Miu</span><span class="ed-card-name">Jill Kortleve</span><span class="ed-card-date">Paris</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/steinberg-vogue/7a_9b_kVS3KJ1p.jpg','images/steinberg-vogue/5b_b1_kcgpOzxp.jpg','images/steinberg-vogue/a1_09_vRGrc9yT.jpg','images/steinberg-vogue/84_05_k70kM9VO.jpg','images/steinberg-vogue/21_0a_JPAhHT3V.jpg','images/steinberg-vogue/9f_69_jyhi5POj.jpg','images/steinberg-vogue/0f_fc_drwplGaS.jpg','images/steinberg-vogue/6d_c9_LkmTQSJW.jpg'],0)">
-      <img src="images/steinberg-vogue/7a_9b_kVS3KJ1p.jpg" alt="Steinberg Vogue CS" loading="lazy">
+    <div class="ed-card" onclick="lbOpen(['images/steinberg-vogue/84_05_k70kM9VO.jpg','images/steinberg-vogue/7a_9b_kVS3KJ1p.jpg','images/steinberg-vogue/5b_b1_kcgpOzxp.jpg','images/steinberg-vogue/a1_09_vRGrc9yT.jpg','images/steinberg-vogue/21_0a_JPAhHT3V.jpg','images/steinberg-vogue/9f_69_jyhi5POj.jpg','images/steinberg-vogue/0f_fc_drwplGaS.jpg','images/steinberg-vogue/6d_c9_LkmTQSJW.jpg'],0)">
+      <img src="images/steinberg-vogue/84_05_k70kM9VO.jpg" alt="Steinberg Vogue CS" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Vogue CS</span><span class="ed-card-name">Steinberg</span><span class="ed-card-date">Sep 2024</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/vogue-japan/1.jpg','images/vogue-japan/2.jpg','images/vogue-japan/3.jpg','images/vogue-japan/4.jpg','images/vogue-japan/5.jpg','images/vogue-japan/6.jpg','images/vogue-japan/7.jpg','images/vogue-japan/8.jpg','images/vogue-japan/9.jpg','images/vogue-japan/10.jpg','images/vogue-japan/11.jpg','images/vogue-japan/12.jpg','images/vogue-japan/13.jpg'],0)">
-      <img src="images/vogue-japan/1.jpg" alt="Vogue Japan Hikari Mori" loading="lazy">
+    <div class="ed-card" onclick="lbOpen(['images/vogue-japan/3.jpg','images/vogue-japan/1.jpg','images/vogue-japan/2.jpg','images/vogue-japan/4.jpg','images/vogue-japan/5.jpg','images/vogue-japan/6.jpg','images/vogue-japan/7.jpg','images/vogue-japan/8.jpg','images/vogue-japan/9.jpg','images/vogue-japan/10.jpg','images/vogue-japan/11.jpg','images/vogue-japan/12.jpg','images/vogue-japan/13.jpg'],0)">
+      <img src="images/vogue-japan/3.jpg" alt="Vogue Japan Hikari Mori" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Vogue Japan</span><span class="ed-card-name">Hikari Mori</span><span class="ed-card-date">Oct 2025</span></div>
     </div>
 
     <div class="ed-card" onclick="lbOpen(['images/bad-gyal-gq/gq-01.jpg','images/bad-gyal-gq/gq-02.jpg','images/bad-gyal-gq/gq-03.jpg','images/bad-gyal-gq/gq-04.jpg','images/bad-gyal-gq/gq-05.jpg','images/bad-gyal-gq/gq-06.jpg','images/bad-gyal-gq/gq-07.jpg','images/bad-gyal-gq/gq-08.jpg','images/bad-gyal-gq/gq-09.jpg'],0)">
-      <img src="images/bad-gyal-gq/gq-01.jpg" alt="Bad Gyal GQ Spain" loading="lazy" style="object-position:top;">
+      <img src="images/bad-gyal-gq/gq-01.jpg" alt="Bad Gyal GQ Spain" loading="lazy" style="object-fit:contain;background:#0a0908;">
       <div class="ed-card-info"><span class="ed-card-pub">GQ Spain &mdash; Cover</span><span class="ed-card-name">Bad Gyal</span><span class="ed-card-date">Dec 2024</span></div>
     </div>
 
@@ -544,7 +549,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     </div>
 
     <div class="ed-card" onclick="lbOpen(['images/karol-g/elle-cover-1.jpg','images/karol-g/elle-cover-2.jpg','images/karol-g/elle-04.jpg','images/karol-g/elle-05.jpg','images/karol-g/elle-06.jpg','images/karol-g/elle-08.jpg','images/karol-g/elle-09.jpg','images/karol-g/elle-10.jpg','images/karol-g/elle-11.jpg','images/karol-g/elle-03.jpg'],0)">
-      <img src="images/karol-g/elle-cover-1.jpg" alt="Karol G ELLE Espana" loading="lazy">
+      <img src="images/karol-g/elle-cover-1.jpg" alt="Karol G ELLE Espana" loading="lazy" style="object-fit:contain;background:#0a0908;">
       <div class="ed-card-info"><span class="ed-card-pub">ELLE Espa&ntilde;a &mdash; Cover</span><span class="ed-card-name">Karol G</span><span class="ed-card-date">Aug 2025</span></div>
     </div>
 
@@ -553,8 +558,8 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">Carnale Issue 07</span><span class="ed-card-name">Mimi Dey</span><span class="ed-card-date">May 2025</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-gq/hb-cover.jpg'],0)">
-      <img src="images/bad-gyal-gq/hb-cover.jpg" alt="Bad Gyal HB Espana" loading="lazy">
+    <div class="ed-card" onclick="lbOpen(['images/hb-cover.jpg'],0)">
+      <img src="images/hb-cover.jpg" alt="Bad Gyal HB Espana" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a &mdash; Cover</span><span class="ed-card-name">Bad Gyal</span><span class="ed-card-date">Dec 2025</span></div>
     </div>
 
@@ -563,8 +568,8 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a</span><span class="ed-card-name">Diane Kruger</span><span class="ed-card-date">Nov 2024</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/deva-cassel/1.jpg','images/deva-cassel/2.jpg','images/deva-cassel/3.jpg','images/deva-cassel/4.jpg','images/deva-cassel/5.jpg','images/deva-cassel/8.jpg','images/deva-cassel/11.jpg','images/deva-cassel/12.jpg'],0)">
-      <img src="images/deva-cassel/1.jpg" alt="Deva Cassel HB Espana" loading="lazy">
+    <div class="ed-card" onclick="lbOpen(['images/deva-cassel/5.jpg','images/deva-cassel/1.jpg','images/deva-cassel/2.jpg','images/deva-cassel/3.jpg','images/deva-cassel/4.jpg','images/deva-cassel/8.jpg','images/deva-cassel/11.jpg','images/deva-cassel/12.jpg'],0)">
+      <img src="images/deva-cassel/5.jpg" alt="Deva Cassel HB Espana" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a</span><span class="ed-card-name">Deva Cassel</span><span class="ed-card-date">Nov 2025</span></div>
     </div>
 
@@ -672,8 +677,8 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <img src="images/bad-gyal-artists/01.jpg" alt="GQ Spain &mdash; Cover Story" loading="lazy">
       <div class="proj-card-info"><span class="proj-card-pub">Mujer del A&ntilde;o</span><span class="proj-card-name">GQ Spain<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Dec 2024</span></div>
     </div>
-    <div class="proj-card" onclick="lbOpen(['images/bad-gyal-gq/hb-cover.jpg'],0)">
-      <img src="images/bad-gyal-gq/hb-cover.jpg" alt="Harper&rsquo;s Bazaar &mdash; Cover" loading="lazy">
+    <div class="proj-card" onclick="lbOpen(['images/hb-cover.jpg'],0)">
+      <img src="images/hb-cover.jpg" alt="Harper&rsquo;s Bazaar &mdash; Cover" loading="lazy">
       <div class="proj-card-info"><span class="proj-card-pub">Women of the Year</span><span class="proj-card-name">Harper&rsquo;s Bazaar<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Dec 2025</span></div>
     </div>
     <div class="proj-card" onclick="lbOpen(['images/bad-gyal-artists/10.jpg'],0)">
