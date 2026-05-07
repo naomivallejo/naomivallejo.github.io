@@ -47,10 +47,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:contrast(1.08) saturate(.7) brightness(.95);}
 .cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.95) 0%,rgba(10,9,8,.35) 55%,rgba(10,9,8,.15) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
-.cover-name{position:absolute;bottom:7rem;left:3rem;right:3rem;z-index:3;display:flex;align-items:baseline;justify-content:space-between;pointer-events:none;}
-.cover-name-left{font-family:'Unbounded',sans-serif;font-size:clamp(2.2rem,6vw,6.5rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;color:var(--bone);writing-mode:horizontal-tb;animation:dropIn .85s cubic-bezier(.2,.8,.3,1) 0s both;}
-.cover-name-right{font-family:'Unbounded',sans-serif;font-size:clamp(2.2rem,6vw,6.5rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;color:var(--bone);writing-mode:horizontal-tb;animation:dropIn .85s cubic-bezier(.2,.8,.3,1) .12s both;}
-@keyframes dropIn{0%{opacity:0;transform:translateY(-120vh);}65%{opacity:1;transform:translateY(2rem);}82%{transform:translateY(-.8rem);}100%{opacity:1;transform:translateY(0);}}70%{opacity:1;transform:translateY(1.5rem);}85%{transform:translateY(-.5rem);}100%{opacity:1;transform:translateY(0);}}
+.cover-sig{position:absolute;bottom:7rem;left:3rem;width:clamp(220px,34vw,500px);height:auto;z-index:3;pointer-events:none;overflow:visible;}
+@media(max-width:600px){.cover-sig{bottom:5.5rem;left:1.5rem;width:clamp(180px,58vw,320px);}}
 .cover-name .v{color:var(--bone);}
 .cover-sub{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:absolute;bottom:3.5rem;left:3rem;right:3rem;z-index:5;}
 .cover-role{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(242,237,230,.35);}
@@ -473,7 +471,14 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 <section id="cover">
   <div class="cover-bg" style="background-image:url('images/carnale/carnale-18.jpg');background-position:center 15%;"></div>
   <div class="cover-content">
-    <div class="cover-name"><span class="cover-name-left">NAOMI</span><span class="cover-name-right"><span class="v">V</span>ALLEJO</span></div>
+    <svg class="cover-sig" id="sig-svg" viewBox="0 0 600 122" preserveAspectRatio="xMinYMid meet" aria-label="Naomi Vallejo">
+      <defs>
+        <clipPath id="sig-clip">
+          <rect id="sig-rect" x="-8" y="-8" width="0" height="140"/>
+        </clipPath>
+      </defs>
+      <text font-family="'Great Vibes', cursive" font-size="96" fill="rgba(242,237,230,.88)" x="6" y="102" clip-path="url(#sig-clip)">Naomi Vallejo</text>
+    </svg>
     <div class="cover-sub">
       <div class="cover-role">Fashion Stylist &mdash; Paris</div>
       <div class="cover-meta">Open to relocation<br><span class="cover-langs">ES &middot; FR &middot; EN</span></div>
@@ -1131,6 +1136,29 @@ function artBack(){
   var sec=document.getElementById('artists');
   if(sec)window.scrollTo({top:sec.offsetTop-65,behavior:'smooth'});
 }
+
+// ─── SIGNATURE ANIMATION ───
+(function(){
+  var rect=document.getElementById('sig-rect');
+  if(!rect)return;
+  var MAX_W=660;
+  var DURATION=2800;
+  var DELAY=420;
+  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+  if(sessionStorage.getItem('sig-played')){
+    rect.setAttribute('width',MAX_W);
+    return;
+  }
+  var start=null;
+  function step(ts){
+    if(!start)start=ts;
+    var p=Math.min((ts-start)/DURATION,1);
+    rect.setAttribute('width',ease(p)*MAX_W);
+    if(p<1){requestAnimationFrame(step);}
+    else{sessionStorage.setItem('sig-played','1');}
+  }
+  setTimeout(function(){requestAnimationFrame(step);},DELAY);
+})();
 </script>
 <div id="glr">
   <div id="glr-top">
