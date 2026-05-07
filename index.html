@@ -29,11 +29,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 @media(hover:none){.cur{display:none;}}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 3rem;background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(242,237,230,.05);}
-.nav-mono{display:inline-flex;align-items:flex-start;flex-direction:column;gap:.12rem;text-decoration:none;opacity:.85;transition:opacity .3s;cursor:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 3rem;background:transparent;border-bottom:none;}
+.nav-mono{display:inline-block;position:relative;text-decoration:none;opacity:.9;transition:opacity .3s;cursor:none;padding-bottom:.1rem;}
 .nav-mono:hover{opacity:1;}
-.nav-name-first{font-family:'Alex Brush',cursive;font-size:1.7rem;line-height:1;letter-spacing:.02em;color:rgba(242,237,230,.88);}
-.nav-name-last{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.44rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,237,230,.55);padding-left:.06rem;}
+.nav-name-first{font-family:'Alex Brush',cursive;font-size:1.7rem;line-height:1;letter-spacing:.02em;color:rgba(242,237,230,.88);display:block;}
+.nav-name-last{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.44rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,237,230,.72);position:absolute;top:52%;left:.06rem;white-space:nowrap;}
 .nav-r{display:flex;align-items:center;gap:2.2rem;}
 .nav-r a{font-size:.7rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.4);text-decoration:none;transition:color .2s;white-space:nowrap;}
 .nav-r a:hover,.nav-r a.on{color:var(--bone);}
@@ -47,7 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 /* COVER */
 #cover{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
 .cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:grayscale(1) contrast(1.06) brightness(1.0);}
-.cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,.25) 52%,rgba(10,9,8,.08) 100%);}
+.cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,9,8,.55) 0%,rgba(10,9,8,.0) 18%,rgba(10,9,8,.0) 52%,rgba(10,9,8,.88) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
 .cover-sig{position:absolute;bottom:7rem;left:3rem;width:clamp(180px,22vw,320px);height:auto;z-index:3;pointer-events:none;overflow:visible;}
 .cover-sig-r{position:absolute;bottom:7rem;right:3rem;width:clamp(200px,26vw,370px);height:auto;z-index:3;pointer-events:none;overflow:visible;}
@@ -478,7 +478,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <text font-family="'Alex Brush', cursive" font-size="108" letter-spacing="7" fill="rgba(242,237,230,.78)" x="6" y="108">Naomi</text>
     </svg>
     <svg class="cover-sig-r" viewBox="0 0 430 130" preserveAspectRatio="xMaxYMid meet" aria-label="Vallejo">
-      <text font-family="'Alex Brush', cursive" font-size="108" letter-spacing="7" fill="rgba(242,237,230,.78)" x="6" y="108">Vallejo</text>
+      <text font-family="'Alex Brush', cursive" font-size="108" letter-spacing="7" fill="rgba(242,237,230,.78)" x="424" y="108" text-anchor="end">Vallejo</text>
     </svg>
     <div class="cover-sub">
       <div class="cover-role">Fashion Stylist &mdash; Paris</div>
