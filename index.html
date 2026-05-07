@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naomi Vallejo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Alex+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Alex+Brush&family=Ephesis&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -33,9 +33,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .nav-mono{display:inline-block;position:relative;text-decoration:none;opacity:.9;transition:opacity .3s;cursor:none;padding-bottom:.1rem;}
 .nav-mono:hover{opacity:1;}
 .nav-name-first{font-family:'Alex Brush',cursive;font-size:1.7rem;line-height:1;letter-spacing:.02em;color:rgba(242,237,230,.88);display:block;}
-.nav-name-last{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.44rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,237,230,.72);position:absolute;top:52%;left:.06rem;white-space:nowrap;}
+.nav-name-last{font-family:'Unbounded',sans-serif;font-weight:300;font-size:.44rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,237,230,1);position:absolute;top:52%;left:.06rem;white-space:nowrap;text-shadow:0 0 12px rgba(10,9,8,.9),0 0 4px rgba(10,9,8,.9);}
 .nav-r{display:flex;align-items:center;gap:2.2rem;}
-.nav-r a{font-size:.7rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.4);text-decoration:none;transition:color .2s;white-space:nowrap;}
+.nav-r a{font-size:.7rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.75);text-decoration:none;transition:color .2s;white-space:nowrap;}
 .nav-r a:hover,.nav-r a.on{color:var(--bone);}
 /* Hamburger */
 .nav-ham{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;justify-content:center;gap:5px;z-index:502;}
@@ -47,7 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 /* COVER */
 #cover{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
 .cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:grayscale(1) contrast(1.06) brightness(1.0);}
-.cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,9,8,.55) 0%,rgba(10,9,8,.0) 18%,rgba(10,9,8,.0) 52%,rgba(10,9,8,.88) 100%);}
+.cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,9,8,.72) 0%,rgba(10,9,8,.15) 22%,rgba(10,9,8,.0) 50%,rgba(10,9,8,.88) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
 .cover-sig{position:absolute;bottom:7rem;left:3rem;width:clamp(180px,22vw,320px);height:auto;z-index:3;pointer-events:none;overflow:visible;}
 .cover-sig-r{position:absolute;bottom:7rem;right:3rem;width:clamp(200px,26vw,370px);height:auto;z-index:3;pointer-events:none;overflow:visible;}
@@ -475,10 +475,10 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   <div class="cover-bg" style="background-image:url('images/karol-g/karol-5.avif');background-position:center 20%;"></div>
   <div class="cover-content">
     <svg class="cover-sig" id="sig-svg" viewBox="0 0 370 130" preserveAspectRatio="xMinYMid meet" aria-label="Naomi">
-      <text font-family="'Alex Brush', cursive" font-size="108" letter-spacing="7" fill="rgba(242,237,230,.78)" x="6" y="108">Naomi</text>
+      <text font-family="'Ephesis', cursive" font-size="112" letter-spacing="4" fill="none" stroke="rgba(242,237,230,.82)" stroke-width="0.75" x="6" y="108">Naomi</text>
     </svg>
     <svg class="cover-sig-r" viewBox="0 0 430 130" preserveAspectRatio="xMaxYMid meet" aria-label="Vallejo">
-      <text font-family="'Alex Brush', cursive" font-size="108" letter-spacing="7" fill="rgba(242,237,230,.78)" x="424" y="108" text-anchor="end">Vallejo</text>
+      <text font-family="'Ephesis', cursive" font-size="112" letter-spacing="4" fill="none" stroke="rgba(242,237,230,.82)" stroke-width="0.75" x="424" y="108" text-anchor="end">Vallejo</text>
     </svg>
     <div class="cover-sub">
       <div class="cover-role">Fashion Stylist &mdash; Paris</div>
