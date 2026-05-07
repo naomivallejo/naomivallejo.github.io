@@ -341,7 +341,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 #glr{display:none;position:fixed;inset:0;background:#0a0908;z-index:9000;flex-direction:column;}
 #glr.on{display:flex;}
 #glr-top{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;flex-shrink:0;}
-#glr-ct{font-family:'Unbounded',sans-serif;font-size:.45rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(242,237,230,.3);}
+#glr-ct{font-family:'Unbounded',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,237,230,.4);}
 #glr-x{color:rgba(242,237,230,.5);font-size:2rem;background:none;border:none;cursor:pointer;line-height:1;font-weight:200;transition:color .15s;padding:0;cursor:none;}
 #glr-x:hover{color:var(--bone);}
 #glr-main{flex:1;display:flex;align-items:center;justify-content:center;position:relative;min-height:0;padding:0 4.5rem;}
@@ -354,7 +354,9 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 .glr-th{width:48px;height:48px;object-fit:cover;opacity:.35;cursor:pointer;transition:opacity .2s,outline .2s;flex-shrink:0;outline:1px solid transparent;outline-offset:1px;}
 .glr-th.act{opacity:1;outline-color:rgba(242,237,230,.5);}
 .glr-th:hover{opacity:.75;}
-#glr-title{font-family:'Unbounded',sans-serif;font-size:.72rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.65);flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 1rem;}
+#glr-title-area{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:0 1rem;gap:.18rem;}
+#glr-pub{font-family:'Unbounded',sans-serif;font-size:.4rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(242,237,230,.35);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#glr-title{font-family:'Unbounded',sans-serif;font-size:.72rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #glr-hint{font-size:1.1rem;color:rgba(242,237,230,.22);text-align:center;padding-bottom:.5rem;flex-shrink:0;letter-spacing:.4em;}
 .g{cursor:zoom-in;}
 /* ─── EDITORIAL MOODBOARD ─── */
@@ -472,7 +474,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <!-- COVER: using GQ BW image — clean minimal background -->
 <section id="cover">
-  <div class="cover-bg" style="background-image:url('images/carnale/carnale-10.jpg');background-position:center top;"></div>
+  <div class="cover-bg" style="background-image:url('images/carnale/carnale-18.jpg');background-position:center top;"></div>
   <div class="cover-content">
     <div class="cover-name"><span class="cover-name-left">NAOMI</span><span class="cover-name-right"><span class="v">V</span>ALLEJO</span></div>
     <div class="cover-sub">
@@ -520,7 +522,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
     <div class="ed-card" onclick="lbOpen(['images/cap74024/02.jpg','images/cap74024/01.jpg','images/cap74024/03.jpg','images/cap74024/04.jpg','images/cap74024/05.jpg','images/cap74024/06.jpg'],0)">
       <img src="images/cap74024/02.jpg" alt="CAP74024 Miu Miu Jill Kortleve" loading="lazy">
-      <div class="ed-card-info"><span class="ed-card-pub">CAP74024 &times; Miu Miu</span><span class="ed-card-name">Jill Kortleve</span><span class="ed-card-date">Paris</span></div>
+      <div class="ed-card-info"><span class="ed-card-pub">CAP74024 &times; Miu Miu — Ph. Fausto Elizalde</span><span class="ed-card-name">Jill Kortleve</span><span class="ed-card-date">Paris</span></div>
     </div>
 
     <div class="ed-card" onclick="lbOpen(['images/steinberg-vogue/84_05_k70kM9VO.jpg','images/steinberg-vogue/7a_9b_kVS3KJ1p.jpg','images/steinberg-vogue/5b_b1_kcgpOzxp.jpg','images/steinberg-vogue/a1_09_vRGrc9yT.jpg','images/steinberg-vogue/21_0a_JPAhHT3V.jpg','images/steinberg-vogue/9f_69_jyhi5POj.jpg','images/steinberg-vogue/0f_fc_drwplGaS.jpg','images/steinberg-vogue/6d_c9_LkmTQSJW.jpg'],0)">
@@ -534,7 +536,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     </div>
 
     <div class="ed-card" onclick="lbOpen(['images/bad-gyal-gq/gq-01.jpg','images/bad-gyal-gq/gq-02.jpg','images/bad-gyal-gq/gq-03.jpg','images/bad-gyal-gq/gq-04.jpg','images/bad-gyal-gq/gq-05.jpg','images/bad-gyal-gq/gq-06.jpg','images/bad-gyal-gq/gq-07.jpg','images/bad-gyal-gq/gq-08.jpg','images/bad-gyal-gq/gq-09.jpg'],0)">
-      <img src="images/bad-gyal-gq/gq-01.jpg" alt="Bad Gyal GQ Spain" loading="lazy" style="object-fit:contain;background:#0a0908;">
+      <img src="images/bad-gyal-gq/gq-01.jpg" alt="Bad Gyal GQ Spain" loading="lazy" style="object-fit:contain;object-position:center top;background:#1a0c06;">
       <div class="ed-card-info"><span class="ed-card-pub">GQ Spain &mdash; Cover</span><span class="ed-card-name">Bad Gyal</span><span class="ed-card-date">Dec 2024</span></div>
     </div>
 
@@ -549,12 +551,12 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     </div>
 
     <div class="ed-card" onclick="lbOpen(['images/karol-g/elle-cover-1.jpg','images/karol-g/elle-cover-2.jpg','images/karol-g/elle-04.jpg','images/karol-g/elle-05.jpg','images/karol-g/elle-06.jpg','images/karol-g/elle-08.jpg','images/karol-g/elle-09.jpg','images/karol-g/elle-10.jpg','images/karol-g/elle-11.jpg','images/karol-g/elle-03.jpg'],0)">
-      <img src="images/karol-g/elle-cover-1.jpg" alt="Karol G ELLE Espana" loading="lazy" style="object-fit:contain;background:#0a0908;">
+      <img src="images/karol-g/elle-cover-1.jpg" alt="Karol G ELLE Espana" loading="lazy" style="object-fit:contain;object-position:center top;background:#1a0c06;">
       <div class="ed-card-info"><span class="ed-card-pub">ELLE Espa&ntilde;a &mdash; Cover</span><span class="ed-card-name">Karol G</span><span class="ed-card-date">Aug 2025</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/carnale/carnale-01.jpg','images/carnale/carnale-02.jpg','images/carnale/carnale-03.jpg','images/carnale/carnale-04.jpg','images/carnale/carnale-05.jpg','images/carnale/carnale-06.jpg','images/carnale/carnale-07.jpg','images/carnale/carnale-08.jpg','images/carnale/carnale-09.jpg','images/carnale/carnale-10.jpg','images/carnale/carnale-11.jpg','images/carnale/carnale-12.jpg','images/carnale/carnale-13.jpg','images/carnale/carnale-14.jpg','images/carnale/carnale-15.jpg','images/carnale/carnale-16.jpg','images/carnale/carnale-17.jpg','images/carnale/carnale-18.jpg','images/carnale/carnale-19.jpg','images/carnale/carnale-20.jpg','images/carnale/carnale-21.jpg','images/carnale/carnale-22.jpg','images/carnale/carnale-23.jpg','images/carnale/carnale-24.jpg','images/carnale/carnale-25.jpg','images/carnale/carnale-26.jpg','images/carnale/carnale-27.jpg','images/carnale/carnale-28.jpg','images/carnale/carnale-29.jpg','images/carnale/carnale-30.jpg','images/carnale/carnale-31.jpg','images/carnale/carnale-32.jpg','images/carnale/carnale-33.jpg','images/carnale/carnale-34.jpg','images/carnale/carnale-35.jpg'],9)">
-      <img src="images/carnale/carnale-10.jpg" alt="Carnale Issue 07 Mimi Dey" loading="lazy">
+    <div class="ed-card" onclick="lbOpen(['images/carnale/carnale-01.jpg','images/carnale/carnale-02.jpg','images/carnale/carnale-03.jpg','images/carnale/carnale-04.jpg','images/carnale/carnale-05.jpg','images/carnale/carnale-06.jpg','images/carnale/carnale-07.jpg','images/carnale/carnale-08.jpg','images/carnale/carnale-09.jpg','images/carnale/carnale-10.jpg','images/carnale/carnale-11.jpg','images/carnale/carnale-12.jpg','images/carnale/carnale-13.jpg','images/carnale/carnale-14.jpg','images/carnale/carnale-15.jpg','images/carnale/carnale-16.jpg','images/carnale/carnale-17.jpg','images/carnale/carnale-18.jpg','images/carnale/carnale-19.jpg','images/carnale/carnale-20.jpg','images/carnale/carnale-21.jpg','images/carnale/carnale-22.jpg','images/carnale/carnale-23.jpg','images/carnale/carnale-24.jpg','images/carnale/carnale-25.jpg','images/carnale/carnale-26.jpg','images/carnale/carnale-27.jpg','images/carnale/carnale-28.jpg','images/carnale/carnale-29.jpg','images/carnale/carnale-30.jpg','images/carnale/carnale-31.jpg','images/carnale/carnale-32.jpg','images/carnale/carnale-33.jpg','images/carnale/carnale-34.jpg','images/carnale/carnale-35.jpg'],17)">
+      <img src="images/carnale/carnale-18.jpg" alt="Carnale Issue 07 Mimi Dey" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Carnale Issue 07</span><span class="ed-card-name">Mimi Dey</span><span class="ed-card-date">May 2025</span></div>
     </div>
 
@@ -573,12 +575,8 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a</span><span class="ed-card-name">Deva Cassel</span><span class="ed-card-date">Nov 2025</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/mina-serrano/3.jpg'],0)">
-      <img src="images/mina-serrano/3.jpg" alt="Mina Serrano Premios Forque" loading="lazy">
-      <div class="ed-card-info"><span class="ed-card-pub">Premios Forqu&eacute;</span><span class="ed-card-name">Mina Serrano</span><span class="ed-card-date">Jan 2025</span></div>
-    </div>
 
-    <div class="ed-card ed-card-ph" style="cursor:default;">
+<div class="ed-card ed-card-ph" style="cursor:default;">
       <div class="ed-card-info"><span class="ed-card-pub">Vogue CS</span><span class="ed-card-name">Camille Chifflot</span><span class="ed-card-date">Feb 2025</span></div>
     </div>
 
@@ -1009,8 +1007,9 @@ document.getElementById('contact-form').addEventListener('submit',async function
   }
 });
 var LB={imgs:[],i:0};
-var GLR={imgs:[],i:0,title:''};
+var GLR={imgs:[],i:0,title:'',pub:''};
 var _pendingTitle='';
+var _pendingPub='';
 document.addEventListener('click',function(e){
   var card=e.target.closest('.proj-card,.ed-card,.af,.ef');
   if(!card)return;
@@ -1025,10 +1024,13 @@ document.addEventListener('click',function(e){
     var img=card.querySelector('img');
     _pendingTitle=img?(img.alt||''):'';
   }
+  var pubEl=card.querySelector('.proj-card-pub,.ed-card-pub');
+  _pendingPub=pubEl?pubEl.textContent.trim():'';
 },true);
 function lbOpen(imgs,i){
   GLR.imgs=imgs; GLR.i=(i||0);
   GLR.title=_pendingTitle; _pendingTitle='';
+  GLR.pub=_pendingPub; _pendingPub='';
   glrRender();
   document.getElementById('glr').classList.add('on');
   document.body.style.overflow='hidden';
@@ -1046,9 +1048,11 @@ function glrRender(){
   var hint=document.getElementById('glr-hint');
   var single=GLR.imgs.length===1;
   img.src=GLR.imgs[GLR.i];
-  document.getElementById('glr-ct').textContent=(GLR.i+1)+' — '+GLR.imgs.length;
+  document.getElementById('glr-ct').textContent=(GLR.i+1)+' / '+GLR.imgs.length;
   var titleEl=document.getElementById('glr-title');
   if(titleEl)titleEl.textContent=GLR.title||'';
+  var pubEl=document.getElementById('glr-pub');
+  if(pubEl)pubEl.textContent=GLR.pub||'';
   document.getElementById('glr-prev').style.visibility=single?'hidden':'visible';
   document.getElementById('glr-next').style.visibility=single?'hidden':'visible';
   hint.style.display=single?'none':'block';
@@ -1135,7 +1139,7 @@ function artBack(){
 <div id="glr">
   <div id="glr-top">
     <span id="glr-ct"></span>
-    <span id="glr-title"></span>
+    <div id="glr-title-area"><span id="glr-pub"></span><span id="glr-title"></span></div>
     <button id="glr-x" onclick="glrClose()">&#215;</button>
   </div>
   <div id="glr-main">
