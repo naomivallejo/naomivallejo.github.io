@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naomi Vallejo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Alex+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Alex+Brush&family=Ephesis&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -30,9 +30,10 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 3rem;background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(242,237,230,.05);}
-.nav-mono{display:inline-flex;align-items:center;text-decoration:none;opacity:.82;transition:opacity .3s;cursor:none;}
+.nav-mono{display:inline-flex;align-items:flex-start;flex-direction:column;gap:.12rem;text-decoration:none;opacity:.85;transition:opacity .3s;cursor:none;}
 .nav-mono:hover{opacity:1;}
-.nav-nvl{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.42rem;letter-spacing:.48em;text-transform:uppercase;color:rgba(242,237,230,.62);padding-right:.48em;}
+.nav-name-first{font-family:'Alex Brush',cursive;font-size:1.45rem;line-height:1;letter-spacing:.02em;color:rgba(242,237,230,.88);}
+.nav-name-last{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.3rem;letter-spacing:.38em;text-transform:uppercase;color:rgba(242,237,230,.48);padding-left:.06rem;}
 .nav-r{display:flex;align-items:center;gap:2.2rem;}
 .nav-r a{font-size:.7rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.4);text-decoration:none;transition:color .2s;white-space:nowrap;}
 .nav-r a:hover,.nav-r a.on{color:var(--bone);}
@@ -451,7 +452,8 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <nav id="main-nav" onclick="if(this.classList.contains('menu-open')&&!event.target.closest('a,button'))navClose()">
   <a href="#cover" class="nav-mono" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Naomi Vallejo López">
-    <span class="nav-nvl">NVL</span>
+    <span class="nav-name-first">Naomi</span>
+    <span class="nav-name-last">Vallejo L&oacute;pez</span>
   </a>
   <div class="nav-r" id="nav-r">
     <a href="#editorial" id="n-ed" onclick="navClose()">Editorial</a>
@@ -470,10 +472,8 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 <section id="cover">
   <div class="cover-bg" style="background-image:url('images/karol-g/elle-04.jpg');background-position:center 18%;"></div>
   <div class="cover-content">
-    <svg class="cover-sig" id="sig-svg" viewBox="0 0 760 130" preserveAspectRatio="xMinYMid meet" aria-label="Naomi Vallejo">
-      <text font-family="'Alex Brush', cursive" font-size="108" letter-spacing="7"
-            fill="none" stroke="rgba(242,237,230,.58)" stroke-width="0.8"
-            x="6" y="108">Naomi Vallejo</text>
+    <svg class="cover-sig" id="sig-svg" viewBox="0 0 820 130" preserveAspectRatio="xMinYMid meet" aria-label="Naomi Vallejo">
+      <text font-family="'Ephesis', cursive" font-size="110" letter-spacing="6" fill="rgba(242,237,230,.72)" x="6" y="108">Naomi Vallejo</text>
     </svg>
     <div class="cover-sub">
       <div class="cover-role">Fashion Stylist &mdash; Paris</div>
