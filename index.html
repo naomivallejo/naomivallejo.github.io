@@ -450,9 +450,15 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <nav id="main-nav" onclick="if(this.classList.contains('menu-open')&&!event.target.closest('a,button'))navClose()">
   <a href="#cover" class="nav-mono" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Naomi Vallejo López">
-    <svg viewBox="0 0 24 34" width="22" height="31" fill="none" stroke="rgba(242,237,230,.7)" stroke-width="0.95" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <!-- Abstract N: single continuous path, slightly inclined verticals -->
-      <path d="M 3,30 L 4,4 L 17,30 L 18,4"/>
+    <svg viewBox="0 0 44 58" width="26" height="34" fill="none" stroke="rgba(242,237,230,.7)" stroke-width="0.85" stroke-linecap="butt" stroke-linejoin="round" aria-hidden="true">
+      <!-- N: tall left structure, two verticals + diagonal -->
+      <path d="M 4,54 L 4,4 L 22,54 L 22,4"/>
+      <!-- V: pointed arch (inverted A-shape), apex centered — same grammar as reference's A -->
+      <path d="M 8,54 L 22,26 L 36,54"/>
+      <!-- L: right vertical + foot -->
+      <path d="M 34,4 L 34,54 L 42,54"/>
+      <!-- Circle: design element inscribed at visual center, like reference -->
+      <circle cx="22" cy="36" r="7"/>
     </svg>
   </a>
   <div class="nav-r" id="nav-r">
