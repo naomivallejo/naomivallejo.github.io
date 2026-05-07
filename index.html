@@ -102,23 +102,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .epull{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.6rem;line-height:1.4;color:rgba(10,9,8,.14);padding:2rem 0;border-top:1px solid rgba(10,9,8,.08);border-bottom:1px solid rgba(10,9,8,.08);align-self:center;}
 
 /* ─── ARTISTS ─── */
-#artists{background:#ede8df;color:var(--ink);padding:0 0 8rem;scroll-margin-top:65px;}
-#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;background:#ede8df;}
-/* Talents cream-bg overrides */
-#artists .art-hdr{border-bottom-color:rgba(10,9,8,.1);}
-#artists .art-htitle,#artists .art-detail-kicker{color:var(--ink);}
-#artists .art-htitle em{color:rgba(10,9,8,.38);}
-#artists .art-hsub{color:rgba(10,9,8,.4);}
-#artists .art-back{color:rgba(10,9,8,.5);}
-#artists .art-back:hover{color:var(--ink);}
-#artists .art-detail-hdr{border-bottom-color:rgba(10,9,8,.1);}
-#artists .art-ov-card{background:rgba(10,9,8,.05);}
-#artists .proj-card{background:rgba(10,9,8,.05);}
-#artists .aw{color:var(--ink);}
-#artists .ay{color:rgba(10,9,8,.42);}
-#artists .ab{border-bottom-color:rgba(10,9,8,.07);}
-#artists .abn{-webkit-text-stroke:1px rgba(10,9,8,.12);color:transparent;}
-#artists .adiv{background:rgba(10,9,8,.07);}
+#artists{background:var(--ink);color:var(--bone);padding:0 0 8rem;scroll-margin-top:65px;}
+#art-overview-page{height:calc(100vh - 65px);display:flex;flex-direction:column;overflow:hidden;background:var(--ink);}
+/* Talents dark-bg overrides */
+#artists .art-hdr{border-bottom-color:rgba(242,237,230,.06);}
+#artists .art-htitle,#artists .art-detail-kicker{color:var(--bone);}
+#artists .art-htitle em{color:rgba(242,237,230,.38);}
+#artists .art-hsub{color:rgba(242,237,230,.38);}
+#artists .art-back{color:rgba(242,237,230,.5);}
+#artists .art-back:hover{color:var(--bone);}
+#artists .art-detail-hdr{border-bottom-color:rgba(242,237,230,.06);}
+#artists .art-ov-card{background:rgba(242,237,230,.04);}
+#artists .proj-card{background:rgba(242,237,230,.05);}
+#artists .art-ov-name{color:var(--bone);}
+#artists .art-ov-sub{color:rgba(242,237,230,.52);}
 #art-overview-page.detail-mode{height:0;overflow:hidden;padding:0;}
 .art-hdr{padding:1.8rem 3rem 1rem;border-bottom:1px solid rgba(242,237,230,.06);display:grid;grid-template-columns:1fr auto;align-items:end;gap:3rem;flex-shrink:0;}
 .art-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.8rem,3.5vw,3.8rem);font-weight:900;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;}
