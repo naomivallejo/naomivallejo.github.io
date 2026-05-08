@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naomi Vallejo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Alex+Brush&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Alex+Brush&family=Sacramento&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -49,8 +49,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:grayscale(1) contrast(1.06) brightness(1.0);}
 .cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,.25) 52%,rgba(10,9,8,.08) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
-.cover-sig{position:absolute;bottom:7rem;left:3rem;z-index:3;pointer-events:none;font-family:'Pinyon Script',cursive;font-size:clamp(4rem,7vw,8rem);color:rgba(242,237,230,.86);line-height:1;letter-spacing:.02em;}
-@media(max-width:600px){.cover-sig{bottom:5.5rem;left:1.5rem;font-size:clamp(3rem,11vw,5rem);}}
+.cover-sig{position:absolute;bottom:7rem;left:3rem;z-index:3;pointer-events:none;font-family:'Sacramento',cursive;font-size:clamp(4.5rem,8vw,9.5rem);color:rgba(242,237,230,.86);line-height:1;letter-spacing:.02em;}
+.cover-sig-r{position:absolute;bottom:7rem;right:3rem;z-index:3;pointer-events:none;font-family:'Sacramento',cursive;font-size:clamp(4.5rem,8vw,9.5rem);color:rgba(242,237,230,.86);line-height:1;letter-spacing:.02em;}
+@media(max-width:600px){.cover-sig{bottom:5.5rem;left:1.5rem;font-size:clamp(3.2rem,10vw,5rem);}.cover-sig-r{bottom:5.5rem;right:1.5rem;font-size:clamp(3.2rem,10vw,5rem);}}
 .cover-name .v{color:var(--bone);}
 .cover-sub{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:absolute;bottom:3.5rem;left:3rem;right:3rem;z-index:5;}
 .cover-role{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(242,237,230,.35);}
@@ -473,7 +474,8 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 <section id="cover">
   <div class="cover-bg" style="background-image:url('images/karol-g/karol-5.avif');background-position:center 20%;"></div>
   <div class="cover-content">
-    <div class="cover-sig">Naomi Vallejo</div>
+    <div class="cover-sig">Naomi</div>
+    <div class="cover-sig-r">Vallejo</div>
     <div class="cover-sub">
       <div class="cover-role">Fashion Stylist &mdash; Paris</div>
       <div class="cover-meta">Open to relocation<br><span class="cover-langs">ES &middot; FR &middot; EN</span></div>
