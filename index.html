@@ -475,7 +475,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <!-- COVER: using GQ BW image — clean minimal background -->
 <section id="cover">
-  <div class="cover-bg" style="background-image:url('images/karol-g/karol-5.avif');background-position:center 20%;background-size:cover;"></div>
+  <div class="cover-bg" style="background-image:url('images/karol-g/karol-5.avif');background-position:center 20%;background-size:cover;background-color:#0a0908;"></div>
   <div class="cover-content">
     <div class="cover-sig">Naomi</div>
     <div class="cover-sig-r">Vallejo</div>
@@ -927,9 +927,9 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
 // COVER SLIDESHOW — mixed talents, face-safe positions
 (function(){
   const slides=[
-    {src:"images/karol-g/karol-5.avif",                    pos:"center 20%",    size:"cover"},
-    {src:"images/hb-cover.jpg",                            pos:"center center", size:"auto 120%"},
-    {src:"images/steinberg-vogue/84_05_k70kM9VO.jpg",     pos:"center center", size:"auto 120%"}
+    {src:"images/karol-g/karol-5.avif",                    pos:"center 20%",  size:"cover"},
+    {src:"images/hb-cover.jpg",                            pos:"center 10%",  size:"cover"},
+    {src:"images/steinberg-vogue/84_05_k70kM9VO.jpg",     pos:"center top",  size:"cover"}
   ];
   let idx=0;
   const bg=document.querySelector('.cover-bg');
