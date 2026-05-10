@@ -49,7 +49,7 @@ nav.nav-scrolled{background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-b
 
 /* COVER */
 #cover{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:grayscale(1) contrast(1.06) brightness(1.0);transition:opacity 1s ease;}
+.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:contrast(1.05) brightness(0.95);transition:opacity 1s ease;}
 .cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,.25) 52%,rgba(10,9,8,.08) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
 .cover-sig{position:absolute;bottom:7rem;left:3rem;z-index:3;pointer-events:none;font-family:'Brittany',cursive;font-size:clamp(5rem,9vw,11rem);color:rgba(242,237,230,.82);line-height:1;letter-spacing:.01em;}
@@ -77,7 +77,7 @@ nav.nav-scrolled{background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-b
 .s-kicker{font-family:'Libre Baskerville',serif;font-style:italic;font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:var(--choco3);margin-bottom:1rem;display:block;}
 
 /* ─── EDITORIAL ─── */
-#editorial{background:var(--ink);color:var(--bone);padding:0 0 8rem;}
+#editorial{background:var(--ink);color:var(--bone);padding:0 0 8rem;scroll-margin-top:75px;}
 .ed-hdr{padding:5rem 3rem 3rem;border-bottom:1px solid rgba(242,237,230,.08);display:flex;align-items:flex-end;gap:3rem;}
 .ed-htitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.6rem,3vw,3rem);font-weight:700;line-height:.9;letter-spacing:-.025em;text-transform:uppercase;flex:1;color:var(--bone);}
 .ed-htitle em{font-family:'Libre Baskerville',serif;font-style:italic;font-weight:400;font-size:.58em;display:block;color:rgba(242,237,230,.38);letter-spacing:.02em;margin-bottom:.4rem;}
@@ -542,19 +542,19 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">S Moda El Pa&iacute;s</span><span class="ed-card-name">Emma Corrin</span><span class="ed-card-date">Jul 2024</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/diane-kruger/hb-01.jpg','images/diane-kruger/hb-02.jpg','images/diane-kruger/hb-03.jpg','images/diane-kruger/hb-04.jpg','images/diane-kruger/hb-05.jpg','images/diane-kruger/hb-06.jpg','images/diane-kruger/hb-07.jpg','images/diane-kruger/hb-08.jpg','images/diane-kruger/hb-09.jpg'],3)">
+    <div class="ed-card" style="aspect-ratio:4/5;" onclick="lbOpen(['images/diane-kruger/hb-01.jpg','images/diane-kruger/hb-02.jpg','images/diane-kruger/hb-03.jpg','images/diane-kruger/hb-04.jpg','images/diane-kruger/hb-05.jpg','images/diane-kruger/hb-06.jpg','images/diane-kruger/hb-07.jpg','images/diane-kruger/hb-08.jpg','images/diane-kruger/hb-09.jpg'],3)">
       <img src="images/diane-kruger/hb-04.jpg" alt="Diane Kruger HB Espana" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a</span><span class="ed-card-name">Diane Kruger</span><span class="ed-card-date">Nov 2024</span></div>
-    </div>
-
-    <div class="ed-card" onclick="lbOpen(['images/deva-cassel/5.jpg','images/deva-cassel/1.jpg','images/deva-cassel/2.jpg','images/deva-cassel/3.jpg','images/deva-cassel/4.jpg','images/deva-cassel/8.jpg','images/deva-cassel/11.jpg','images/deva-cassel/12.jpg'],0)">
-      <img src="images/deva-cassel/5.jpg" alt="Deva Cassel HB Espana" loading="lazy">
-      <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a</span><span class="ed-card-name">Deva Cassel</span><span class="ed-card-date">Nov 2025</span></div>
     </div>
 
     <div class="ed-card" onclick="lbOpen(['images/steinberg-vogue/84_05_k70kM9VO.jpg','images/steinberg-vogue/7a_9b_kVS3KJ1p.jpg','images/steinberg-vogue/5b_b1_kcgpOzxp.jpg','images/steinberg-vogue/a1_09_vRGrc9yT.jpg','images/steinberg-vogue/21_0a_JPAhHT3V.jpg','images/steinberg-vogue/9f_69_jyhi5POj.jpg','images/steinberg-vogue/0f_fc_drwplGaS.jpg','images/steinberg-vogue/6d_c9_LkmTQSJW.jpg'],0)">
       <img src="images/steinberg-vogue/84_05_k70kM9VO.jpg" alt="Steinberg Vogue CS" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Vogue CS</span><span class="ed-card-name">Steinberg</span><span class="ed-card-date">Sep 2024</span></div>
+    </div>
+
+    <div class="ed-card" style="aspect-ratio:4/5;" onclick="lbOpen(['images/deva-cassel/5.jpg','images/deva-cassel/1.jpg','images/deva-cassel/2.jpg','images/deva-cassel/3.jpg','images/deva-cassel/4.jpg','images/deva-cassel/8.jpg','images/deva-cassel/11.jpg','images/deva-cassel/12.jpg'],0)">
+      <img src="images/deva-cassel/5.jpg" alt="Deva Cassel HB Espana" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a</span><span class="ed-card-name">Deva Cassel</span><span class="ed-card-date">Nov 2025</span></div>
     </div>
 
     <div class="ed-card" onclick="lbOpen(['images/vogue-japan/3.jpg','images/vogue-japan/1.jpg','images/vogue-japan/2.jpg','images/vogue-japan/4.jpg','images/vogue-japan/5.jpg','images/vogue-japan/6.jpg','images/vogue-japan/7.jpg','images/vogue-japan/8.jpg','images/vogue-japan/9.jpg','images/vogue-japan/10.jpg','images/vogue-japan/11.jpg','images/vogue-japan/12.jpg','images/vogue-japan/13.jpg'],0)">
@@ -929,14 +929,13 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
   const slides=[
     {src:"images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-10-1200x1800.jpg", pos:"center top"},
     {src:"images/aitana-vogue-hq/vogue78.JPG",                                     pos:"center top"},
-    {src:"images/vogue-japan/2.jpg",                                               pos:"center top"},
-    {src:"images/steinberg-vogue/21_0a_JPAhHT3V.jpg",                             pos:"center top"},
-    {src:"images/emma-corrin/ec-02.jpg",                                           pos:"center top"},
-    {src:"images/deva-cassel/3.jpg",                                               pos:"center top"},
-    {src:"images/georgina/red-sea-portrait-final.jpg",                             pos:"center top"},
-    {src:"images/vogue-japan/4.jpg",                                               pos:"center top"},
     {src:"images/steinberg-vogue/84_05_k70kM9VO.jpg",                             pos:"center top"},
-    {src:"images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-6-1200x1800.jpg", pos:"center top"}
+    {src:"images/emma-corrin/ec-02.jpg",                                           pos:"center top"},
+    {src:"images/bad-gyal-artists/04.jpg",                                         pos:"center top"},
+    {src:"images/vogue-japan/2.jpg",                                               pos:"center top"},
+    {src:"images/clement/clement-01.jpg",                                          pos:"center top"},
+    {src:"images/deva-cassel/3.jpg",                                               pos:"center top"},
+    {src:"images/vogue-japan/4.jpg",                                               pos:"center top"}
   ];
   let idx=0;
   const bg=document.querySelector('.cover-bg');
@@ -949,7 +948,7 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
       bg.style.backgroundPosition=slides[idx].pos;
       bg.style.opacity='1';
     },900);
-  },5000);
+  },3500);
 })();
 
 const cur=document.getElementById('cur');
