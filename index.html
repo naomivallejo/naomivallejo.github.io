@@ -38,7 +38,7 @@ nav.nav-scrolled{background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-b
 .nav-name-first{font-family:'Alex Brush',cursive;font-size:1.7rem;line-height:1;letter-spacing:.02em;color:rgba(242,237,230,.88);}
 .nav-name-last{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(242,237,230,.65);padding-left:.06rem;}
 .nav-r{display:flex;align-items:center;gap:2.2rem;}
-.nav-r a{font-size:.7rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.75);text-decoration:none;transition:color .2s;white-space:nowrap;}
+.nav-r a{font-size:.7rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.92);text-decoration:none;transition:color .2s;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.6);}
 .nav-r a:hover,.nav-r a.on{color:var(--bone);}
 /* Hamburger */
 .nav-ham{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;justify-content:center;gap:5px;z-index:502;}
@@ -920,19 +920,23 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <script>
 if('scrollRestoration' in history){history.scrollRestoration='manual';}
+if(window.location.hash){history.replaceState(null,'',window.location.pathname);}
 window.scrollTo(0,0);
+window.addEventListener('load',function(){window.scrollTo(0,0);});
 
 // COVER SLIDESHOW — mixed talents, face-safe positions
 (function(){
   const slides=[
     {src:"images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-10-1200x1800.jpg", pos:"center top"},
-    {src:"images/aitana-vogue-hq/main.jpg",                                        pos:"center top"},
-    {src:"images/emma-corrin/ec-01.jpg",                                           pos:"center top"},
-    {src:"images/bad-gyal-gq/gq-01.jpg",                                          pos:"center top"},
-    {src:"images/deva-cassel/1.jpg",                                               pos:"center top"},
+    {src:"images/aitana-vogue-hq/vogue78.JPG",                                     pos:"center top"},
+    {src:"images/vogue-japan/2.jpg",                                               pos:"center top"},
+    {src:"images/steinberg-vogue/21_0a_JPAhHT3V.jpg",                             pos:"center top"},
+    {src:"images/emma-corrin/ec-02.jpg",                                           pos:"center top"},
+    {src:"images/deva-cassel/3.jpg",                                               pos:"center top"},
     {src:"images/georgina/red-sea-portrait-final.jpg",                             pos:"center top"},
-    {src:"images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-6-1200x1800.jpg", pos:"center top"},
-    {src:"images/diane-kruger/hb-01.jpg",                                          pos:"center top"}
+    {src:"images/vogue-japan/4.jpg",                                               pos:"center top"},
+    {src:"images/steinberg-vogue/84_05_k70kM9VO.jpg",                             pos:"center top"},
+    {src:"images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-6-1200x1800.jpg", pos:"center top"}
   ];
   let idx=0;
   const bg=document.querySelector('.cover-bg');
