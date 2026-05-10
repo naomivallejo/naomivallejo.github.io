@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naomi Vallejo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Alex+Brush&family=Carattere&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@200;300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,300&family=Alex+Brush&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Autography';src:url('fonts/Autography.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --ink:#111010;
@@ -46,11 +47,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 
 /* COVER */
 #cover{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:grayscale(1) contrast(1.06) brightness(1.0);}
+.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:grayscale(1) contrast(1.06) brightness(1.0);transition:opacity 1s ease;}
 .cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,.25) 52%,rgba(10,9,8,.08) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
-.cover-sig{position:absolute;bottom:7rem;left:3rem;z-index:3;pointer-events:none;font-family:'Carattere',cursive;font-size:clamp(5rem,9vw,11rem);color:rgba(242,237,230,.78);line-height:1;letter-spacing:.01em;}
-.cover-sig-r{position:absolute;bottom:7rem;right:3rem;z-index:3;pointer-events:none;font-family:'Carattere',cursive;font-size:clamp(5rem,9vw,11rem);color:rgba(242,237,230,.78);line-height:1;letter-spacing:.01em;}
+.cover-sig{position:absolute;bottom:7rem;left:3rem;z-index:3;pointer-events:none;font-family:'Autography',cursive;font-size:clamp(5rem,9vw,11rem);color:rgba(242,237,230,.82);line-height:1;letter-spacing:.01em;}
+.cover-sig-r{position:absolute;bottom:7rem;right:3rem;z-index:3;pointer-events:none;font-family:'Autography',cursive;font-size:clamp(5rem,9vw,11rem);color:rgba(242,237,230,.82);line-height:1;letter-spacing:.01em;}
 @media(max-width:600px){.cover-sig{bottom:5.5rem;left:1.5rem;font-size:clamp(3.5rem,11vw,5.5rem);}.cover-sig-r{bottom:5.5rem;right:1.5rem;font-size:clamp(3.5rem,11vw,5.5rem);}}
 .cover-name .v{color:var(--bone);}
 .cover-sub{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:absolute;bottom:3.5rem;left:3rem;right:3rem;z-index:5;}
@@ -918,6 +919,32 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 <script>
 if('scrollRestoration' in history){history.scrollRestoration='manual';}
 window.scrollTo(0,0);
+
+// COVER SLIDESHOW
+(function(){
+  const photos=[
+    "images/karol-g/karol-5.avif",
+    "images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-10-1200x1800.jpg",
+    "images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-11-1200x1800.jpg",
+    "images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-4-1200x1800.jpg",
+    "images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-6-1200x1800.jpg",
+    "images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-9-1200x1800.jpg"
+  ];
+  let idx=0;
+  const bg=document.querySelector('.cover-bg');
+  // preload all
+  photos.forEach(p=>{const i=new Image();i.src=p;});
+  setInterval(function(){
+    idx=(idx+1)%photos.length;
+    bg.style.opacity='0';
+    setTimeout(function(){
+      bg.style.backgroundImage="url('"+photos[idx]+"')";
+      bg.style.backgroundPosition='center 20%';
+      bg.style.opacity='1';
+    },900);
+  },5000);
+})();
+
 const cur=document.getElementById('cur');
 let mx=0,my=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
