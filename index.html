@@ -9,6 +9,9 @@
 <style>
 @font-face{font-family:'Autography';src:url('fonts/Autography.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap;}
 @font-face{font-family:'Brittany';src:url('fonts/BrittanySignature.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;}
+@font-face{font-family:'Allura';src:url('fonts/Allura-Regular.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;}
+@font-face{font-family:'Qwigley';src:url('fonts/Qwigley-Regular.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;}
+@font-face{font-family:'MonsieurLaDoulaise';src:url('fonts/MonsieurLaDoulaise-Regular.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --ink:#111010;
@@ -52,8 +55,8 @@ nav.nav-scrolled{background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-b
 .cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:grayscale(1) contrast(1.05) brightness(0.95);transition:opacity 0.4s ease;}
 .cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,.25) 52%,rgba(10,9,8,.08) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
-.cover-sig{position:absolute;bottom:8rem;left:3rem;z-index:3;pointer-events:none;font-family:'Bodoni Moda',serif;font-weight:300;font-style:italic;text-transform:none;font-size:clamp(2.8rem,5.5vw,7rem);color:rgba(242,237,230,.6);line-height:1;letter-spacing:.06em;}
-.cover-sig-r{position:absolute;bottom:8rem;right:3rem;z-index:3;pointer-events:none;font-family:'Bodoni Moda',serif;font-weight:300;font-style:italic;text-transform:none;font-size:clamp(2.8rem,5.5vw,7rem);color:rgba(242,237,230,.6);line-height:1;letter-spacing:.06em;}
+.cover-sig{position:absolute;bottom:8rem;left:3rem;z-index:3;pointer-events:none;font-family:'MonsieurLaDoulaise',cursive;font-weight:normal;font-style:normal;text-transform:none;font-size:clamp(4rem,7vw,9rem);color:rgba(242,237,230,.6);line-height:1;letter-spacing:.02em;}
+.cover-sig-r{position:absolute;bottom:8rem;right:3rem;z-index:3;pointer-events:none;font-family:'MonsieurLaDoulaise',cursive;font-weight:normal;font-style:normal;text-transform:none;font-size:clamp(4rem,7vw,9rem);color:rgba(242,237,230,.6);line-height:1;letter-spacing:.02em;}
 @media(max-width:600px){.cover-sig{bottom:5.5rem;left:1.5rem;font-size:clamp(3.5rem,11vw,5.5rem);}.cover-sig-r{bottom:5.5rem;right:1.5rem;font-size:clamp(3.5rem,11vw,5.5rem);}}
 .cover-name .v{color:var(--bone);}
 .cover-sub{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:absolute;bottom:3.5rem;left:3rem;right:3rem;z-index:5;}
