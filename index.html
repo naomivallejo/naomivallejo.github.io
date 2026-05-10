@@ -927,16 +927,9 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
 // COVER SLIDESHOW — mixed talents, face-safe positions
 (function(){
   const slides=[
-    {src:"images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-10-1200x1800.jpg", pos:"center top"},
-    {src:"images/hb-cover.jpg",                                                    pos:"center 15%"},
-    {src:"images/steinberg-vogue/84_05_k70kM9VO.jpg",                             pos:"center top"},
-    {src:"images/aitana/metamorfosis-0505.jpg",                                    pos:"center 20%"},
-    {src:"images/aitana/metamorfosis-tour-3.jpg",                                  pos:"center 20%"},
-    {src:"images/clement/clement-08.jpg",                                          pos:"center 15%"},
-    {src:"images/vogue-japan/4.jpg",                                               pos:"center top"},
-    {src:"images/vogue-japan/9.jpg",                                               pos:"center top"},
-    {src:"images/carnale/carnale-01.jpg",                                          pos:"center top"},
-    {src:"images/emma-corrin/ec-07.jpg",                                           pos:"center top"}
+    {src:"images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-10-1200x1800.jpg", pos:"center top",    size:"cover"},
+    {src:"images/hb-cover.jpg",                                                    pos:"center center", size:"auto 100%"},
+    {src:"images/steinberg-vogue/84_05_k70kM9VO.jpg",                             pos:"center center", size:"auto 100%"}
   ];
   let idx=0;
   const bg=document.querySelector('.cover-bg');
@@ -947,6 +940,7 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
     setTimeout(function(){
       bg.style.backgroundImage="url('"+slides[idx].src+"')";
       bg.style.backgroundPosition=slides[idx].pos;
+      bg.style.backgroundSize=slides[idx].size;
       bg.style.opacity='1';
     },400);
   },1600);
