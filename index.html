@@ -927,13 +927,13 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
 // COVER SLIDESHOW — mixed talents, face-safe positions
 (function(){
   const slides=[
-    {src:"images/vogue-japan/12.jpg",                      pos:"center 68%",  size:"cover", bright:1.6, dur:1700},
+    {src:"images/vogue-japan/12.jpg",                      pos:"center 68%",  size:"cover", bright:1.6},
     {src:"images/karol-g/karol-5.avif",                    pos:"center 20%",  size:"cover"},
     {src:"images/steinberg-vogue/84_05_k70kM9VO.jpg",     pos:"center top",  size:"cover"},
     {src:"images/emma-corrin/ec-02.jpg",                   pos:"center 32%",  size:"cover"},
     {src:"images/carnale/carnale-18.jpg",                  pos:"center 28%",  size:"cover"}
   ];
-  let idx=0, firstCycle=true;
+  let idx=0;
   const bg=document.querySelector('.cover-bg');
   slides.forEach(s=>{const i=new Image();i.src=s.src;});
   function applySlide(s){
@@ -946,16 +946,14 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
   }
   function nextSlide(){
     idx=(idx+1)%slides.length;
-    if(idx===0) firstCycle=false;
     bg.style.opacity='0';
     setTimeout(function(){
       applySlide(slides[idx]);
       bg.style.opacity='1';
-      var dur=(firstCycle && slides[idx].dur) ? slides[idx].dur : 1000;
-      setTimeout(nextSlide, dur);
+      setTimeout(nextSlide, 1600);
     },300);
   }
-  setTimeout(nextSlide, slides[0].dur||1000);
+  setTimeout(nextSlide, 1600);
 })();
 
 const cur=document.getElementById('cur');
