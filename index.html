@@ -49,7 +49,7 @@ nav.nav-scrolled{background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-b
 
 /* COVER */
 #cover{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:contrast(1.05) brightness(0.95);transition:opacity 0.4s ease;}
+.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:grayscale(1) contrast(1.05) brightness(0.95);transition:opacity 0.4s ease;}
 .cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,.25) 52%,rgba(10,9,8,.08) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
 .cover-sig{position:absolute;bottom:8rem;left:3rem;z-index:3;pointer-events:none;font-family:'Brittany',cursive;font-size:clamp(3rem,5.5vw,7rem);color:rgba(242,237,230,.55);line-height:1;letter-spacing:.01em;}
@@ -931,20 +931,26 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
     {src:"images/hb-cover.jpg",                            pos:"center 10%",  size:"cover"},
     {src:"images/steinberg-vogue/84_05_k70kM9VO.jpg",     pos:"center top",  size:"cover"},
     {src:"images/emma-corrin/ec-02.jpg",                   pos:"center 62%",  size:"cover"},
-    {src:"images/vogue-japan/12.jpg",                      pos:"center 38%",  size:"cover"},
+    {src:"images/vogue-japan/12.jpg",                      pos:"center 52%",  size:"cover", bright:1.6},
     {src:"images/clement/clement-08.jpg",                  pos:"center 10%",  size:"cover"},
     {src:"images/carnale/carnale-18.jpg",                  pos:"center 8%",   size:"cover"}
   ];
   let idx=0;
   const bg=document.querySelector('.cover-bg');
   slides.forEach(s=>{const i=new Image();i.src=s.src;});
+  function applySlide(s){
+    bg.style.backgroundImage="url('"+s.src+"')";
+    bg.style.backgroundPosition=s.pos;
+    bg.style.backgroundSize=s.size;
+    bg.style.filter=s.bright
+      ?'grayscale(1) contrast(1.1) brightness('+s.bright+')'
+      :'grayscale(1) contrast(1.05) brightness(0.95)';
+  }
   setInterval(function(){
-    idx=(idx+1)%slides.length;  // cycles 0→1→2→0
+    idx=(idx+1)%slides.length;
     bg.style.opacity='0';
     setTimeout(function(){
-      bg.style.backgroundImage="url('"+slides[idx].src+"')";
-      bg.style.backgroundPosition=slides[idx].pos;
-      bg.style.backgroundSize=slides[idx].size;
+      applySlide(slides[idx]);
       bg.style.opacity='1';
     },400);
   },1600);
