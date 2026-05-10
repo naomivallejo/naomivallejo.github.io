@@ -475,7 +475,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
 <!-- COVER: using GQ BW image — clean minimal background -->
 <section id="cover">
-  <div class="cover-bg" style="background-image:url('images/karol-g/karol-5.avif');background-position:center 20%;"></div>
+  <div class="cover-bg" style="background-image:url('images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-10-1200x1800.jpg');background-position:center top;background-size:cover;"></div>
   <div class="cover-content">
     <div class="cover-sig">Naomi</div>
     <div class="cover-sig-r">Vallejo</div>
@@ -935,7 +935,7 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
   const bg=document.querySelector('.cover-bg');
   slides.forEach(s=>{const i=new Image();i.src=s.src;});
   setInterval(function(){
-    idx=(idx+1)%slides.length;
+    idx=(idx+1)%slides.length;  // cycles 0→1→2→0
     bg.style.opacity='0';
     setTimeout(function(){
       bg.style.backgroundImage="url('"+slides[idx].src+"')";
