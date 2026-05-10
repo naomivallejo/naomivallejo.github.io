@@ -49,11 +49,11 @@ nav.nav-scrolled{background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-b
 
 /* COVER */
 #cover{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:contrast(1.05) brightness(0.95);transition:opacity 1s ease;}
+.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center top;background-repeat:no-repeat;background-color:#0a0908;filter:contrast(1.05) brightness(0.95);transition:opacity 0.4s ease;}
 .cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,.25) 52%,rgba(10,9,8,.08) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
-.cover-sig{position:absolute;bottom:9rem;left:3rem;z-index:3;pointer-events:none;font-family:'Brittany',cursive;font-size:clamp(5rem,9vw,11rem);color:rgba(242,237,230,.48);line-height:1;letter-spacing:.01em;}
-.cover-sig-r{position:absolute;bottom:9rem;right:3rem;z-index:3;pointer-events:none;font-family:'Brittany',cursive;font-size:clamp(5rem,9vw,11rem);color:rgba(242,237,230,.48);line-height:1;letter-spacing:.01em;}
+.cover-sig{position:absolute;bottom:8rem;left:3rem;z-index:3;pointer-events:none;font-family:'Brittany',cursive;font-size:clamp(3rem,5.5vw,7rem);color:rgba(242,237,230,.55);line-height:1;letter-spacing:.01em;}
+.cover-sig-r{position:absolute;bottom:8rem;right:3rem;z-index:3;pointer-events:none;font-family:'Brittany',cursive;font-size:clamp(3rem,5.5vw,7rem);color:rgba(242,237,230,.55);line-height:1;letter-spacing:.01em;}
 @media(max-width:600px){.cover-sig{bottom:5.5rem;left:1.5rem;font-size:clamp(3.5rem,11vw,5.5rem);}.cover-sig-r{bottom:5.5rem;right:1.5rem;font-size:clamp(3.5rem,11vw,5.5rem);}}
 .cover-name .v{color:var(--bone);}
 .cover-sub{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:absolute;bottom:3.5rem;left:3rem;right:3rem;z-index:5;}
@@ -928,11 +928,11 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
 (function(){
   const slides=[
     {src:"images/karol-g/Karol-G-Elle-Spain-08-2025-Txema-Yeste-10-1200x1800.jpg", pos:"center top"},
-    {src:"images/hb-cover.jpg",                                                    pos:"center top"},
+    {src:"images/hb-cover.jpg",                                                    pos:"center 15%"},
     {src:"images/steinberg-vogue/84_05_k70kM9VO.jpg",                             pos:"center top"},
-    {src:"images/aitana/metamorfosis-0502.jpg",                                    pos:"center top"},
-    {src:"images/aitana/metamorfosis-tour-2.jpg",                                  pos:"center top"},
-    {src:"images/clement/clement-10.jpg",                                          pos:"center top"},
+    {src:"images/aitana/metamorfosis-0505.jpg",                                    pos:"center 20%"},
+    {src:"images/aitana/metamorfosis-tour-3.jpg",                                  pos:"center 20%"},
+    {src:"images/clement/clement-08.jpg",                                          pos:"center 15%"},
     {src:"images/vogue-japan/4.jpg",                                               pos:"center top"},
     {src:"images/vogue-japan/9.jpg",                                               pos:"center top"},
     {src:"images/carnale/carnale-01.jpg",                                          pos:"center top"},
@@ -948,8 +948,8 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
       bg.style.backgroundImage="url('"+slides[idx].src+"')";
       bg.style.backgroundPosition=slides[idx].pos;
       bg.style.opacity='1';
-    },900);
-  },2200);
+    },400);
+  },1600);
 })();
 
 const cur=document.getElementById('cur');
