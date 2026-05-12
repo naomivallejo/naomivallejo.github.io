@@ -213,7 +213,7 @@ nav.nav-light .nav-r a:hover,nav.nav-light .nav-r a.on{color:#1a0c06;opacity:1;}
 #about .tlc{color:rgba(92,53,32,.65);}
 #about .tltag{border-color:rgba(92,53,32,.2);color:rgba(92,53,32,.45);}
 .about-wrap{display:grid;grid-template-columns:1fr 1fr;align-items:start;}
-.abl-head{padding:3rem 3.5rem 0.5rem;border-right:1px solid rgba(242,237,230,.05);}
+.abl-head{padding:8rem 3.5rem 0.5rem;border-right:1px solid rgba(242,237,230,.05);}
 .abr-head{display:none;}
 .abl-body{padding:0 3.5rem 3rem;border-right:1px solid rgba(242,237,230,.05);display:flex;flex-direction:column;justify-content:space-between;}
 .abn2{font-family:'Unbounded',sans-serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:900;line-height:.88;letter-spacing:-.025em;text-transform:uppercase;margin-bottom:2rem;}
@@ -300,39 +300,33 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   #cover{min-height:100dvh;}
   .cover-name{bottom:9rem;left:1.4rem;right:1.4rem;flex-direction:column;gap:.1rem;align-items:flex-start;}
   .cover-name-left,.cover-name-right{font-size:clamp(2rem,10.5vw,3.2rem);line-height:.88;}
-  .cover-sub{bottom:4.5rem;left:1.4rem;right:1.4rem;flex-direction:column;align-items:flex-start;gap:.3rem;}
-  .cover-meta{text-align:left;line-height:1.6;display:flex;flex-direction:row;justify-content:space-between;align-items:center;width:100%;font-size:.42rem;}
-  .cover-meta br{display:none;}
-  .cover-langs{font-size:.36rem;}
+  .cover-sub{bottom:4.5rem;left:1.4rem;right:1.4rem;flex-direction:row;justify-content:space-between;align-items:center;gap:.5rem;}
+  .cover-role{font-size:.38rem;letter-spacing:.35em;}
+  .cover-meta{text-align:right;line-height:1.9;font-size:.38rem;}
+  .cover-meta br{display:inline;}
+  .cover-langs{font-size:.34rem;letter-spacing:.35em;}
   .cover-scroll{display:none;}
 
   /* EDITORIAL */
   .ed-hdr{padding:3.5rem 1.4rem 2rem;}
   .ed-moodboard{padding:1.2rem 1.4rem 3rem;}
 
-  /* TALENTS overview */
-  #art-overview-page{height:auto;}
+  /* TALENTS — show all sections stacked, no click-through */
+  #art-overview-page{height:auto;overflow:visible;}
+  #art-overview-page.detail-mode{height:auto;overflow:visible;padding:0;}
   .art-hdr{padding:1.4rem 1.4rem .8rem;}
-  .art-overview{
-    flex:none;
-    grid-template-columns:repeat(2,1fr);
-    grid-template-rows:none;
-    grid-auto-rows:minmax(36vw,1fr);
-    gap:.5rem;
-    padding:.5rem 1.4rem 1.2rem;
-  }
-
-  /* TALENT DETAIL */
-  .art-detail.active{height:auto;min-height:calc(100vh - 65px);display:flex;flex-direction:column;}
+  .art-overview{display:none;}
+  .art-detail{display:flex !important;flex-direction:column;height:auto !important;min-height:0 !important;}
+  .art-back{display:none;}
+  .art-detail-name{padding:1.2rem 1.4rem 0;}
   .proj-grid{
     flex:1;
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    grid-auto-rows:minmax(140px,1fr);
+    grid-auto-rows:minmax(140px,auto);
     padding:.4rem 1.4rem .6rem;
     gap:.5rem;
   }
-  .art-back{padding:1.4rem 0 .3rem 1.4rem;}
   .art-detail-hdr{padding:.1rem 1.4rem .7rem;}
 
   /* EDITORIAL HEADER — stack on mobile, hide hint text */
@@ -343,7 +337,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   /* ABOUT — less top padding now that name is removed */
   .abl-head{padding:2rem 1.4rem 1.5rem;}
   .abl-body{padding:0 1.4rem 2.5rem;}
-  .abr{padding:2rem 1.4rem 3rem;}
+  .abr{padding:2rem 1.4rem 3rem;grid-column:1;grid-row:auto;}
   .ablang{gap:1.2rem;}
 
   /* CONTACT */
