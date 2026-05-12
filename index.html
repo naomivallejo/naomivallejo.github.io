@@ -397,9 +397,9 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 .ed-card-info{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,0) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:.85rem;transition:opacity .3s;}
 .ed-card-ph .ed-card-info{opacity:1;background:rgba(10,9,8,.18);}
 .ed-ghost{visibility:hidden;pointer-events:none;background:none!important;}
-.ed-card-pub{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,237,230,.7);margin-bottom:.32rem;}
-.ed-card-name{font-family:'Libre Baskerville',serif;font-size:1.05rem;line-height:1.2;color:var(--bone);}
-.ed-card-date{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,230,.5);margin-top:.28rem;}
+.ed-card-pub{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,237,230,.65);margin-bottom:.24rem;}
+.ed-card-name{font-family:'Libre Baskerville',serif;font-size:.82rem;line-height:1.2;color:var(--bone);}
+.ed-card-date{font-size:.42rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,230,.45);margin-top:.18rem;}
 
 
 /* ─── PROJECT MOODBOARD (inside talent detail) ─── */
@@ -443,6 +443,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 /* Fashion Week: tighter header so grid is visible on first viewport */
 #runway .ed-hdr{padding:1.5rem 3rem 1.5rem;}
 #runway .ed-moodboard{padding-top:1rem;}
+#runway .ed-hint{text-align:left;margin-left:0;margin-right:auto;}
 
 @media(max-width:900px){
   .ed-moodboard{grid-template-columns:repeat(2,1fr);padding:1.5rem 1.5rem 3rem;gap:1rem;}
@@ -856,14 +857,14 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 
   <div class="ed-moodboard sr">
 
-    <div class="ed-card" onclick="lbOpen(['images/georgina/valentino-final.jpg'],0)">
-      <img src="images/georgina/valentino-final.jpg" alt="Valentino AW25 Georgina" loading="lazy">
-      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Valentino</span><span class="ed-card-date">Georgina &middot; Mar 2025</span></div>
+    <div class="ed-card" onclick="lbOpen(['images/loewe-ss26/loewe-01.jpg','images/loewe-ss26/loewe-02.jpg','images/loewe-ss26/loewe-03.jpg','images/loewe-ss26/loewe-04.jpg','images/loewe-ss26/loewe-05.jpg','images/loewe-ss26/loewe-06.jpg','images/loewe-ss26/loewe-07.jpg','images/loewe-ss26/loewe-08.jpg','images/loewe-ss26/loewe-09.jpg','images/loewe-ss26/loewe-10.jpg','images/loewe-ss26/loewe-11.jpg','images/loewe-ss26/loewe-12.jpg','images/loewe-ss26/loewe-13.jpg','images/loewe-ss26/loewe-14.jpg','images/loewe-ss26/loewe-15.jpg','images/loewe-ss26/loewe-16.jpg','images/loewe-ss26/loewe-17.jpg','images/loewe-ss26/loewe-18.jpg','images/loewe-ss26/loewe-19.jpg','images/loewe-ss26/loewe-20.jpg','images/loewe-ss26/loewe-21.jpg','images/loewe-ss26/loewe-22.jpg','images/loewe-ss26/loewe-23.jpg','images/loewe-ss26/loewe-24.jpg','images/loewe-ss26/loewe-25.jpg','images/loewe-ss26/loewe-26.jpg','images/loewe-ss26/loewe-27.jpg','images/loewe-ss26/loewe-28.jpg','images/loewe-ss26/loewe-29.jpg','images/loewe-ss26/loewe-30.jpg','images/loewe-ss26/loewe-31.jpg','images/loewe-ss26/loewe-32.jpg','images/loewe-ss26/loewe-33.jpg','images/loewe-ss26/loewe-34.jpg','images/loewe-ss26/loewe-35.jpg','images/loewe-ss26/loewe-36.jpg','images/loewe-ss26/loewe-37.jpg','images/loewe-ss26/loewe-38.jpg','images/loewe-ss26/loewe-39.jpg','images/loewe-ss26/loewe-40.jpg','images/loewe-ss26/loewe-41.jpg','images/loewe-ss26/loewe-42.jpg','images/loewe-ss26/loewe-43.jpg','images/loewe-ss26/loewe-44.jpg','images/loewe-ss26/loewe-45.jpg','images/loewe-ss26/loewe-46.jpg','images/loewe-ss26/loewe-47.jpg','images/loewe-ss26/loewe-48.jpg','images/loewe-ss26/loewe-49.jpg','images/loewe-ss26/loewe-50.jpg','images/loewe-ss26/loewe-51.jpg','images/loewe-ss26/loewe-52.jpg','images/loewe-ss26/loewe-53.jpg','images/loewe-ss26/loewe-54.jpg'],0)">
+      <img src="images/loewe-ss26/loewe-01.jpg" alt="Loewe SS26 PFW" loading="lazy" style="object-fit:cover;object-position:center top;">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Loewe</span><span class="ed-card-date">Priscilla &middot; SS26</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-artists/11.jpg'],0)">
-      <img src="images/bad-gyal-artists/11.jpg" alt="Courrèges PFW Bad Gyal" loading="lazy">
-      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Courr&egrave;ges</span><span class="ed-card-date">Bad Gyal &middot; Mar 2025</span></div>
+    <div class="ed-card" onclick="lbOpen(['images/luis-de-javier/ldj-14.jpg','images/luis-de-javier/ldj-01.jpg','images/luis-de-javier/ldj-02.jpg','images/luis-de-javier/ldj-03.jpg','images/luis-de-javier/ldj-04.jpg','images/luis-de-javier/ldj-05.jpg','images/luis-de-javier/ldj-06.jpg','images/luis-de-javier/ldj-07.jpg','images/luis-de-javier/ldj-08.jpg','images/luis-de-javier/ldj-09.jpg','images/luis-de-javier/ldj-10.jpg','images/luis-de-javier/ldj-11.jpg','images/luis-de-javier/ldj-12.jpg','images/luis-de-javier/ldj-13.jpg','images/luis-de-javier/ldj-14.jpg','images/luis-de-javier/ldj-15.jpg','images/luis-de-javier/ldj-16.jpg','images/luis-de-javier/ldj-17.jpg','images/luis-de-javier/ldj-18.jpg','images/luis-de-javier/ldj-19.jpg','images/luis-de-javier/ldj-20.jpg','images/luis-de-javier/ldj-21.jpg','images/luis-de-javier/ldj-22.jpg','images/luis-de-javier/ldj-23.jpg'],0)">
+      <img src="images/luis-de-javier/ldj-14.jpg" alt="Luis de Javier SS26 PFW" loading="lazy" style="object-fit:cover;object-position:center top;">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Luis de Javier</span><span class="ed-card-date">SS26 &middot; Oct 2025</span></div>
     </div>
 
     <div class="ed-card" onclick="lbOpen(['images/georgina/ldss-show.jpg'],0)">
@@ -876,14 +877,14 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Valentino</span><span class="ed-card-date">Bad Gyal &middot; Mar 2025</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/loewe-ss26/loewe-01.jpg','images/loewe-ss26/loewe-02.jpg','images/loewe-ss26/loewe-03.jpg','images/loewe-ss26/loewe-04.jpg','images/loewe-ss26/loewe-05.jpg','images/loewe-ss26/loewe-06.jpg','images/loewe-ss26/loewe-07.jpg','images/loewe-ss26/loewe-08.jpg','images/loewe-ss26/loewe-09.jpg','images/loewe-ss26/loewe-10.jpg','images/loewe-ss26/loewe-11.jpg','images/loewe-ss26/loewe-12.jpg','images/loewe-ss26/loewe-13.jpg','images/loewe-ss26/loewe-14.jpg','images/loewe-ss26/loewe-15.jpg','images/loewe-ss26/loewe-16.jpg','images/loewe-ss26/loewe-17.jpg','images/loewe-ss26/loewe-18.jpg','images/loewe-ss26/loewe-19.jpg','images/loewe-ss26/loewe-20.jpg','images/loewe-ss26/loewe-21.jpg','images/loewe-ss26/loewe-22.jpg','images/loewe-ss26/loewe-23.jpg','images/loewe-ss26/loewe-24.jpg','images/loewe-ss26/loewe-25.jpg','images/loewe-ss26/loewe-26.jpg','images/loewe-ss26/loewe-27.jpg','images/loewe-ss26/loewe-28.jpg','images/loewe-ss26/loewe-29.jpg','images/loewe-ss26/loewe-30.jpg','images/loewe-ss26/loewe-31.jpg','images/loewe-ss26/loewe-32.jpg','images/loewe-ss26/loewe-33.jpg','images/loewe-ss26/loewe-34.jpg','images/loewe-ss26/loewe-35.jpg','images/loewe-ss26/loewe-36.jpg','images/loewe-ss26/loewe-37.jpg','images/loewe-ss26/loewe-38.jpg','images/loewe-ss26/loewe-39.jpg','images/loewe-ss26/loewe-40.jpg','images/loewe-ss26/loewe-41.jpg','images/loewe-ss26/loewe-42.jpg','images/loewe-ss26/loewe-43.jpg','images/loewe-ss26/loewe-44.jpg','images/loewe-ss26/loewe-45.jpg','images/loewe-ss26/loewe-46.jpg','images/loewe-ss26/loewe-47.jpg','images/loewe-ss26/loewe-48.jpg','images/loewe-ss26/loewe-49.jpg','images/loewe-ss26/loewe-50.jpg','images/loewe-ss26/loewe-51.jpg','images/loewe-ss26/loewe-52.jpg','images/loewe-ss26/loewe-53.jpg','images/loewe-ss26/loewe-54.jpg'],0)">
-      <img src="images/loewe-ss26/loewe-01.jpg" alt="Loewe SS26 PFW" loading="lazy" style="object-fit:cover;object-position:center top;">
-      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Loewe</span><span class="ed-card-date">Priscilla &middot; SS26</span></div>
+    <div class="ed-card" onclick="lbOpen(['images/georgina/valentino-final.jpg'],0)">
+      <img src="images/georgina/valentino-final.jpg" alt="Valentino AW25 Georgina" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Valentino</span><span class="ed-card-date">Georgina &middot; Mar 2025</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/luis-de-javier/ldj-14.jpg','images/luis-de-javier/ldj-01.jpg','images/luis-de-javier/ldj-02.jpg','images/luis-de-javier/ldj-03.jpg','images/luis-de-javier/ldj-04.jpg','images/luis-de-javier/ldj-05.jpg','images/luis-de-javier/ldj-06.jpg','images/luis-de-javier/ldj-07.jpg','images/luis-de-javier/ldj-08.jpg','images/luis-de-javier/ldj-09.jpg','images/luis-de-javier/ldj-10.jpg','images/luis-de-javier/ldj-11.jpg','images/luis-de-javier/ldj-12.jpg','images/luis-de-javier/ldj-13.jpg','images/luis-de-javier/ldj-14.jpg','images/luis-de-javier/ldj-15.jpg','images/luis-de-javier/ldj-16.jpg','images/luis-de-javier/ldj-17.jpg','images/luis-de-javier/ldj-18.jpg','images/luis-de-javier/ldj-19.jpg','images/luis-de-javier/ldj-20.jpg','images/luis-de-javier/ldj-21.jpg','images/luis-de-javier/ldj-22.jpg','images/luis-de-javier/ldj-23.jpg'],0)">
-      <img src="images/luis-de-javier/ldj-14.jpg" alt="Luis de Javier SS26 PFW" loading="lazy" style="object-fit:cover;object-position:center top;">
-      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Luis de Javier</span><span class="ed-card-date">SS26 &middot; Oct 2025</span></div>
+    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-artists/11.jpg'],0)">
+      <img src="images/bad-gyal-artists/11.jpg" alt="Courrèges PFW Bad Gyal" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Paris Fashion Week</span><span class="ed-card-name">Courr&egrave;ges</span><span class="ed-card-date">Bad Gyal &middot; Mar 2025</span></div>
     </div>
 
     <div class="ed-card" onclick="lbOpen(['images/bad-gyal-artists/12.jpg'],0)">
