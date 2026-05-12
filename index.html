@@ -66,7 +66,7 @@ nav.nav-light .nav-r a:hover,nav.nav-light .nav-r a.on{color:#1a0c06;opacity:1;}
 .cover-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,9,8,.55) 0%,transparent 28%),linear-gradient(to top,rgba(10,9,8,.88) 0%,rgba(10,9,8,.25) 52%,rgba(10,9,8,.08) 100%);}
 .cover-content{position:absolute;inset:0;z-index:2;}
 .cover-sig{position:absolute;bottom:6.5rem;left:3rem;z-index:3;pointer-events:none;font-family:'Unbounded',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.5rem,3vw,3.8rem);color:rgba(242,237,230,.6);line-height:1;letter-spacing:-.025em;}
-.cover-sig-r{position:absolute;bottom:6.5rem;right:3rem;z-index:3;pointer-events:none;font-family:'Unbounded',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.5rem,3vw,3.8rem);color:rgba(242,237,230,.6);line-height:1;letter-spacing:-.025em;}@media(max-width:600px){.cover-sig{bottom:5.5rem;left:1.4rem;font-size:clamp(3.5rem,11vw,5.5rem);}.cover-sig-r{bottom:5.5rem;right:1.4rem;font-size:clamp(3.5rem,11vw,5.5rem);}}
+.cover-sig-r{position:absolute;bottom:6.5rem;right:3rem;z-index:3;pointer-events:none;font-family:'Unbounded',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.5rem,3vw,3.8rem);color:rgba(242,237,230,.6);line-height:1;letter-spacing:-.025em;}@media(max-width:600px){.cover-sig{bottom:8rem;left:1.4rem;font-size:clamp(1rem,4vw,1.6rem);}.cover-sig-r{bottom:8rem;right:1.4rem;font-size:clamp(1rem,4vw,1.6rem);}}
 .cover-name .v{color:var(--bone);}
 .cover-sub{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:absolute;bottom:3.5rem;left:3rem;right:3rem;z-index:20;}
 .cover-role{font-family:'Unbounded',sans-serif;font-weight:200;font-size:.52rem;letter-spacing:.5em;text-transform:uppercase;color:rgba(242,237,230,.35);}
@@ -335,8 +335,13 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   .art-back{padding:1.4rem 0 .3rem 1.4rem;}
   .art-detail-hdr{padding:.1rem 1.4rem .7rem;}
 
-  /* ABOUT */
-  .abl-head{padding:3rem 1.4rem 1.5rem;}
+  /* EDITORIAL HEADER — stack on mobile, hide hint text */
+  .ed-hdr{flex-direction:column;align-items:flex-start;gap:.6rem;}
+  .ed-hint{display:none;}
+  #runway .ed-hint{display:none;}
+
+  /* ABOUT — less top padding now that name is removed */
+  .abl-head{padding:2rem 1.4rem 1.5rem;}
   .abl-body{padding:0 1.4rem 2.5rem;}
   .abr{padding:2rem 1.4rem 3rem;}
   .ablang{gap:1.2rem;}
@@ -482,6 +487,14 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     text-align:right;
     white-space:nowrap;
   }
+}
+
+/* ── EXTRA SMALL SCREENS (< 420px) ── */
+@media(max-width:420px){
+  .ed-moodboard{grid-template-columns:1fr;gap:.8rem;padding:1rem 1.4rem 2rem;}
+  #runway .ed-moodboard{grid-template-columns:1fr;}
+  .art-overview{grid-template-columns:1fr;grid-auto-rows:minmax(56vw,1fr);}
+  .cover-sig,.cover-sig-r{font-size:clamp(.9rem,3.5vw,1.3rem);}
 }
 
 /* Fix: prevent hairline gap (ralla) at top of photo cards */
@@ -769,8 +782,8 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     <div class="art-detail-hdr"><span class="art-detail-kicker">Aitana</span></div>
     <div class="proj-grid">
 
-    <div class="proj-card" onclick="lbOpen(['images/aitana-vogue/cover.jpg','images/aitana-vogue-hq/main.jpg','images/aitana-vogue/01.jpg','images/aitana-vogue/02.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
-      <img src="images/aitana-vogue/cover.jpg" alt="Vogue Espa&ntilde;a" loading="lazy">
+    <div class="proj-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/02.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
+      <img src="images/aitana-vogue-hq/main.jpg" alt="Vogue Espa&ntilde;a" loading="lazy">
       <div class="proj-card-info"><span class="proj-card-pub">Cover Story</span><span class="proj-card-name">Vogue Espa&ntilde;a<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Jul 2025</span></div>
     </div>
     <div class="proj-card" onclick="lbOpen(['images/aitana/metamorfosis-0502.jpg','images/aitana/metamorfosis-0503.jpg','images/aitana/metamorfosis-0504.jpg','images/aitana/metamorfosis-0505.jpg','images/aitana/metamorfosis-0506-2.jpg','images/aitana/metamorfosis-0507-2.jpg','images/aitana/metamorfosis-0508.jpg','images/aitana/metamorfosis-0509.jpg','images/aitana/metamorfosis-0510.jpg','images/aitana/metamorfosis-0511.jpg','images/aitana/metamorfosis-0512-2.jpg','images/aitana/metamorfosis-0513.jpg','images/aitana/metamorfosis-0514.jpg','images/aitana/metamorfosis-0515.jpg','images/aitana/metamorfosis-0516.jpg','images/aitana/metamorfosis-0517.jpg','images/aitana/metamorfosis-0518.jpg','images/aitana/metamorfosis-0519.jpg','images/aitana/metamorfosis-0520.jpg','images/aitana/metamorfosis-0521.jpg','images/aitana/metamorfosis-tour-2.jpg','images/aitana/metamorfosis-tour-3.jpg','images/aitana/metamorfosis-tour-1.jpg'],0)">
@@ -899,7 +912,6 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 <section id="about">
   <div class="about-wrap">
     <div class="abl-head sr">
-      <div class="abn2"><span class="abn2-n">N</span><span class="abn2-a">A</span><span class="abn2-o">O</span><span class="abn2-m">M</span><span class="abn2-i">I</span><span class="l2">VALLEJO LÓPEZ</span></div>
       <div class="abr2">Stylist &mdash; Paris</div>
     </div>
     <div class="abr-head"></div>
