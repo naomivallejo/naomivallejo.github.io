@@ -1266,6 +1266,29 @@ function artBack(){
   if(sec)window.scrollTo({top:sec.offsetTop-65,behavior:'smooth'});
 }
 
+// Mobile Talents: show all proj-cards in flat grid, hide overview
+function mobileArtSetup(){
+  if(window.innerWidth>680)return;
+  var ov=document.getElementById('art-overview');
+  if(ov){ov.style.cssText='display:none!important';}
+  var pg=document.getElementById('art-overview-page');
+  if(pg){pg.style.cssText='height:auto!important;overflow:visible!important;display:block!important;';}
+  document.querySelectorAll('.art-detail').forEach(function(el){
+    el.style.cssText='display:block!important;';
+  });
+  document.querySelectorAll('.art-detail-hdr,.art-back,.art-detail-name').forEach(function(el){
+    el.style.cssText='display:none!important;';
+  });
+  document.querySelectorAll('.proj-grid').forEach(function(el){
+    el.style.cssText='display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:.5rem!important;padding:0!important;min-height:0!important;';
+  });
+  document.querySelectorAll('.proj-card').forEach(function(el){
+    el.style.cssText='aspect-ratio:4/5!important;position:relative!important;overflow:hidden!important;';
+  });
+}
+document.addEventListener('DOMContentLoaded',mobileArtSetup);
+window.addEventListener('resize',mobileArtSetup);
+
 </script>
 <div id="glr">
   <div id="glr-top">
