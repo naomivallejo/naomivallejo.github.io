@@ -311,17 +311,15 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   .ed-hdr{padding:3.5rem 1.4rem 2rem;}
   .ed-moodboard{padding:1.2rem .5rem 3rem;grid-template-columns:repeat(2,1fr);gap:.5rem;}
 
-  /* TALENTS — flat 2-col grid, like editorial */
+  /* TALENTS — 2-col overview grid, like editorial */
   #art-overview-page{height:auto !important;overflow:visible !important;display:block !important;padding:.5rem .5rem 2rem;background:var(--ink);}
   #art-overview-page.detail-mode{height:auto !important;overflow:visible !important;}
-  .art-hdr{padding:1.4rem 0 .8rem;}
-  .art-overview{display:none !important;}
-  .art-detail{display:block !important;}
+  .art-overview{display:grid !important;grid-template-columns:repeat(2,1fr) !important;grid-template-rows:auto !important;gap:.5rem !important;padding:0 !important;}
+  .art-ov-card{aspect-ratio:4/5 !important;position:relative !important;overflow:hidden !important;}
+  .art-detail{display:none !important;}
   .art-detail-hdr{display:none !important;}
   .art-back{display:none !important;}
   .art-detail-name{display:none !important;}
-  .proj-grid{display:grid !important;grid-template-columns:repeat(2,1fr) !important;grid-auto-rows:auto !important;gap:.5rem !important;padding:0 !important;min-height:0 !important;}
-  .proj-card{aspect-ratio:4/5 !important;position:relative !important;overflow:hidden !important;}
 
   /* EDITORIAL HEADER — stack on mobile, hide hint text */
   .ed-hdr{flex-direction:column;align-items:flex-start;gap:.6rem;}
@@ -1266,24 +1264,18 @@ function artBack(){
   if(sec)window.scrollTo({top:sec.offsetTop-65,behavior:'smooth'});
 }
 
-// Mobile Talents: show all proj-cards in flat grid, hide overview
+// Mobile Talents: show overview as 2-col grid, hide detail sections
 function mobileArtSetup(){
   if(window.innerWidth>680)return;
-  var ov=document.getElementById('art-overview');
-  if(ov){ov.style.cssText='display:none!important';}
   var pg=document.getElementById('art-overview-page');
   if(pg){pg.style.cssText='height:auto!important;overflow:visible!important;display:block!important;';}
-  document.querySelectorAll('.art-detail').forEach(function(el){
-    el.style.cssText='display:block!important;';
-  });
-  document.querySelectorAll('.art-detail-hdr,.art-back,.art-detail-name').forEach(function(el){
-    el.style.cssText='display:none!important;';
-  });
-  document.querySelectorAll('.proj-grid').forEach(function(el){
-    el.style.cssText='display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:.5rem!important;padding:0!important;min-height:0!important;';
-  });
-  document.querySelectorAll('.proj-card').forEach(function(el){
+  var ov=document.getElementById('art-overview');
+  if(ov){ov.style.cssText='display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:.5rem!important;padding:0!important;';}
+  document.querySelectorAll('.art-ov-card').forEach(function(el){
     el.style.cssText='aspect-ratio:4/5!important;position:relative!important;overflow:hidden!important;';
+  });
+  document.querySelectorAll('.art-detail').forEach(function(el){
+    el.style.cssText='display:none!important;';
   });
 }
 document.addEventListener('DOMContentLoaded',mobileArtSetup);
