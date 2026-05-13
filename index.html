@@ -379,9 +379,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 /* ── Custom cursor ── */
 #cur{position:fixed;top:0;left:0;pointer-events:none;z-index:100000;transform:translate(-120px,-120px);will-change:transform;}
 #cur-dot{width:6px;height:6px;background:var(--bone);border-radius:50%;margin:-3px 0 0 -3px;opacity:.7;transition:transform .35s cubic-bezier(.23,1,.32,1),opacity .2s;}
-#cur-ring{position:absolute;top:-14px;left:-14px;width:28px;height:28px;border:1px solid rgba(242,237,230,.28);border-radius:50%;transition:transform .48s cubic-bezier(.23,1,.32,1),opacity .3s;}
 .cur-xl #cur-dot{transform:scale(2.8);opacity:.9;}
-.cur-xl #cur-ring{transform:scale(1.75);opacity:.55;}
 /* ── Card tilt transition ── */
 .ed-card,.proj-card{transition:transform .6s cubic-bezier(.23,1,.32,1);}
 #vid-modal{display:none;position:fixed;inset:0;background:rgba(10,9,8,.95);z-index:9100;align-items:center;justify-content:center;}
@@ -574,11 +572,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">ELLE Espa&ntilde;a &mdash; Cover</span><span class="ed-card-name">Karol G</span><span class="ed-card-date">Aug 2025</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-gq/gq-01.jpg','images/bad-gyal-gq/gq-02.jpg','images/bad-gyal-gq/gq-03.jpg','images/bad-gyal-gq/gq-04.jpg','images/bad-gyal-gq/gq-05.jpg','images/bad-gyal-gq/gq-06.jpg','images/bad-gyal-gq/gq-07.jpg','images/bad-gyal-gq/gq-08.jpg'],0)">
-      <img src="images/bad-gyal-gq/gq-01.jpg" alt="Bad Gyal GQ Spain" loading="lazy" style="object-fit:cover;object-position:center top;">
-      <div class="ed-card-info"><span class="ed-card-pub">GQ Spain &mdash; Cover</span><span class="ed-card-name">Bad Gyal</span><span class="ed-card-date">Dec 2024</span></div>
-    </div>
-
+    <!-- Vogue covers together -->
     <div class="ed-card" onclick="lbOpen(['images/steinberg-vogue/steinberg-vogue-cs-cover.jpg','images/steinberg-vogue/84_05_k70kM9VO.jpg','images/steinberg-vogue/0f_fc_drwplGaS.jpg','images/steinberg-vogue/9f_69_jyhi5POj.jpg','images/steinberg-vogue/5b_b1_kcgpOzxp.jpg','images/steinberg-vogue/a1_09_vRGrc9yT.jpg','images/steinberg-vogue/6d_c9_LkmTQSJW.jpg','images/steinberg-vogue/21_0a_JPAhHT3V.jpg','images/steinberg-vogue/7a_9b_kVS3KJ1p.jpg'],0)">
       <img src="images/steinberg-vogue/steinberg-vogue-cs-cover.jpg" alt="Steinberg Vogue CS Cover" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Vogue CS &mdash; Cover</span><span class="ed-card-name">Steinberg</span><span class="ed-card-date">Sep 2024</span></div>
@@ -589,14 +583,19 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">Vogue CS &mdash; Cover</span><span class="ed-card-name">Camille Chifflot</span><span class="ed-card-date">Feb 2025</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/02.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
+    <div class="ed-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
       <img src="images/aitana-vogue-hq/main.jpg" alt="Vogue España Aitana" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Vogue España &mdash; Cover</span><span class="ed-card-name">Aitana</span><span class="ed-card-date">Jul 2025</span></div>
     </div>
 
+    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-gq/gq-01.jpg','images/bad-gyal-gq/gq-02.jpg','images/bad-gyal-gq/gq-03.jpg','images/bad-gyal-gq/gq-04.jpg','images/bad-gyal-gq/gq-05.jpg','images/bad-gyal-gq/gq-06.jpg','images/bad-gyal-gq/gq-07.jpg','images/bad-gyal-gq/gq-08.jpg'],0)">
+      <img src="images/bad-gyal-gq/gq-01.jpg" alt="Bad Gyal GQ Spain" loading="lazy" style="object-fit:cover;object-position:center top;">
+      <div class="ed-card-info"><span class="ed-card-pub">GQ Spain &mdash; Cover</span><span class="ed-card-name">Bad Gyal</span><span class="ed-card-date">Dec 2024</span></div>
+    </div>
+
     <!-- ── EDITORIALS ── -->
-    <div class="ed-card" onclick="lbOpen(['images/bad-gyal-woty/hb-01.jpg','images/bad-gyal-woty/hb-03.jpg','images/bad-gyal-woty/hb-04.jpg','images/bad-gyal-woty/hb-05.jpg','images/bad-gyal-woty/hb-06.jpg','images/bad-gyal-woty/hb-07.jpg','images/bad-gyal-woty/hb-08.jpg','images/bad-gyal-woty/hb-09.jpg','images/bad-gyal-woty/hb-11.jpg','images/bad-gyal-woty/hb-12.jpg','images/bad-gyal-woty/hb-10.jpg','images/bad-gyal-woty/hb-02.jpg'],0)">
-      <img src="images/bad-gyal-woty/hb-01.jpg" alt="Bad Gyal Harper's Bazaar España WOTY" loading="lazy" style="object-fit:cover;object-position:center top;">
+    <div class="ed-card" onclick="lbOpen(['images/hb-cover.jpg','images/bad-gyal-woty/hb-01.jpg','images/bad-gyal-woty/hb-03.jpg','images/bad-gyal-woty/hb-04.jpg','images/bad-gyal-woty/hb-05.jpg','images/bad-gyal-woty/hb-06.jpg','images/bad-gyal-woty/hb-07.jpg','images/bad-gyal-woty/hb-08.jpg','images/bad-gyal-woty/hb-09.jpg','images/bad-gyal-woty/hb-11.jpg','images/bad-gyal-woty/hb-12.jpg','images/bad-gyal-woty/hb-10.jpg','images/bad-gyal-woty/hb-02.jpg'],0)">
+      <img src="images/hb-cover.jpg" alt="Bad Gyal Harper's Bazaar España WOTY" loading="lazy" style="object-fit:cover;object-position:center top;">
       <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a &mdash; WOTY</span><span class="ed-card-name">Bad Gyal</span><span class="ed-card-date">Dec 2025</span></div>
     </div>
 
@@ -645,8 +644,6 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">El País Semanal</span><span class="ed-card-name">Rauw Alejandro</span><span class="ed-card-date">Apr 2025</span></div>
     </div>
 
-    <div class="ed-card ed-ghost" aria-hidden="true"></div>
-    <div class="ed-card ed-ghost" aria-hidden="true"></div>
     <div class="ed-card ed-ghost" aria-hidden="true"></div>
 
   </div>
@@ -795,7 +792,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     <div class="art-detail-hdr"><span class="art-detail-kicker">Aitana</span></div>
     <div class="proj-grid">
 
-    <div class="proj-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/02.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
+    <div class="proj-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
       <img src="images/aitana-vogue-hq/main.jpg" alt="Vogue Espa&ntilde;a" loading="lazy">
       <div class="proj-card-info"><span class="proj-card-pub">Cover Story</span><span class="proj-card-name">Vogue Espa&ntilde;a<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Jul 2025</span></div>
     </div>
@@ -1368,7 +1365,7 @@ function artBack(){
 
 <!-- Grain + Cursor -->
 <div id="grain"></div>
-<div id="cur"><div id="cur-dot"></div><div id="cur-ring"></div></div>
+<div id="cur"><div id="cur-dot"></div></div>
 
 <!-- VIDEO MODAL -->
 <div id="vid-modal" onclick="vidClose()">
