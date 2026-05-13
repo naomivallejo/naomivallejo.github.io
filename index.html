@@ -311,17 +311,17 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
   .ed-hdr{padding:3.5rem 1.4rem 2rem;}
   .ed-moodboard{padding:1.2rem .5rem 3rem;grid-template-columns:repeat(2,1fr);gap:.5rem;}
 
-  /* TALENTS — flat grid of all projects, like editorial */
-  #art-overview-page{height:auto;overflow:visible;display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;padding:.5rem .5rem 2rem;background:var(--ink);}
-  #art-overview-page.detail-mode{height:auto;overflow:visible;}
-  .art-hdr{grid-column:1/-1;padding:1.4rem 0 .8rem;}
-  .art-overview{display:none;}
-  .art-detail{display:contents !important;}
-  .art-detail-hdr{display:none;}
-  .art-back{display:none;}
-  .art-detail-name{display:none;}
-  .proj-grid{display:contents;}
-  .proj-card{aspect-ratio:4/5;position:relative;}
+  /* TALENTS — flat 2-col grid, like editorial */
+  #art-overview-page{height:auto !important;overflow:visible !important;display:block !important;padding:.5rem .5rem 2rem;background:var(--ink);}
+  #art-overview-page.detail-mode{height:auto !important;overflow:visible !important;}
+  .art-hdr{padding:1.4rem 0 .8rem;}
+  .art-overview{display:none !important;}
+  .art-detail{display:block !important;}
+  .art-detail-hdr{display:none !important;}
+  .art-back{display:none !important;}
+  .art-detail-name{display:none !important;}
+  .proj-grid{display:grid !important;grid-template-columns:repeat(2,1fr) !important;grid-auto-rows:auto !important;gap:.5rem !important;padding:0 !important;min-height:0 !important;}
+  .proj-card{aspect-ratio:4/5 !important;position:relative !important;overflow:hidden !important;}
 
   /* EDITORIAL HEADER — stack on mobile, hide hint text */
   .ed-hdr{flex-direction:column;align-items:flex-start;gap:.6rem;}
