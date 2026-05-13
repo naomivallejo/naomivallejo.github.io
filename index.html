@@ -373,6 +373,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 .glr-proj-btn{color:rgba(242,237,230,.55);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;background:none;border:none;cursor:none;transition:color .2s;padding:.5rem .9rem;font-family:'Unbounded',sans-serif;}
 .glr-proj-btn:hover{color:rgba(242,237,230,1);}
 .glr-proj-btn:disabled{opacity:0;pointer-events:none;}
+#glr-cap{text-align:center;font-family:'Unbounded',sans-serif;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,237,230,.38);padding:.5rem 2rem .1rem;flex-shrink:0;display:none;}
 #vid-modal{display:none;position:fixed;inset:0;background:rgba(10,9,8,.95);z-index:9100;align-items:center;justify-content:center;}
 #vid-modal.on{display:flex;}
 #vid-wrap{width:min(90vw,960px);aspect-ratio:16/9;position:relative;}
@@ -622,7 +623,11 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">Vogue CS &mdash; Cover</span><span class="ed-card-name">Camille Chifflot</span><span class="ed-card-date">Feb 2025</span></div>
     </div>
 
-    <div class="ed-card ed-ghost" aria-hidden="true"></div>
+    <div class="ed-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/02.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
+      <img src="images/aitana-vogue-hq/main.jpg" alt="Vogue España Aitana" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">Vogue España &mdash; Cover</span><span class="ed-card-name">Aitana</span><span class="ed-card-date">Jul 2025</span></div>
+    </div>
+
     <div class="ed-card ed-ghost" aria-hidden="true"></div>
     <div class="ed-card ed-ghost" aria-hidden="true"></div>
 
@@ -682,11 +687,11 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     <div class="art-detail-hdr"><span class="art-detail-kicker">Karol G</span></div>
     <div class="proj-grid">
 
-    <div class="proj-card" onclick="lbOpen(['images/karol-g-artists/04.jpg','images/karol-g-artists/01.jpg','images/karol-g-artists/02.jpg','images/karol-g-artists/03.jpg','images/karol-g-artists/05.jpg','images/karol-g-artists/06.jpg','images/karol-g-artists/07.jpg','images/karol-g-artists/08.jpg','images/karol-g-artists/09.jpg','images/karol-g-artists/10.jpg','images/karol-g-artists/11.jpg','images/karol-g-artists/12.jpg'],0)">
+    <div class="proj-card" onclick="lbOpen([{src:'images/karol-g-artists/04.jpg',cap:'Véronique Leroy SS 1996 — Reference'},'images/karol-g-artists/01.jpg','images/karol-g-artists/02.jpg','images/karol-g-artists/03.jpg',{src:'images/karol-g-artists/05.jpg',cap:'Véronique Leroy SS 1996 — Reference'},{src:'images/karol-g-artists/06.jpg',cap:'Véronique Leroy SS 1996 — Reference'},'images/karol-g-artists/07.jpg','images/karol-g-artists/08.jpg','images/karol-g-artists/09.jpg','images/karol-g-artists/10.jpg','images/karol-g-artists/11.jpg','images/karol-g-artists/12.jpg'],0)">
       <img src="images/karol-g-artists/04.jpg" alt="MTV VMAs" loading="lazy">
       <div class="proj-card-info"><span class="proj-card-pub">Red Carpet &amp; Fitting</span><span class="proj-card-name">MTV VMAs<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; red carpet</span></span><span class="proj-card-date">Sep 2024</span></div>
     </div>
-    <div class="proj-card" onclick="lbOpen(['images/karol-g/msb-tour.jpg','images/karol-g/msb-tourR.jpg','images/karol-g/msb-tour_.jpg','images/karol-g/msb-tour-sketches.jpg','images/karol-g/sketches-msb-tour.jpg'],0)">
+    <div class="proj-card" onclick="lbOpen(['images/karol-g/msb-tour.jpg','images/karol-g/msb-tourR.jpg','images/karol-g/msb-tour_.jpg',{src:'images/karol-g/msb-tour-sketches.jpg',cap:'Fashion Sketch — Mañana Será Bonito Tour'},{src:'images/karol-g/sketches-msb-tour.jpg',cap:'Fashion Sketch — Mañana Será Bonito Tour'}],0)">
       <img src="images/karol-g/msb-tour.jpg" alt="Tour Ma&ntilde;ana Ser&aacute; Bonito" loading="lazy">
       <div class="proj-card-info"><span class="proj-card-pub">Tour Styling</span><span class="proj-card-name">Tour Ma&ntilde;ana Ser&aacute; Bonito<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; tour</span></span><span class="proj-card-date">2024</span></div>
     </div>
@@ -823,7 +828,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     <div class="proj-grid">
 
     <div class="proj-card mv-card" onclick="window.open('https://www.youtube.com/watch?v=DREDPRaRBSI','_blank')">
-      <img src="images/tini/de-papel-thumbnail.jpg" alt="De Papel" loading="lazy" style="object-fit:cover;object-position:center 20%;">
+      <img src="images/tini/de-papel-thumbnail.jpg" alt="De Papel" loading="lazy">
       <div class="proj-card-info"><span class="proj-card-pub">Music Video</span><span class="proj-card-name">De Papel<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Aug 2025</span></div>
     </div>
     </div>
@@ -1127,7 +1132,7 @@ document.addEventListener('click',function(e){
   _pendingPub=pubEl?pubEl.textContent.trim():'';
 },true);
 function lbOpen(imgs,i){
-  GLR.imgs=imgs; GLR.i=(i||0);
+  GLR.imgs=imgs.map(function(x){return(typeof x==='string')?{src:x,cap:''}:x;}); GLR.i=(i||0);
   GLR.title=_pendingTitle; _pendingTitle='';
   GLR.pub=_pendingPub; _pendingPub='';
   // Collect all visible lbOpen cards for project navigation
@@ -1167,8 +1172,12 @@ function glrRender(){
   var glr=document.getElementById('glr');
   var img=document.getElementById('glr-img');
   var strip=document.getElementById('glr-strip');
+  var item=GLR.imgs[GLR.i];
+  var src=item.src; var cap=item.cap||'';
   var single=GLR.imgs.length===1;
-  img.src=GLR.imgs[GLR.i];
+  img.src=src;
+  var capEl=document.getElementById('glr-cap');
+  if(capEl){capEl.textContent=cap;capEl.style.display=cap?'block':'none';}
   document.getElementById('glr-ct').textContent=(GLR.i+1)+' / '+GLR.imgs.length;
   // Project nav buttons
   var ppBtn=document.getElementById('glr-proj-prev');
@@ -1184,9 +1193,9 @@ function glrRender(){
   strip.style.display=single?'none':'flex';
   strip.innerHTML='';
   if(!single){
-    GLR.imgs.forEach(function(src,idx){
+    GLR.imgs.forEach(function(it,idx){
       var t=document.createElement('img');
-      t.src=src; t.className='glr-th'+(idx===GLR.i?' act':'');
+      t.src=it.src; t.className='glr-th'+(idx===GLR.i?' act':'');
       t.onclick=function(e){e.stopPropagation();GLR.i=idx;glrRender();};
       strip.appendChild(t);
     });
@@ -1288,6 +1297,7 @@ function artBack(){
     <img id="glr-img" src="" alt="">
     <button id="glr-next" onclick="glrGo(1)">&#8250;</button>
   </div>
+  <div id="glr-cap"></div>
   <div id="glr-strip"></div>
   <div id="glr-proj-nav">
     <button class="glr-proj-btn" id="glr-proj-prev" onclick="glrProjGo(-1)">&#8592; prev project</button>
