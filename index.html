@@ -32,19 +32,15 @@
   --warm:#b8a898;
 }
 html{scroll-behavior:smooth;}
-body{background:var(--ink);color:var(--bone);font-family:'DM Sans',sans-serif;font-weight:200;overflow-x:hidden;cursor:none;}
+body{background:var(--ink);color:var(--bone);font-family:'DM Sans',sans-serif;font-weight:200;overflow-x:hidden;}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9000;opacity:.55;}
 
-/* CURSOR */
-.cur{position:fixed;width:10px;height:10px;border:1px solid var(--bone);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:difference;}
-.cur.big{width:38px;height:38px;}
-@media(hover:none){.cur{display:none;}}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 3rem;background:transparent;backdrop-filter:none;border-bottom:none;transition:background .4s,backdrop-filter .4s,border-color .4s;}
 nav.nav-scrolled{background:rgba(10,9,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(242,237,230,.05);}
 nav.nav-light{background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(92,53,32,.08);}
-.nav-mono{display:inline-flex;align-items:center;text-decoration:none;opacity:.85;transition:opacity .3s;cursor:none;}
+.nav-mono{display:inline-flex;align-items:center;text-decoration:none;opacity:.85;transition:opacity .3s;}
 .nav-mono:hover{opacity:1;}
 .nav-naomi{display:inline-flex;align-items:center;color:rgba(242,237,230,.92);filter:drop-shadow(0 0 4px rgba(0,0,0,1)) drop-shadow(0 1px 8px rgba(0,0,0,1)) drop-shadow(0 0 18px rgba(0,0,0,.9));transition:color .4s,filter .4s;}
 .nav-naomi svg{height:2.4rem;width:auto;display:block;}
@@ -251,7 +247,7 @@ nav.nav-light .nav-r a:hover,nav.nav-light .nav-r a.on{color:#1a0c06;opacity:1;}
 .cfh{font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.4rem;color:var(--bone);margin-bottom:2rem;}
 .fg{margin-bottom:1.3rem;}
 .fl{display:block;font-size:.48rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,237,230,.28);margin-bottom:.4rem;}
-.fi{width:100%;background:none;border:none;border-bottom:1px solid rgba(242,237,230,.15);padding:.65rem 0;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:200;color:var(--bone);outline:none;transition:border-color .2s;cursor:none;}
+.fi{width:100%;background:none;border:none;border-bottom:1px solid rgba(242,237,230,.15);padding:.65rem 0;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:200;color:var(--bone);outline:none;transition:border-color .2s;}
 .fi:focus{border-bottom-color:var(--bone);}
 .fi::placeholder{color:rgba(242,237,230,.15);}
 textarea.fi{resize:none;height:60px;}
@@ -354,11 +350,11 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 #glr.on{display:flex;}
 #glr-top{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2.4rem;flex-shrink:0;border:none;}
 #glr-ct{font-family:'Unbounded',sans-serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,237,230,.4);}
-#glr-x{color:rgba(242,237,230,.5);font-size:2.2rem;background:none;border:none;cursor:pointer;line-height:1;font-weight:200;transition:color .15s;padding:0;cursor:none;}
+#glr-x{color:rgba(242,237,230,.5);font-size:2.2rem;background:none;border:none;cursor:pointer;line-height:1;font-weight:200;transition:color .15s;padding:0;}
 #glr-x:hover{color:var(--bone);}
 #glr-main{flex:1;display:flex;align-items:center;justify-content:center;position:relative;min-height:0;padding:0 4.5rem;border:none;background:transparent;}
 #glr-img{max-width:100%;max-height:72vh;object-fit:contain;display:block;user-select:none;transition:opacity .15s;border:none;outline:none;margin:0;padding:0;}
-#glr-prev,#glr-next{position:absolute;top:50%;transform:translateY(-50%);color:rgba(242,237,230,.4);font-size:2.8rem;background:none;border:none;cursor:pointer;padding:.4rem 1rem;line-height:1;font-weight:200;transition:color .15s;cursor:none;}
+#glr-prev,#glr-next{position:absolute;top:50%;transform:translateY(-50%);color:rgba(242,237,230,.4);font-size:2.8rem;background:none;border:none;cursor:pointer;padding:.4rem 1rem;line-height:1;font-weight:200;transition:color .15s;}
 #glr-prev:hover,#glr-next:hover{color:var(--bone);}
 #glr-prev{left:0;}#glr-next{right:0;}
 #glr-strip{display:flex;gap:.35rem;padding:.7rem 2rem 1rem;overflow-x:auto;flex-shrink:0;scrollbar-width:none;justify-content:center;}
@@ -370,23 +366,20 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 #glr-pub{font-family:'Unbounded',sans-serif;font-size:.54rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(242,237,230,.35);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #glr-title{font-family:'Unbounded',sans-serif;font-size:.82rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,230,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #glr-proj-nav{display:flex;justify-content:space-between;align-items:center;padding:.6rem 2.4rem 1.1rem;flex-shrink:0;}
-.glr-proj-btn{color:rgba(242,237,230,.55);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;background:none;border:none;cursor:none;transition:color .2s;padding:.5rem .9rem;font-family:'Unbounded',sans-serif;}
+.glr-proj-btn{color:rgba(242,237,230,.55);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;background:none;border:none;cursor:pointer;transition:color .2s;padding:.5rem .9rem;font-family:'Unbounded',sans-serif;}
 .glr-proj-btn:hover{color:rgba(242,237,230,1);}
 .glr-proj-btn:disabled{opacity:0;pointer-events:none;}
 #glr-cap{text-align:center;font-family:'Unbounded',sans-serif;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,237,230,.38);padding:.5rem 2rem .1rem;flex-shrink:0;display:none;}
 /* ── Grain overlay ── */
 #grain{position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");background-size:200px 200px;}
 /* ── Custom cursor ── */
-#cur{position:fixed;top:0;left:0;pointer-events:none;z-index:100000;transform:translate(-120px,-120px);will-change:transform;}
-#cur-dot{width:6px;height:6px;background:var(--bone);border-radius:50%;margin:-3px 0 0 -3px;opacity:.7;transition:transform .35s cubic-bezier(.23,1,.32,1),opacity .2s;}
-.cur-xl #cur-dot{transform:scale(2.8);opacity:.9;}
 /* ── Card tilt transition ── */
 .ed-card,.proj-card{transition:transform .6s cubic-bezier(.23,1,.32,1);}
 #vid-modal{display:none;position:fixed;inset:0;background:rgba(10,9,8,.95);z-index:9100;align-items:center;justify-content:center;}
 #vid-modal.on{display:flex;}
 #vid-wrap{width:min(90vw,960px);aspect-ratio:16/9;position:relative;}
 #vid-iframe{width:100%;height:100%;border-radius:2px;}
-#vid-x{position:fixed;top:1.2rem;right:2rem;color:rgba(242,237,230,.5);font-size:2rem;background:none;border:none;cursor:pointer;line-height:1;font-weight:200;transition:color .15s;z-index:9101;cursor:none;}
+#vid-x{position:fixed;top:1.2rem;right:2rem;color:rgba(242,237,230,.5);font-size:2rem;background:none;border:none;cursor:pointer;line-height:1;font-weight:200;transition:color .15s;z-index:9101;}
 #vid-x:hover{color:var(--bone);}
 .g{cursor:zoom-in;}
 /* ─── EDITORIAL MOODBOARD ─── */
@@ -436,7 +429,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 /* ─── ARTIST DETAIL ─── */
 .art-detail{display:none;}
 .art-detail.active{display:grid;grid-template-rows:auto auto 1fr;grid-template-columns:1fr;height:calc(100vh - 65px);}
-.art-back{grid-row:1;grid-column:1;display:inline-flex;align-items:center;gap:.5rem;font-family:'Unbounded',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,230,.62);background:none;border:none;padding:1.8rem 0 .3rem 3rem;cursor:pointer;transition:color .2s;cursor:none;}
+.art-back{grid-row:1;grid-column:1;display:inline-flex;align-items:center;gap:.5rem;font-family:'Unbounded',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,230,.62);background:none;border:none;padding:1.8rem 0 .3rem 3rem;cursor:pointer;transition:color .2s;}
 .art-back:hover{color:var(--bone);}
 .art-back::before{content:'←';margin-right:.5rem;font-size:.9rem;}
 
@@ -498,8 +491,6 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 </style>
 </head>
 <body>
-<div class="cur" id="cur"></div>
-
 <nav id="main-nav" onclick="if(this.classList.contains('menu-open')&&!event.target.closest('a,button'))navClose()">
   <a href="#cover" class="nav-mono" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Naomi Vallejo López">
     <span class="nav-naomi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 42" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="2" x2="2" y2="40"/><line x1="2" y1="2" x2="26" y2="40"/><line x1="18" y1="2" x2="26" y2="40"/><line x1="26" y1="40" x2="42" y2="2"/></g></svg></span>
@@ -583,7 +574,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">Vogue CS &mdash; Cover</span><span class="ed-card-name">Camille Chifflot</span><span class="ed-card-date">Feb 2025</span></div>
     </div>
 
-    <div class="ed-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
+    <div class="ed-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG','images/aitana-vogue-hq/vogue81.JPG'],0)">
       <img src="images/aitana-vogue-hq/main.jpg" alt="Vogue España Aitana" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Vogue España &mdash; Cover</span><span class="ed-card-name">Aitana</span><span class="ed-card-date">Jul 2025</span></div>
     </div>
@@ -594,7 +585,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     </div>
 
     <!-- ── EDITORIALS ── -->
-    <div class="ed-card" onclick="lbOpen(['images/hb-cover.jpg','images/bad-gyal-woty/hb-01.jpg','images/bad-gyal-woty/hb-03.jpg','images/bad-gyal-woty/hb-04.jpg','images/bad-gyal-woty/hb-05.jpg','images/bad-gyal-woty/hb-06.jpg','images/bad-gyal-woty/hb-07.jpg','images/bad-gyal-woty/hb-08.jpg','images/bad-gyal-woty/hb-09.jpg','images/bad-gyal-woty/hb-11.jpg','images/bad-gyal-woty/hb-12.jpg','images/bad-gyal-woty/hb-10.jpg','images/bad-gyal-woty/hb-02.jpg'],0)">
+    <div class="ed-card" onclick="lbOpen(['images/hb-cover.jpg','images/bad-gyal-woty/hb-03.jpg','images/bad-gyal-woty/hb-04.jpg','images/bad-gyal-woty/hb-05.jpg','images/bad-gyal-woty/hb-06.jpg','images/bad-gyal-woty/hb-07.jpg','images/bad-gyal-woty/hb-08.jpg','images/bad-gyal-woty/hb-09.jpg','images/bad-gyal-woty/hb-11.jpg','images/bad-gyal-woty/hb-12.jpg','images/bad-gyal-woty/hb-10.jpg','images/bad-gyal-woty/hb-02.jpg'],0)">
       <img src="images/hb-cover.jpg" alt="Bad Gyal Harper's Bazaar España WOTY" loading="lazy" style="object-fit:cover;object-position:center top;">
       <div class="ed-card-info"><span class="ed-card-pub">Harper&rsquo;s Bazaar Espa&ntilde;a &mdash; WOTY</span><span class="ed-card-name">Bad Gyal</span><span class="ed-card-date">Dec 2025</span></div>
     </div>
@@ -792,7 +783,7 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     <div class="art-detail-hdr"><span class="art-detail-kicker">Aitana</span></div>
     <div class="proj-grid">
 
-    <div class="proj-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
+    <div class="proj-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG','images/aitana-vogue-hq/vogue81.JPG'],0)">
       <img src="images/aitana-vogue-hq/main.jpg" alt="Vogue Espa&ntilde;a" loading="lazy">
       <div class="proj-card-info"><span class="proj-card-pub">Cover Story</span><span class="proj-card-name">Vogue Espa&ntilde;a<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; editorial</span></span><span class="proj-card-date">Jul 2025</span></div>
     </div>
@@ -929,7 +920,6 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="abb">
         <p>Paris-based fashion stylist. <strong>Istituto Marangoni</strong> Bachelor in Fashion Styling &amp; Creative Direction &mdash; studies split between Milan and Paris.</p>
         <p>Worked directly alongside <strong>Alba Melendo</strong> on editorial shoots, music videos, world tours, Paris Fashion Week and red carpet appearances for internationally acclaimed artists.</p>
-        <p>Open to travel and relocation. Available for editorial, celebrity styling, commercial, advertising, film, personal styling and others.</p>
       </div>
       <div class="ablang">
         <div class="li"><div class="ln">Spanish</div><div class="ll">Native</div></div>
@@ -1028,10 +1018,6 @@ window.addEventListener('load',function(){window.scrollTo(0,0);});
   setTimeout(nextSlide, 1600);
 })();
 
-const cur=document.getElementById('cur');
-let mx=0,my=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'));});
 const ids=['editorial','artists','runway','about','contact'];
 const nm={'editorial':'n-ed','artists':'n-art','runway':'n-rw','about':'n-ab','contact':'n-co'};
 const mainNav=document.getElementById('main-nav');
@@ -1304,23 +1290,6 @@ function artBack(){
   window.addEventListener('resize',fixMobileArt);
 })();
 
-// ── Custom cursor ──
-(function(){
-  var cur=document.getElementById('cur');
-  if(!cur||'ontouchstart' in window){if(cur)cur.style.display='none';return;}
-  document.addEventListener('mousemove',function(e){
-    cur.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';
-  });
-  var hoverSel='.ed-card,.proj-card,.art-ov-card,.af,.ef,.nav-r a,.nav-mono,.glr-th,.art-back,.glr-proj-btn';
-  function bindCur(){
-    document.querySelectorAll(hoverSel).forEach(function(el){
-      el.addEventListener('mouseenter',function(){cur.classList.add('cur-xl');});
-      el.addEventListener('mouseleave',function(){cur.classList.remove('cur-xl');});
-    });
-  }
-  document.addEventListener('DOMContentLoaded',bindCur);
-  window.setTimeout(bindCur,800);
-})();
 
 // ── Card tilt ──
 (function(){
@@ -1363,9 +1332,8 @@ function artBack(){
   </div>
 </div>
 
-<!-- Grain + Cursor -->
+<!-- Grain -->
 <div id="grain"></div>
-<div id="cur"><div id="cur-dot"></div></div>
 
 <!-- VIDEO MODAL -->
 <div id="vid-modal" onclick="vidClose()">
