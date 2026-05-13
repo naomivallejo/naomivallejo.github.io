@@ -374,6 +374,16 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
 .glr-proj-btn:hover{color:rgba(242,237,230,1);}
 .glr-proj-btn:disabled{opacity:0;pointer-events:none;}
 #glr-cap{text-align:center;font-family:'Unbounded',sans-serif;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,237,230,.38);padding:.5rem 2rem .1rem;flex-shrink:0;display:none;}
+/* ── Grain overlay ── */
+#grain{position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");background-size:200px 200px;}
+/* ── Custom cursor ── */
+#cur{position:fixed;top:0;left:0;pointer-events:none;z-index:100000;transform:translate(-120px,-120px);will-change:transform;}
+#cur-dot{width:6px;height:6px;background:var(--bone);border-radius:50%;margin:-3px 0 0 -3px;opacity:.7;transition:transform .35s cubic-bezier(.23,1,.32,1),opacity .2s;}
+#cur-ring{position:absolute;top:-14px;left:-14px;width:28px;height:28px;border:1px solid rgba(242,237,230,.28);border-radius:50%;transition:transform .48s cubic-bezier(.23,1,.32,1),opacity .3s;}
+.cur-xl #cur-dot{transform:scale(2.8);opacity:.9;}
+.cur-xl #cur-ring{transform:scale(1.75);opacity:.55;}
+/* ── Card tilt transition ── */
+.ed-card,.proj-card{transition:transform .6s cubic-bezier(.23,1,.32,1);}
 #vid-modal{display:none;position:fixed;inset:0;background:rgba(10,9,8,.95);z-index:9100;align-items:center;justify-content:center;}
 #vid-modal.on{display:flex;}
 #vid-wrap{width:min(90vw,960px);aspect-ratio:16/9;position:relative;}
@@ -623,6 +633,11 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
       <div class="ed-card-info"><span class="ed-card-pub">Vogue CS &mdash; Cover</span><span class="ed-card-name">Camille Chifflot</span><span class="ed-card-date">Feb 2025</span></div>
     </div>
 
+    <div class="ed-card" onclick="lbOpen(['images/rauw/rauw-07.jpg','images/rauw/rauw-08.jpg','images/rauw/rauw-09.jpg','images/rauw/rauw-10.jpg','images/rauw/rauw-11.jpg','images/rauw/rauw-12.jpg','images/rauw/rauw-13.jpg','images/rauw/rauw-14.jpg','images/rauw/rauw-15.jpg','images/rauw/rauw-16.jpg','images/rauw/rauw-17.jpg','images/rauw/rauw-18.jpg','images/rauw/rauw-19.jpg','images/rauw/rauw-20.jpg','images/rauw/rauw-21.jpg','images/rauw/rauw-22.jpg','images/rauw/rauw-23.jpg'],0)">
+      <img src="images/rauw/rauw-07.jpg" alt="El País Semanal Rauw Alejandro" loading="lazy">
+      <div class="ed-card-info"><span class="ed-card-pub">El País Semanal</span><span class="ed-card-name">Rauw Alejandro</span><span class="ed-card-date">Apr 2025</span></div>
+    </div>
+
     <div class="ed-card" onclick="lbOpen(['images/aitana-vogue-hq/main.jpg','images/aitana-vogue/02.jpg','images/aitana-vogue/03.jpg','images/aitana-vogue/04.jpg','images/aitana-vogue/05.jpg','images/aitana-vogue/06.jpg','images/aitana-vogue/07.jpg','images/aitana-vogue-hq/vogue75.JPG','images/aitana-vogue-hq/vogue76.JPG','images/aitana-vogue-hq/vogue77.JPG','images/aitana-vogue-hq/vogue78.JPG','images/aitana-vogue-hq/vogue79.JPG','images/aitana-vogue-hq/vogue80.JPG','images/aitana-vogue-hq/vogue81.JPG','images/aitana-vogue-hq/vogue82.JPG','images/aitana-vogue-hq/vogue83.JPG','images/aitana-vogue-hq/vogue84.JPG','images/aitana-vogue-hq/vogue85.JPG','images/aitana-vogue-hq/vogue86.JPG','images/aitana-vogue-hq/vogue87.JPG'],0)">
       <img src="images/aitana-vogue-hq/main.jpg" alt="Vogue España Aitana" loading="lazy">
       <div class="ed-card-info"><span class="ed-card-pub">Vogue España &mdash; Cover</span><span class="ed-card-name">Aitana</span><span class="ed-card-date">Jul 2025</span></div>
@@ -698,6 +713,10 @@ footer{background:var(--ink);padding:1.2rem 3rem;display:flex;align-items:center
     <div class="proj-card mv-card" onclick="window.open('https://www.youtube.com/watch?v=ArpWnAJtGmU','_blank')">
       <img src="images/karol-g/no-me-cansare-thumbnail.jpg" alt="No me cansar&eacute;" loading="lazy">
       <div class="proj-card-info"><span class="proj-card-pub">Music Video &mdash; ft. Sevdaliza</span><span class="proj-card-name">No me cansar&eacute;<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; music video</span></span><span class="proj-card-date">Oct 2024</span></div>
+    </div>
+    <div class="proj-card mv-card" onclick="window.open('https://www.youtube.com/watch?v=-DINXNvNNC4','_blank')">
+      <img src="images/karol-g/nfl-halftime-brazil.jpg" alt="NFL Halftime São Paulo" loading="lazy">
+      <div class="proj-card-info"><span class="proj-card-pub">Performance &mdash; NFL São Paulo</span><span class="proj-card-name">Halftime Show<span style="font-size:.75em;font-weight:300;opacity:.5;letter-spacing:0;"> &mdash; performance</span></span><span class="proj-card-date">Sep 2025</span></div>
     </div>
     <div class="proj-card" onclick="lbOpen(['images/karol-g/tropicoqueta-cover.jpg'],0)">
       <img src="images/karol-g/tropicoqueta-cover.jpg" alt="Tropicoqueta" loading="lazy">
@@ -1285,6 +1304,45 @@ function artBack(){
   window.addEventListener('resize',fixMobileArt);
 })();
 
+// ── Custom cursor ──
+(function(){
+  var cur=document.getElementById('cur');
+  if(!cur||'ontouchstart' in window){if(cur)cur.style.display='none';return;}
+  document.addEventListener('mousemove',function(e){
+    cur.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';
+  });
+  var hoverSel='.ed-card,.proj-card,.art-ov-card,.af,.ef,.nav-r a,.nav-mono,.glr-th,.art-back,.glr-proj-btn';
+  function bindCur(){
+    document.querySelectorAll(hoverSel).forEach(function(el){
+      el.addEventListener('mouseenter',function(){cur.classList.add('cur-xl');});
+      el.addEventListener('mouseleave',function(){cur.classList.remove('cur-xl');});
+    });
+  }
+  document.addEventListener('DOMContentLoaded',bindCur);
+  window.setTimeout(bindCur,800);
+})();
+
+// ── Card tilt ──
+(function(){
+  if('ontouchstart' in window) return;
+  function applyTilt(sel){
+    document.querySelectorAll(sel).forEach(function(el){
+      el.addEventListener('mousemove',function(e){
+        var r=el.getBoundingClientRect();
+        var x=(e.clientX-r.left)/r.width-.5;
+        var y=(e.clientY-r.top)/r.height-.5;
+        el.style.transform='perspective(900px) rotateY('+(x*6)+'deg) rotateX('+(-y*5)+'deg) translateZ(5px)';
+        el.style.transitionDuration='0s';
+      });
+      el.addEventListener('mouseleave',function(){
+        el.style.transform='';
+        el.style.transitionDuration='.6s';
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded',function(){applyTilt('.ed-card,.proj-card');});
+})();
+
 </script>
 <div id="glr">
   <div id="glr-top">
@@ -1304,6 +1362,10 @@ function artBack(){
     <button class="glr-proj-btn" id="glr-proj-next" onclick="glrProjGo(1)">next project &#8594;</button>
   </div>
 </div>
+
+<!-- Grain + Cursor -->
+<div id="grain"></div>
+<div id="cur"><div id="cur-dot"></div><div id="cur-ring"></div></div>
 
 <!-- VIDEO MODAL -->
 <div id="vid-modal" onclick="vidClose()">
