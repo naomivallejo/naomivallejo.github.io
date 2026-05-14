@@ -396,7 +396,30 @@
       "WebFetch(domain:www.picuki.com)",
       "WebFetch(domain:www.revistahombre.es)",
       "WebFetch(domain:convivimos.naranjax.com)",
-      "WebFetch(domain:webcache.googleusercontent.com)"
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:imgbox.com)",
+      "Bash(identify /Users/naomivallejolopez/Downloads/Portfolio/images/hb-cover.jpg)",
+      "Bash(curl -L -o \"/Users/naomivallejolopez/Downloads/Portfolio/images/diane-kruger/hb-cover.jpg\" \"https://images2.imgbox.com/c2/c9/uAKXAD5b_o.jpg\" -w \"%{http_code} %{size_download}\" --silent)",
+      "WebFetch(domain:carnaleroom.com)",
+      "Bash(curl -L -o \"/Users/naomivallejolopez/Downloads/Portfolio/images/carnale/carnale-cover.png\" \"https://carnaleroom.com/wp-content/uploads/2025/05/COVER.png\" -w \"%{http_code} %{size_download}\" --silent)",
+      "Bash(curl -L -o \"/tmp/deva-cover-0.jpg\" \"https://celebmafia.com/wp-content/uploads/2025/10/deva-cassel-in-couture-looks-for-harper-s-bazaar-spain-november-2025-0.jpg\" -w \"%{http_code}\" --silent)",
+      "WebFetch(domain:brot.sk)",
+      "Bash(curl -L -o \"/tmp/deva-squarespace.jpg\" \"https://images.squarespace-cdn.com/content/v1/55f45174e4b0fb5d95b07f39/e9c344ea-257d-4d1e-9800-5dd0fd03a760/Deva-Cassel-by-Pablo-Saez-Harpers-Bazaar-Espana-November-2025-2.png\" -w \"%{http_code} %{size_download}\" --silent)",
+      "WebFetch(domain:www.eleconomista.es)",
+      "Bash(curl -L -o \"/tmp/carnale-thumb.jpg\" \"https://www.serendeepity.net/wp-content/uploads/2025/06/carnale-carnale-magazine-issue-07-1-150x150.jpg\" --silent)",
+      "Bash(curl -L -o \"/tmp/carnale-full.jpg\" \"https://www.serendeepity.net/wp-content/uploads/2025/06/carnale-carnale-magazine-issue-07-1.jpg\" -w \"%{http_code} %{size_download}\" --silent)",
+      "Bash(curl -L -o \"/tmp/vogue-japan-cover.webp\" \"https://cdn.visie.io/public/project/7808/image/VisieAdmin_VogueJapan_2025_139513_VISIE_large.webp\" -w \"%{http_code} %{size_download}\" --silent)",
+      "WebFetch(domain:www.hbespana.es)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:txemayeste.com)",
+      "WebFetch(domain:www.magzter.com)",
+      "WebFetch(domain:files.magzter.com)",
+      "Bash(curl -L \"https://files.magzter.com/resize/magazine/1467026732/1763636855/view/2.jpg\" -o /Users/naomivallejolopez/Downloads/Portfolio/images/bad-gyal/hb-woty-cover.jpg)",
+      "Bash(curl -L \"https://thebeautyconcept.com/wp-content/uploads/2025/04/ELPAIS.pdf\" -o /tmp/rauw-elpais.pdf)",
+      "WebFetch(domain:rawmagazine.es)",
+      "WebFetch(domain:rauwalejandro.com)",
+      "Bash(curl -L \"https://img.youtube.com/vi/BgMU9Vuj17Y/maxresdefault.jpg\" -o /Users/naomivallejolopez/Downloads/Portfolio/images/karol-g/latina-foreva-thumbnail.jpg)",
+      "Bash(curl -L \"https://img.youtube.com/vi/LenBa0yOAus/maxresdefault.jpg\" -o /Users/naomivallejolopez/Downloads/Portfolio/images/karol-g/la-premiere-thumbnail.jpg)"
     ]
   }
 }
